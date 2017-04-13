@@ -4,6 +4,6 @@
 
 `curl https://install.meteor.com/ | sh)`
 
-### Run application 
+### Run application
 
 `meteor run`
