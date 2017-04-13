@@ -7,10 +7,11 @@ import SideBar from './components/campaign_page/cp_sidebar';
 
 
 //Create a new component. This component should produce some HTML
-const App = function() => {
-	return (<div>
-		<Body />
-	</div>
+const App = () => {
+	return (
+		<div>
+			<Body />
+		</div>
 	);
 }
 

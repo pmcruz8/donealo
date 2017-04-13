@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
-import {Link} from 'react-router'
-import {Navbar, NavItem} from 'react-materialize';
+import { Link } from 'react-router'
+import { Navbar, NavItem } from 'react-materialize';
 
 class Header extends Component {
-   render(){
+   render() {
     return (
       <div>
         <Navbar brand='../../public/img/dona_logo.png' left>
@@ -11,6 +11,7 @@ class Header extends Component {
           <NavItem><Link to="/path goes here" activeClassName="active">Inicio</Link></NavItem>
           <NavItem><Link to="/path goes here" activeClassName="active">Campañas</Link></NavItem>
           <NavItem><Link to="/path goes here" activeClassName="active">Organizaciones</Link></NavItem>
+        </Navbar>
         </Navbar>
       {this.props.children}
       </div>
