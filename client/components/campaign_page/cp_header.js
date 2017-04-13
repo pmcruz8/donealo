@@ -6,8 +6,8 @@ class Header extends Component {
    render(){
     return (
       <div>
-        <Navbar brand='dona_logo.png' left>
-        <Navbar brand='logo-blue.png' left>
+        <Navbar brand='../../public/img/dona_logo.png' left>
+        <Navbar brand='../../public/img/logo-blue.png' left>
           <NavItem><Link to="/path goes here" activeClassName="active">Inicio</Link></NavItem>
           <NavItem><Link to="/path goes here" activeClassName="active">Campañas</Link></NavItem>
           <NavItem><Link to="/path goes here" activeClassName="active">Organizaciones</Link></NavItem>
