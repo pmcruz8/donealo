@@ -1,6 +1,7 @@
 import React from 'react';
 
-const PrivateCampaigns = () => {
+const PrivateCampaigns = (props) => {
+  console.log(props.campaigns); 
   return (
     <div className="row">
         <div className="col-md-12">
@@ -15,4 +16,6 @@ const PrivateCampaigns = () => {
   );
 };
 
-export default PrivateCampaigns;
+export default PrivateCampaigns; 
+
+
