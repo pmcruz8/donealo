@@ -1,9 +1,0 @@
-cd admin
-npm install
-
-cd ../home
-MONGO_URL=mongolab-trapezoidal-84935 
-npm install
-
-cd ../admin
-meteor run
