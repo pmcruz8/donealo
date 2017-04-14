@@ -9,7 +9,7 @@ const CampaignsContainer = () => {
     <div className="page-wrapper">
 
       <div className="pull-right">
-        <button className="btn btn-primary">Nueva Campaña</button>
+        <button className="btn btn-success">Nueva Campaña</button>
       </div>
 
       <div className="container-fluid">
