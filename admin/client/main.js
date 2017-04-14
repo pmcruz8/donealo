@@ -1,21 +1,17 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import {
+	BrowserRouter as Router,
+  Route,
+  Link
+} from 'react-router-dom'
 
-import AdminNavbar from './components/admin_navbar';
-import CampaignsContainer from './components/campaigns/admin_campaigns_container';
-import CreateCampaign from './components/campaigns/create_campaign';
-
-const App = () => {
-	return (
-		<div className="wrapper">
-			<AdminNavbar />
-			<CampaignsContainer />
-			<CreateCampaign />
-		</div>
-	);
-};
+import Index from './index';
 
 Meteor.startup(() => {
-	ReactDOM.render(<App />, document.querySelector('.app-container'));
+	ReactDOM.render(
+		<Index />,
+		document.querySelector('.app-container')
+	);
 });
 

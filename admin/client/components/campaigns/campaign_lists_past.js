@@ -1,6 +1,6 @@
 import React from 'react';
 
-const InactiveCampaigns = () => {
+const PastCampaigns = () => {
   return (
     <div className="row">
         <div className="col-md-12">
@@ -15,4 +15,4 @@ const InactiveCampaigns = () => {
   );
 };
 
-export default InactiveCampaigns;
+export default PastCampaigns;

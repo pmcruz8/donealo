@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const AdminNavbar = () => {
   return (
@@ -62,16 +63,16 @@ const AdminNavbar = () => {
           <div className="collapse navbar-collapse navbar-ex1-collapse">
               <ul className="nav navbar-nav side-nav">
                   <li className="active side-nav-items">
-                      <a className="text-white" href="#"><i className="fa fa-fw fa-bullhorn"></i> Campañas</a>
+                        <Link to="/"className="text-white"><i className="fa fa-fw fa-bullhorn"></i> Campañas</Link>
                   </li>
                   <li className="side-nav-items">
-                      <a className="text-white" href="#"><i className="fa fa-fw fa-heart"></i> Donaciones</a>
+                      <Link to="/donations" className="text-white"><i className="fa fa-fw fa-heart"></i> Donaciones</Link>
                   </li>
                   <li className="side-nav-items">
-                      <a className="text-white" href="#"><i className="fa fa-fw fa-users"></i> Voluntarios</a>
+                      <Link to="/volunteers" className="text-white"><i className="fa fa-fw fa-users"></i> Voluntarios</Link>
                   </li>
                   <li className="side-nav-items">
-                      <a className="text-white" href="#"><i className="fa fa-fw fa-cubes"></i> Artículos</a>
+                      <Link to="/articles" className="text-white"><i className="fa fa-fw fa-cubes"></i> Artículos</Link>
                   </li>
               </ul>
           </div>
