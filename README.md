@@ -4,6 +4,10 @@
 
 `curl https://install.meteor.com/ | sh)`
 
+### Run both applications locally. 
+
+`npm start`
+
 ### Run home application (for regular users) locally.
 
 `cd home/` 
