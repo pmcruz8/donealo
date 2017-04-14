@@ -1,9 +1,8 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { Link } from 'react-router'
 import { Navbar, NavItem } from 'react-materialize';
 
-class Header extends Component {
-   render() {
+const Header = () => {
     return (
       <div>
         <Navbar brand='../../public/img/dona_logo.png' left>
@@ -16,7 +15,7 @@ class Header extends Component {
       {this.props.children}
       </div>
     );
-  }
+
 }
 
 export default Header;

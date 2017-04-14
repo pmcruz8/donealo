@@ -14,3 +14,4 @@ Meteor.startup(() => {
 		document.querySelector('.app-container')
 	);
 });
+

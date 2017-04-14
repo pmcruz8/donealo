@@ -1,14 +1,15 @@
 {
-  "name": "home",
-  "private": true,
+  "name": "Donealo",
+  "Version": "0.1",
+  "engines": {
+    "node": "0.10.36"
+  },
   "scripts": {
-    "start": "meteor --port 3100"
+    "start": "bash run"
   },
   "dependencies": {
     "babel-runtime": "^6.23.0",
-    "meteor-node-stubs": "~0.2.4",
     "react": "^15.5.4",
-    "react-dom": "^15.5.4",
     "react-materialize": "^0.18.1",
     "react-router": "^4.1.1"
   }
