@@ -8,14 +8,12 @@ class CreateCampaignStep1 extends Component {
         <div className="form-group">
           <label>Cantidad</label>
           <input ref="quantity" className="form-control" />
-          <label>Cantidad</label>
-          <input ref="quantity" className="form-control" />
           <label>Título</label>
-          <input ref="quantity" className="form-control" />
+          <input ref="title" className="form-control" />
           <label>Categoría</label>
-          <input ref="quantity" className="form-control" />
-          <label>Fecha</label>
-          <input ref="quantity" className="form-control" />
+          <input ref="category" className="form-control" />
+          <label>Fecha y Hora</label>
+          <input ref="datetime" className="form-control" />
         </div>
         <div className="text-danger"></div>
         <div className="text-center">
