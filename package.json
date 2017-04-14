@@ -6,7 +6,7 @@
   },
   "scripts": {
     "postinstall": "./node_modules/bower/bin/bower install",
-    "start": "sh bin.sh"
+    "start": "sh bin"
   },
   "dependencies": {
     "babel-runtime": "^6.23.0",
