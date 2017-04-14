@@ -1,3 +1,3 @@
-echo "Running Xio's bash"
+echo "Running bash"
 bash admin/run.sh & 
 bash home/run.sh
