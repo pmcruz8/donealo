@@ -2,7 +2,7 @@
   "name": "home",
   "private": true,
   "scripts": {
-    "start": "meteor run"
+    "start": "bash run.sh"
   },
   "dependencies": {
     "babel-runtime": "^6.23.0",
