@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import Header from './components/campaign_page/cp_header';
 import Body from './components/campaign_page/cp_body';
-import Navbar from './components/campaign_page/cp_nabvar';
+import Navbar from './components/campaign_page/cp_navbar';
 import SideBar from './components/campaign_page/cp_sidebar';
 
 
