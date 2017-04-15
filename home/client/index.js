@@ -6,6 +6,8 @@ import Money from './components/campaign_page/cp_money_don';
 import Time from './components/volunteers/cp_time_don';
 import material from './components/articles/cp_material_don';
 
+import SearchBar from './components/home_page/search_bar';
+
 const Index = () => {
   return (
     <Router>
@@ -16,6 +18,14 @@ const Index = () => {
         <Route path="/materials" component={material}/>
       </div>
     </Router>
+  );
+};
+
+const App = () => {
+  return  (
+    <div>
+      <SearchBar/> 
+    </div>
   );
 };
 
