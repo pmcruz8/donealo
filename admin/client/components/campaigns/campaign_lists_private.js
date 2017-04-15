@@ -1,21 +1,50 @@
-import React from 'react';
+import React, { Component } from 'react';
 
-const PrivateCampaigns = (props) => {
-  console.log(props.campaigns); 
+import { Campaigns } from '../../../collections/campaigns'; 
+import { createContainer } from 'meteor/react-meteor-data'; 
+
+class Container extends Component {
+  render() {
+    return (
+      <CampaignList />
+    ); 
+  }
+}
+
+const CampaignList = (props) => {
   return (
     <div className="row">
-        <div className="col-md-12">
-            <h3 className="page-header">Campañas Privadas</h3>
-            <div className="flex-grid">
-              <div className="flex-col">
-                <img src="https://placehold.it/250x250" />
-              </div>
-            </div>
-        </div>
+      <div className="col-md-12">
+        <h3 className="page-header">Campañas Privadas</h3>
+          <div className="flex-grid">
+            { props.data.map(item => <Box key={item._id} item={item}/>) }
+          </div>
+      </div>
     </div>
   );
 };
 
-export default PrivateCampaigns; 
+const Box = (props) => {
+  return (
+    <div className="flex-col">
+      <img src="https://placehold.it/250x250" />
+      <p>{ props.item.title }</p>
+    </div>
+  ); 
+}; 
+
+export default PrivateCampaigns = createContainer (() => {
+  
+  // Subscribe to sub-collection -> "campaigns.private"
+  // params: collectionName, userID
+  const handle = Meteor.subscribe("campaigns.private", "1"); 
+  const isReady = handle.ready(); 
+
+  return {
+    isReady,
+    data: isReady ? Campaigns.find().fetch() : []
+  }; 
+
+}, CampaignList); 
 
 

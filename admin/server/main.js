@@ -1,7 +1,10 @@
 import { Meteor } from 'meteor/meteor';
+import { Mongo } from 'meteor/mongo'; 
+
+import { Campaigns }  from '../collections/campaigns'; 
 
 Meteor.startup(() => {
-  // Active Campaigns Publication
+  // // Active Campaigns Publication
   Meteor.publish('campaigns.active', function(userID) {
     return Campaigns.find({type: 'active', userID: userID}); 
   });
