@@ -4,11 +4,11 @@ class Money extends Component {
   render() {
     return (
 
-      <div class="col-xs-4">
+      <div className="col-xs-4">
       <img src="../../public/img/money-icon.png" />
         <h5>Monetario</h5>
 
-         <div className="modal fade" id="donateModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+         <div className="modal fade" id="donateModal" tabIndex="-1" role="dialog">
            <div className="modal-dialog" role="document">
              <div className="modal-content">
                  <section className="col-md-12" id="giveForm">
@@ -28,7 +28,7 @@ class Money extends Component {
              </section>
              <div className="modal-footer">
              <center>
-             <button type="button" id="donateMoney" style="margin-top:40px;" class="btn btn-create-campaign" data-dismiss="modal">Submit</button>
+             <button type="button" id="donateMoney" className="btn btn-create-campaign" data-dismiss="modal">Submit</button>
              </center>
            </div>
          </div>
@@ -36,7 +36,7 @@ class Money extends Component {
 
                  </section>
                <div className="modal-footer">
-                 <button type="button" className="btn btn-default" data-dismiss="modal">Close</button>
+                 <button type="button" className="btn btn-default">Close</button>
                </div>
            </div>
          </div>

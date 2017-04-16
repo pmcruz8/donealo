@@ -5,6 +5,7 @@ import {
   Route,
   Link
 } from 'react-router-dom'
+import { Accounts, STATES } from 'meteor/std:accounts-ui';
 
 import App from './app';
 import DonationContainer from './components/donations/donation_index';
@@ -20,6 +21,8 @@ const Index = () => {
   return (
     <Router>
       <div>
+        <Route path="/signin" component={() => <Accounts.ui.LoginForm />} />
+        <Route path="/signup" component={() => <Accounts.ui.LoginForm formState={STATES.SIGN_UP} />} />
         <Route exact path="/" component={App}/>
         <Route path="/create" component={CreateCampaign}/>
         <Route path="/create/1" component={CreateCampaignStep1}/>

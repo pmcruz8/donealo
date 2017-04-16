@@ -8,7 +8,7 @@ const Sidebar = () => {
         <div className="col-md-4 campaignSideBar">
           <center>
             <h3>Escoge el tipo de donación</h3>
-              <div class="row">
+              <div className="row">
                 <Money />
                 <Time />
                 <Material />
