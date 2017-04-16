@@ -9,7 +9,6 @@ import PastCampaigns from './campaign_lists_past';
 const CampaignsContainer = () => {
   return (
     <div className="page-wrapper">
-
       <AdminNavbar />
 
       <div className="pull-right">
@@ -18,10 +17,13 @@ const CampaignsContainer = () => {
 
       <div className="container-fluid">
         <ActiveCampaigns />
+      </div>
+      <div className="container-fluid">
         <PrivateCampaigns />
+      </div>
+      <div className="container-fluid">
         <PastCampaigns />
       </div>
-
     </div>
   );
 };

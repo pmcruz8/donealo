@@ -17,7 +17,7 @@ const CampaignList = (props) => {
       <div className="col-md-12">
         <h3 className="page-header">Campañas Privadas</h3>
           <div className="flex-grid">
-            { props.data.map(item => <Box key={item._id} item={item}/>) }
+          { props.privateData.map(item => <Box key={item._id} item={item}/>) }
           </div>
       </div>
     </div>
@@ -42,7 +42,7 @@ export default PrivateCampaigns = createContainer (() => {
 
   return {
     isReady,
-    data: isReady ? Campaigns.find().fetch() : []
+    privateData: isReady ? Campaigns.find({type: 'private', userID: "1"}).fetch() : []
   }; 
 
 }, CampaignList); 
