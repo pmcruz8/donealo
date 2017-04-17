@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
+import ReactDOM from 'react-dom'; 
 import { Link } from 'react-router-dom'
+import { Campaigns } from '../../../collections/campaigns'; 
 
 class CreateCampaignStep3 extends Component {
   render() {

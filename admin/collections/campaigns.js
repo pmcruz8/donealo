@@ -2,6 +2,21 @@ import { Mongo } from 'meteor/mongo';
 
 export const Campaigns = new Mongo.Collection('campaigns'); 
 
+Meteor.methods({
+  'createCampaign': function(props){
+    console.log('createCampaign props ' + props.data); 
+
+    // Campaigns.insert({
+    //   goal: goal, 
+    //   title: title, 
+    //   category: category, 
+    //   datetime: datetime,
+    //   about: about, 
+    //   photoURL: photoURL
+    // });     
+  }
+});
+
 Campaigns.allow({
   insert() {
     // When we will ALLOW inserts on the client.
@@ -23,3 +38,4 @@ Campaigns.deny({
     return !Meteor.user() ? true : false; 
   }
 });
+

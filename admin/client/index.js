@@ -22,9 +22,6 @@ const Index = () => {
       <div>
         <Route exact path="/" component={App}/>
         <Route path="/create" component={CreateCampaign}/>
-        <Route path="/create/1" component={CreateCampaignStep1}/>
-        <Route path="/create/2" component={CreateCampaignStep2}/>
-        <Route path="/create/3" component={CreateCampaignStep3}/>
         <Route path="/donations" component={DonationContainer}/>
         <Route path="/volunteers" component={VolunteersContainer}/>
         <Route path="/articles" component={ArticlesContainer}/>
