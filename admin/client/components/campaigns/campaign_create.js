@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom'
+import { Meteor } from 'meteor/meteor'; 
 
 import AdminNavbar from '../../common/admin_navbar';
 import CreateCampaignStep1 from './campaign_create_step1';
@@ -22,6 +23,7 @@ class CreateCampaign extends Component {
     this.saveValues = this.saveValues.bind(this); 
     this.nextStep = this.nextStep.bind(this); 
     this.previousStep = this.previousStep.bind(this); 
+    this.publishCampaign = this.publishCampaign.bind(this); 
 
     this.state = {
       step : 1
@@ -47,6 +49,8 @@ class CreateCampaign extends Component {
   }
 
   publishCampaign() {
+    Meteor.call('createCampaign', fieldValues); 
+    
     this.nextStep(); 
   }
 
@@ -61,7 +65,7 @@ class CreateCampaign extends Component {
         return <CreateCampaignStep2 fieldValues={fieldValues}
                                     previousStep={this.previousStep}
                                     saveValues={this.saveValues}
-                                    publishCampaign={this.nextStep} />
+                                    publishCampaign={this.publishCampaign} />
       case 3:
         return <CreateCampaignStep3 fieldValues={fieldValues} />
     }

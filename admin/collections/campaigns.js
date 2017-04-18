@@ -3,17 +3,16 @@ import { Mongo } from 'meteor/mongo';
 export const Campaigns = new Mongo.Collection('campaigns'); 
 
 Meteor.methods({
-  'createCampaign': function(props){
-    console.log('createCampaign props ' + props.data); 
+  'createCampaign': function(values) {
 
-    // Campaigns.insert({
-    //   goal: goal, 
-    //   title: title, 
-    //   category: category, 
-    //   datetime: datetime,
-    //   about: about, 
-    //   photoURL: photoURL
-    // });     
+    Campaigns.insert({
+      goal: values.goal, 
+      title: values.title, 
+      category: values.category, 
+      datetime: values.datetime,
+      about: values.about, 
+      photoURL: values.photoURL
+    });     
   }
 });
 

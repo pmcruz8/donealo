@@ -10,9 +10,6 @@ class CreateCampaignStep3 extends Component {
             <img src="https://placehold.it/400x300" width="100%"/>
           <div className="row">
             <div className="col-xs-6">
-              <Link to="/create/2" className="pull-left">Volver a editar</Link>
-            </div>
-            <div className="col-xs-6">
               <Link to="/" className="btn btn-primary pull-right">Ver Campaña</Link>
             </div>
           </div>

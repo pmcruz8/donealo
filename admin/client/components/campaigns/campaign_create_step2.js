@@ -6,7 +6,13 @@ class CreateCampaignStep2 extends Component {
   constructor(props) {
     super(props); 
 
+    this.onEdit = this.onEdit.bind(this); 
     this.onPublish = this.onPublish.bind(this); 
+  }
+
+  onEdit(e) {
+    e.preventDefault(); 
+    this.props.previousStep(); 
   }
 
   onPublish(e) {
@@ -39,7 +45,7 @@ class CreateCampaignStep2 extends Component {
           <div className="text-danger"></div>
           
           <div className="col-xs-6">
-            <Link to="/create/1" className="pull-left">Volver a editar</Link>
+            <Link to="/create/1" onClick={this.onEdit} className="pull-left">Volver a editar</Link>
           </div>
 
           <div className="col-xs-6">
