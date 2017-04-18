@@ -19,12 +19,11 @@ const navbar = () =>{
 
             <div className="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
               <ul className="nav navbar-nav">
-                <li><a className="text-white" href="index.html">Inicio</a></li>
-                <li><a className="text-white" href="index.html#campaignBody">Campañas</a></li>
-                <li><a className="text-white" href="index.html#organizationBody">Organizaciones</a></li>
+                <li><a className="" href="index.html">Inicio</a></li>
+                <li><a className="" href="index.html#campaignBody">Campañas</a></li>
+                <li><a className="" href="index.html#organizationBody">Organizaciones</a></li>
               </ul>
               <form className="navbar-form navbar-right">
-                <button type="submit" className="btn btn-create-campaign" className="btn donateIcons" src="" alt="">Crear Campaña</button>
               </form>
             </div>
           </div>

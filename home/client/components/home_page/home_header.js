@@ -8,9 +8,8 @@ const Header = () => {
 		<div >
 			<div className="homeHeader">
 				<div className="homeText">
-					<div className="logo">Donealo!</div>
+				    <Navbar />
 	    			<div className="homeMotto">Dona por una causa</div>
-
 	    			<SearchBar/>
 	    		</div>
 	    	</div>
