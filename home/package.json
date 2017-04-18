@@ -8,6 +8,7 @@
     "babel-runtime": "^6.23.0",
     "bundle-js": "^0.1.1",
     "meteor-node-stubs": "~0.2.4",
+    "rc-progress": "^2.1.0",
     "react": "^15.5.4",
     "react-dom": "^15.5.4",
     "react-materialize": "^0.18.1",
