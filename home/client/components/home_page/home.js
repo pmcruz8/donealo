@@ -1,9 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import Header from './home_header';
-import Orgs from './organizations';
-import OrgsCat from './organization_categories';
+// import OrgsCat from './organization_categories';
 import RecCampaign from './recent_campaign';
+import Orgs from './organizations';
 import Footer from './home_footer';
 
 const HomePage = () => {
@@ -11,6 +11,7 @@ const HomePage = () => {
 		<div>
 			<Header/>
 			<RecCampaign />
+			<Orgs/>
 			<Footer />
 		</div>
 	);

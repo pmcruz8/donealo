@@ -18,7 +18,7 @@ class RecCampaign extends Component {
 	        	<div className="row">
 
 			<div className="section-title">
-				<h1>Campaña Reciente</h1> 
+				<h1>Campañas Reciente</h1> 
 			</div>
 
 		
