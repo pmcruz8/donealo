@@ -1,16 +1,18 @@
 import React, {Component} from 'react';
+// make class
+
 
 class SearchBar extends Component {
 	constructor(props){
 		super(props);
 
-		this.state = {term:'Search '};
+		this.state = {term:' '};
 	}
 
 	//function to render search bar
 	render() {
 		return(
-			<div>
+			<div className="search-bar">
 			<input
 			    //input changes when the state changes 
 				value = {this.state.term}

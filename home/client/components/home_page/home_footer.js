@@ -1,13 +1,15 @@
 import React from 'react';
 
-const Footer = () =>{
-	<div>
-		<div className="home_footer">
-      	<p>Sobre nosotros</p>
-      	<p>Somos programadores motivados por comida gratis y mucha cafeína.</p>
-    	</div>
-    </div>
-
+const Footer = () => {
+	
+	return( 
+		<div>
+			<div className="footer">
+	      	<p>Sobre nosotros</p>
+	      	<p>Somos programadores motivados por comida gratis y mucha cafeína.</p>
+	    	</div>
+	    </div>
+		);
 
 }
 
