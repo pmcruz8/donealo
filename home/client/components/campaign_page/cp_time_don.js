@@ -8,7 +8,7 @@ class Time extends Component {
       <img src="../../public/img/time-icon.png" />
         <h5>Tiempo</h5>
 
-      <div className="modal fade" id="timeModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+      <div className="modal fade" id="timeModal" tabIndex="-1" role="dialog">
         <div className="modal-dialog" role="document">
           <div className="modal-content">
               <section className="col-md-12" id="giveForm">
@@ -17,29 +17,29 @@ class Time extends Component {
                 <form action="form">
                   <div className="col-md-12 m30">
                     <label>Fecha(s) y horario(s) disponibles a donar</label>
-                    <input className="input100"  type="text" name="date" ng-model="donation.time.date"/>
+                    <input className="input100"  type="text" name="date"/>
                   </div>
                   <div className="col-md-6 m30">
                     <label>First Name</label>
-                    <input className="input100"  type="text" name="firstname" ng-model="donation.time.firstname"/>
+                    <input className="input100"  type="text" name="firstname"/>
                   </div>
                   <div className="col-md-6 m30">
                     <label>Last Name</label>
-                    <input className="input100"  type="text" name="lastname" ng-model="donation.time.lastname"/>
+                    <input className="input100"  type="text" name="lastname"/>
                   </div>
                   <div className="col-md-6 m30">
                     <label>Telephone</label>
-                    <input className="input100"  type="text" name="telephone" ng-model="donation.time.telephone"/>
+                    <input className="input100"  type="text" name="telephone"/>
                   </div>
                   <div className="col-md-6 m30">
                     <label>Email</label>
-                    <input className="input100"  type="text" name="email" ng-model="donation.time.email"/>
+                    <input className="input100"  type="text" name="email"/>
                   </div>
                 </form>
               </section>
             <div className="modal-footer">
               <center>
-              <button type="button" style="margin-top:40px;" className="btn btn-create-campaign" data-dismiss="modal">Submit</button>
+              <button type="button" style={{marginTop:40}} className="btn btn-create-campaign">Submit</button>
             </center>
             </div>
           </div>

@@ -7,7 +7,7 @@ class Material extends Component {
       <img src="../../public/img/give-icon.png" />
         <h5>Artículos</h5>
 
-        <div className="modal fade" id="giveModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div className="modal fade" id="giveModal" tabIndex="-1" role="dialog">
         <div className="modal-dialog" role="document">
           <div className="modal-content">
               <section className="col-md-12" id="giveForm">
@@ -16,29 +16,29 @@ class Material extends Component {
                 <form action="form">
                   <div className="col-md-12 m30">
                     <label>Artículos</label>
-                    <textarea className="input100" autofocus=""name="articles" rows="5" ng-model="donation.give.articles"></textarea>
+                    <textarea className="input100" name="articles" rows="5"></textarea>
                   </div>
                   <div className="col-md-6 m30">
                     <label>First Name</label>
-                    <input className="input100"  type="text" name="firstname" ng-model="donation.give.firstname"/>
+                    <input className="input100"  type="text" name="firstname"/>
                   </div>
                   <div className="col-md-6 m30">
                     <label>Last Name</label>
-                    <input className="input100"  type="text" name="lastname" ng-model="donation.give.lastname"/>
+                    <input className="input100"  type="text" name="lastname"/>
                   </div>
                   <div className="col-md-6 m30">
                     <label>Telephone</label>
-                    <input className="input100"  type="text" name="telephone" ng-model="donation.give.telephone"/>
+                    <input className="input100"  type="text" name="telephone"/>
                   </div>
                   <div className="col-md-6 m30">
                     <label>Email</label>
-                    <input className="input100"  type="text" name="email" ng-model="donation.give.email"/>
+                    <input className="input100"  type="text" name="email"/>
                   </div>
                 </form>
               </section>
             <div className="modal-footer">
               <center>
-              <button type="button" style="margin-top:40px;" className="btn btn-create-campaign" data-dismiss="modal">Submit</button>
+              <button type="button" style={{marginTop: 40}} className="btn btn-create-campaign">Submit</button>
             </center>
             </div>
         </div>

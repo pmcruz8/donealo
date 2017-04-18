@@ -1,12 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Header from './campaign_page/cp_header';
-import Body from './campaign_page/cp_body';
-import Sidebar from './campaign_page/cp_sidebar';
+import Header from './cp_header';
+import Body from './cp_body';
+import Sidebar from './cp_sidebar';
 
 const CampaignPage = () => {
 	return (
-		<div className="wrapper">
+		<div>
 			<Header />
 			<Body />
 			<Sidebar />
