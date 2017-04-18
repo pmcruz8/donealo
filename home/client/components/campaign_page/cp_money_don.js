@@ -7,7 +7,7 @@ class Money extends Component {
       <div class="col-xs-4">
       <img src="../../public/img/money-icon.png" />
         <h5>Monetario</h5>
-
+        //
          <div className="modal fade" id="donateModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
            <div className="modal-dialog" role="document">
              <div className="modal-content">
@@ -40,7 +40,8 @@ class Money extends Component {
                </div>
            </div>
          </div>
-        </div>
+      //
+      </div>
     );
   }
 }

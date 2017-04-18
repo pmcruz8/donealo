@@ -7,7 +7,7 @@ class Time extends Component {
       <div className="col-xs-4">
       <img src="../../public/img/time-icon.png" />
         <h5>Tiempo</h5>
-
+     //
       <div className="modal fade" id="timeModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
         <div className="modal-dialog" role="document">
           <div className="modal-content">
@@ -45,7 +45,8 @@ class Time extends Component {
           </div>
       </div>
       </div>
-      </div>
+    //
+    </div>
     );
   }
 }

@@ -5,6 +5,7 @@ import { Navbar, NavItem } from 'react-materialize';
 const Header = () => {
     return (
       <div>
+
         <Navbar brand='../../public/img/dona_logo.png' left>
         <Navbar brand='../../public/img/logo-blue.png' left>
           <NavItem><Link to="/path goes here" activeClassName="active">Inicio</Link></NavItem>
@@ -13,6 +14,9 @@ const Header = () => {
         </Navbar>
         </Navbar>
       {this.props.children}
+
+        <h1>Campaign Title</h1>
+        <ProgressBar />
       </div>
     );
 
