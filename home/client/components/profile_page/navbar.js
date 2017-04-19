@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Navbar = () =>{
+const navbar = () =>{
 	return(
      <div>
         <nav className="navbar">
@@ -22,6 +22,7 @@ const Navbar = () =>{
                 <li><a className="" href="index.html">Inicio</a></li>
                 <li><a className="" href="index.html#campaignBody">Campañas</a></li>
                 <li><a className="" href="index.html#organizationBody">Organizaciones</a></li>
+                <li><a className="" href="index.html#Login">Login</a></li>
               </ul>
               <form className="navbar-form navbar-right">
               </form>
@@ -35,4 +36,4 @@ const Navbar = () =>{
 }
 
 
-export default Navbar;
+export default navbar;
