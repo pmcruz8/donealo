@@ -7,8 +7,13 @@ import { Organizations } from '../collections/organizations';
 Meteor.startup(() => {
   // Single Campaign Publication
   Meteor.publish('campaign', function(campaignID) {
-    return Campaigns.find({_id: campaignID, type: 'active'}); 
+    return Campaigns.find({_id: campaignID}); 
   });  
+
+  // Active Campaigns Publication
+  Meteor.publish('campaigns.active', function() {
+    return Campaigns.find({type: 'active'}); 
+  });
 
   // Active Campaigns Publication
   Meteor.publish('campaigns.active', function(userID) {
