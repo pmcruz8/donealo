@@ -121,6 +121,13 @@
 }
 /* -------------- Recent Campaign for home page end ---------- */
 
+/* Organization body */
+.organization {
+  background: #fff;
+  height: 400px;
+}
+
+
 #organizationBody {
   background: #fff;
   height: 500px;

@@ -5,33 +5,25 @@ import CampaignPage from './components/campaign_page/campaign_page';
 import Money from './components/campaign_page/cp_money_don';
 import Time from './components/campaign_page/cp_time_don';
 import materials from './components/campaign_page/cp_material_don';
-import SearchBar from './components/home_page/search_bar';
 import App from './app';
+import Profile from './components/profile_page/profile';
 
-import SearchBar from './components/home_page/search_bar';
 
 const Index = () => {
   return (
     <Router>
       <div>
-        <Route path="/" component={App}/>
-        <Route exact path="/campaign" component={CampaignPage}/>
+        <Route exact path="/" component={App}/>
+        <Route path="/campaign" component={CampaignPage}/>
         <Route path="/donations" component={Money}/>
         <Route path="/volunteers" component={Time}/>
         <Route path="/materials" component={materials}/>
-        <Route path="/search_bar" component={SearchBar}/>
+        <Route path="/profile" component={Profile}/>
 
       </div>
     </Router>
   );
 };
 
-const App = () => {
-  return  (
-    <div>
-      <SearchBar/> 
-    </div>
-  );
-};
 
 export default Index;
