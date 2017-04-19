@@ -8,7 +8,6 @@ import materials from './components/campaign_page/cp_material_don';
 import SearchBar from './components/home_page/search_bar';
 import App from './app';
 
-import SearchBar from './components/home_page/search_bar';
 
 const Index = () => {
   return (
@@ -26,12 +25,6 @@ const Index = () => {
   );
 };
 
-const App = () => {
-  return  (
-    <div>
-      <SearchBar/> 
-    </div>
-  );
-};
+
 
 export default Index;
