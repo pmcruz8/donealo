@@ -1,3 +1,0 @@
-echo "Running bash"
-bash home/run.sh & 
-bash admin/run.sh
