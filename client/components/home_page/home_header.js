@@ -1,21 +1,8 @@
 import React from 'react';
-import Navbar from './navigation_bar'
-import SearchBar from './search_bar';
-//For center use bootstrap className: "text-center"
 
-const Header = () => {
-	return(
-		<div >
-			<div className="homeHeader">
-				<div className="homeText">
-				    <Navbar />
-	    			<div className="homeMotto">Dona por una causa</div>
-	    			<SearchBar/>
-	    		</div>
-	    	</div>
-    	</div>
-	);
+const homeHeader = () => {
+
 
 }
 
-export default Header;
+export default homeHeader;

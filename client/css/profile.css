@@ -6,10 +6,9 @@
 }
 
 #homePage{
-  background: white;
+  background: #34b9f5;
   width: 100%;
-  /*max-height: 700px;*/
-  height: 400px;
+  height: 300px;
 }
 
 .logo {
@@ -109,10 +108,8 @@
 
 
 #footer{
-  background: #086788;
-  width: 100%;
-  /*max-height: 700px;*/
-  height: 200px;
+  background: #ffffff;
+  color:#34b9f5;
 }
 
 .input100 {

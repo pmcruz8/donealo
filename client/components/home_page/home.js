@@ -1,17 +1,20 @@
 import React from 'react';
-import Header from './home_header';
-// import OrgsCat from './organization_categories';
-import RecCampaign from './recent_campaign';
+import Navbar from './navigation_bar';
+import homeHeader from './home_header';
+import Sidebar from './sidebar';
 import Orgs from './organizations';
 import Footer from './home_footer';
 
 const HomePage = () => {
 	return (
-		<div>
-			<Header/>
-			<RecCampaign />
-			<Orgs/>
-			<Footer />
+		<div className="app">
+
+			<Navbar/>
+			<div className="row">
+				<Sidebar/>
+				<Orgs/>
+			</div>
+    	<Footer/>
 		</div>
 	);
 };

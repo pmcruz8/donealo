@@ -1,170 +1,135 @@
+body {
+    background-color: #fbfbfb;
+}
+ .background {
+   background-color: #fbfbfb;
+ }
+.button {
+    background-color: #67e43d; /* Green */
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 30px;
+}
 
-#splashScreen {
-  background: #00ADD7;
+.loginButton{
+font-size: 14px;
+margin-top: 10px;
+padding: 5px 20px;
+}
+
+.btnContent {
+  float:left;
+}
+.mainHeader{
+text-align: center;
+}
+
+.sidebar{
+padding-left: 50px;
+}
+
+.btnImg{
+  padding-right: 10px;
+  text-align: left;
+}
+
+.footImg{
+
+  align: center;
+  width:auto;
+  height:30px;
+}
+
+.homePage{
+  background: #34b9f5;
   width: 100%;
-  /*max-height: 700px;*/
-  height: 400px;
-}
-/* ---------------------- Header Start ---------------------- */
-.homeHeader{
-  background: white;
-  width: 100%;
-  /*max-height: 700px;*/
-  height: 200px;
+  height: 300px;
 }
 
-.homeText{
-  margin-top: 20px;
-  margin-left: 10px;
+.buttonCategory{
+text-align: left;
+width: 100%;
+color:#898989;
+font-size: 30px;
+font-weight: normal;
+border-radius: 30px;
+
 }
 
-.homeMotto{
-  color: #00ADD7;
-  text-align:center;
-  font-size:36px;
+.homeTitle {
+  color:white;
+  font-size: 48px;
+  font-weight: 500px;
+  margin-bottom: 20px;
+}
+
+.homeSubtitle {
+  color:white;
+  font-size: 18px;
+  font-weight: 200px;
+  margin-top: 40px;
+  margin-bottom: 30px;
+}
+
+.categorias {
+margin-top:30px;
+width: 100%;
+}
+
+.category-text{
+  font-size: 28px;
+  font-weight: 400;
+  margin-bottom:30px;
+  color:#34b9f5;
+  text-align: center
+}
+
+.homeSidebar {
+  background: #fbfbfb;
+  width: 300px;
+  height: 325px;
+  margin-top:80px;
+  color:#898989;
+  font-size: 30px;
+  font-weight: normal;
 }
 
 .logo {
   width:100px;
   height: auto;
-  margin-left: 10px; 
 }
-
-/* Start Search Bar */
-.search-bar{
-  margin: 10px;
-  text-align: center;
-}
-
-.search-bar input{
-  width: 50%;
-  height: 50%;
-}
-/* End Search Bar */
 
 .text-white {
-  color: #fff;
+  color: #ffffff;
   margin-top:5px;
 }
 
-/* ---------------------- Header End ---------------------- */
 
-.campaignProgress {
-  margin-top: 100px;
-}
-
-.btn-create-campaign {
-    /* Rectangle 2: */
-  background: #8FD93E;
-  border-radius: 100px;
-  color:#fff;
-  margin-right: 20px;
-  margin-top: 5px;
-}
-
-.btn-donate {
-  /* Rectangle 7: */
-  background: #DD1C1A;
-  /*border: 1px solid #979797;*/
-  color:#fff;
-  width: 200px;
-  height: 50px;
-  border-radius: 100px;
-  margin-left: auto;
-  margin-right: auto;
-  font-size: 24px;
-  margin-top: 20px;
-}
-
-.progressBar {
-  width: 500px
-}
-
-.campaignTitle {
-  font-size: 48px;
-  font-weight: 200;
-  margin-bottom: 20px;
-}
-
-.campaignPhoto {
-  width:100%;
-}
-
-.campaignBody {
-  background: #00ADD7;
-  height: 500px;
-}
-
-/* -------------- Recent Campaign for home page start ---------- */
-.recCampaign {
-  background: #bff0fc;
-  height: 400px;
-}
-
-.section {
-  padding: 30px 0;
-  -webkit-transform: translateZ(0);
-  -moz-transform: translateZ(0);
-  -o-transform: translateZ(0);
-  -ms-transform: translateZ(0);
-  transform: translateZ(0);
-}
-.section-white {
-  background: #FFF;
-}
-
-.section .container:first-child h1,
-.section .container:first-child h2,
-.section .container:first-child h3 {
-  margin-top: 0;
-  font-weight: 700;
-}
-/* -------------- Recent Campaign for home page end ---------- */
-
-/* Organization body */
-.organization {
-  background: #fff;
-  height: 400px;
-}
-
-
-#organizationBody {
-  background: #fff;
-  height: 500px;
-
-}
 .logoDona{
   height: 40px;
   width: 40px;
 }
-/*.campaignBodyDesc {
-  padding-left: 20px !important;
-  padding-right: 20px !important;
-}*/
 
-.campaignSideBar {
-  background: #F4F4F4;
-  height: 600px;
-}
-
-.donateModal-headers {
-  text-align: center;
-}
-
-.donateIcons {
-  height: 75px;
-  width: auto;
-  margin-top: 15px;
-}
 
 .footer{
-  color:white;
-  background: #086788;
-  width: 100%;
-  /*max-height: 700px;*/
-  height: 200px;
+  background: #ffffff;
+  color:#34b9f5;
+  margin-bottom: 40px;
+
+}
+.footer-text{
+text-align: center;
+color:grey;
 }
 
-.splashImg {
-  width: 650px;
+.sobreText{
+padding-left: 30px;
+
 }

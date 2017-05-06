@@ -10,57 +10,175 @@ class Orgs extends Component {
 	//function to render search bar
 	render() {
 		return(
-		<div className="organization">
-		  <div className="section">
-	        <div className="container">
-	        	<div className="row">
+    <div className="col-sm-7 col-sm-offset-1 text-center">
+      <div className="row">
+        <div className="text-center">
+          <h2 className= "category-text">Salud</h2>
+          <div className="col-sm-3">
+            <div className="blog-column">
+              <a href="campaign.html">
+                <img className="img-responsive blog-img" src="img/org-placeholder.png" alt=""></img>
+              </a>
+            </div>
+          </div>
+          <div className="col-sm-3">
+            <div className="blog-column">
+              <img className="img-responsive blog-img" src="img/org-placeholder.png" alt=""></img>
+            </div>
+          </div>
+          <div className="col-sm-3">
+            <div className="blog-column">
+              <img className="img-responsive blog-img" src="img/org-placeholder.png" alt=""></img>
+            </div>
+          </div>
+          <div className="col-sm-3">
+            <div className="blog-column">
+              <img className="img-responsive blog-img" src="img/org-placeholder.png" alt=""></img>
+            </div>
+          </div>
+        </div>
+      </div>
 
-			<div className="section-title">
-				<h1>Organizaciones sin fines de Lucro</h1> 
-			</div>
+      <div className="row">
+        <div className="text-center">
+          <h2 className= "category-text">Educación</h2>
+          <div className="col-sm-3">
+            <div className="blog-column">
+              <a href="campaign.html">
+                <img className="img-responsive blog-img" src="img/org-placeholder.png" alt=""></img>
+              </a>
+            </div>
+          </div>
+          <div className="col-sm-3">
+            <div className="blog-column">
+              <img className="img-responsive blog-img" src="img/org-placeholder.png" alt=""></img>
+            </div>
+          </div>
+          <div className="col-sm-3">
+            <div className="blog-column">
+              <img className="img-responsive blog-img" src="img/org-placeholder.png" alt=""></img>
+            </div>
+          </div>
+          <div className="col-sm-3">
+            <div className="blog-column">
+              <img className="img-responsive blog-img" src="img/org-placeholder.png" alt=""></img>
+            </div>
+          </div>
+				</div>
+      </div>
 
-		
-			<ul className="grid cs-style-3">
-	        	<div className="col-md-4 col-md-6 ">
-					<figure>
-						<img className="campaignPhoto" src="/img/gray1.jpg" alt="" />
-						<figcaption>
-							<h3>Nombre</h3>
-							<span>Descripción </span>
-							<a href="">link</a>
-						</figcaption>
-					</figure>
-	        	</div>
+      <div className="row">
+        <div className="text-center">
+            <h2 className= "category-text">Arte y Cultura</h2>
+            <div className="col-sm-3">
+              <div className="blog-column">
+                <a href="campaign.html">
+                  <img className="img-responsive blog-img" src="img/org-placeholder.png" alt=""></img>
+                </a>
+              </div>
+            </div>
+            <div className="col-sm-3">
+              <div className="blog-column">
+                <img className="img-responsive blog-img" src="img/org-placeholder.png" alt=""></img>
+              </div>
+            </div>
+            <div className="col-sm-3">
+              <div className="blog-column">
+                <img className="img-responsive blog-img" src="img/org-placeholder.png" alt=""></img>
+              </div>
+            </div>
+            <div className="col-sm-3">
+              <div className="blog-column">
+                <img className="img-responsive blog-img" src="img/org-placeholder.png" alt=""></img>
+              </div>
+            </div>
+        </div>
+      </div>
 
-	        	<div className="col-md-4 col-md-6 ">
-					<figure>
-						<img className="campaignPhoto" src="/img/gray1.jpg" alt="" />
-						<figcaption>
-							<h3>Nombre</h3>
-							<span>Descripción </span>
-							<a href="">link</a>
-						</figcaption>
-					</figure>
-	        	</div>	
+      <div className="row">
+        <div className="text-center">
+            <h2 className= "category-text">Animales</h2>
+            <div className="col-sm-3">
+              <div className="blog-column">
+                <a href="campaign.html">
+                  <img className="img-responsive blog-img" src="img/org-placeholder.png" alt=""></img>
+                </a>
+              </div>
+            </div>
+            <div className="col-sm-3">
+              <div className="blog-column">
+                <img className="img-responsive blog-img" src="img/org-placeholder.png" alt=""></img>
+              </div>
+            </div>
+            <div className="col-sm-3">
+              <div className="blog-column">
+                <img className="img-responsive blog-img" src="img/org-placeholder.png" alt=""></img>
+              </div>
+            </div>
+            <div className="col-sm-3">
+              <div className="blog-column">
+                <img className="img-responsive blog-img" src="img/org-placeholder.png" alt=""></img>
+              </div>
+            </div>
+        </div>
+      </div>
 
-	            <div className="col-md-4 col-md-6 ">
-					<figure>
-						<img className="campaignPhoto" src="/img/gray1.jpg" alt="" />
-						<figcaption>
-							<h3>Nombre</h3>
-							<span>Descripción </span>
-							<a href="">link</a>
-						</figcaption>
-					</figure>
-	        	</div>
-			</ul>
+      <div className="row">
+        <div className="text-center">
+            <h2 className= "category-text">Medio Ambiente</h2>
+            <div className="col-sm-3">
+              <div className="blog-column">
+                <a href="campaign.html">
+                  <img className="img-responsive blog-img" src="img/org-placeholder.png" alt=""></img>
+                </a>
+              </div>
+            </div>
+            <div className="col-sm-3">
+              <div className="blog-column">
+                <img className="img-responsive blog-img" src="img/org-placeholder.png" alt=""></img>
+              </div>
+            </div>
+            <div className="col-sm-3">
+              <div className="blog-column">
+                <img className="img-responsive blog-img" src="img/org-placeholder.png" alt=""></img>
+              </div>
+            </div>
+            <div className="col-sm-3">
+              <div className="blog-column">
+                <img className="img-responsive blog-img" src="img/org-placeholder.png" alt=""></img>
+              </div>
+            </div>
+        </div>
+      </div>
 
-	        	</div>
-
-	        </div>
-	      </div>
-
-		</div>
+      <div className="row">
+        <div className="text-center">
+            <h2 className= "category-text">Familia</h2>
+            <div className="col-sm-3">
+              <div className="blog-column">
+                <a href="campaign.html">
+                  <img className="img-responsive blog-img" src="img/org-placeholder.png" alt=""></img>
+                </a>
+              </div>
+            </div>
+            <div className="col-sm-3">
+              <div className="blog-column">
+                <img className="img-responsive blog-img" src="img/org-placeholder.png" alt=""></img>
+              </div>
+            </div>
+            <div className="col-sm-3">
+              <div className="blog-column">
+                <img className="img-responsive blog-img" src="img/org-placeholder.png" alt=""></img>
+              </div>
+            </div>
+            <div className="col-sm-3">
+              <div className="blog-column">
+                <img className="img-responsive blog-img" src="img/org-placeholder.png" alt=""></img>
+              </div>
+            </div>
+        </div>
+      </div>
+    </div>
 		);
 	}
 }
