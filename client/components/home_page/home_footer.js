@@ -4,7 +4,7 @@ const Footer = () => {
 
 	return(
 
-<div className="col-md-12" className="footer">
+<div className="col-md-12" className="footer" id="footer">
 	<div className="sobreText">
 	  <h2>Sobre nosotros</h2>
 	  <p>Somos unos estudiantes motivados por comida gratis y mucha cafeína.</p>
@@ -15,7 +15,7 @@ const Footer = () => {
             <div className="col-sm-1">
               <div className="blog-column">
                 <a href="https://www.fundacionbancopopular.org/">
-                  <img className="footImg" src="img/Fundacion.jpg" alt=""></img>
+                  <img className="footImg" src="img/Fundacion.jpg" style={{  "width":"100%", "height":"auto"}} alt=""></img>
                 </a>
               </div>
             </div>

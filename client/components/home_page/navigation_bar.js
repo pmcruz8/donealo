@@ -5,7 +5,7 @@ const Navbar = () =>{
 		  <div className="homePage">
 		    <nav className="navbar">
 		      <div className="container-fluid">
-		        <div className="navbar-header">
+		        <div className="navbarHeader">
 		          <button type="button" className="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
 		            <span className="sr-only">Toggle navigation</span>
 		            <span className="icon-bar"></span>
@@ -26,7 +26,7 @@ const Navbar = () =>{
 		        </div>
 		        <div className="collapse navbar-collapse navbar-right" id="bs-example-navbar-collapse-1">
 		          <ul className="nav navbar-nav">
-		            <li><a href="#"><font color="white" >Inicio</font></a></li>
+		            <li ><a href="#" ><font color="white">Inicio</font></a></li>
 		            <li><a href="#footer"><font color="white">Sobre Donéalo</font></a></li>
 		            <li><button className="button loginButton">Login</button></li>
 		          </ul>
@@ -36,7 +36,11 @@ const Navbar = () =>{
 			<div className="mainHeader">
 				<h1 className=" homeTitle">Dona por una causa</h1>
 				<h3 className=" homeSubtitle">Apoya organizaciones sin fines de lucro de Puerto Rico</h3>
-				<button className="button mainButton">Ver Organizaciones</button>
+				<a href="#organizaciones">
+				<button className="button mainButton">
+					Ver Organizaciones
+				</button>
+				</a>
 				</div>
 		</div>
       );
