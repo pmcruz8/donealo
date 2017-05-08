@@ -7,6 +7,7 @@ import {
 } from 'react-router-dom'
 
 import Index from './index';
+import '../imports/startup/accounts-config.js';
 
 Meteor.startup(() => {
 	ReactDOM.render(
