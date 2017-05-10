@@ -177,3 +177,81 @@ margin-bottom: 20px;
 padding-left: 30px;
 
 }
+
+/*-------------------------------------- Profile style --------------------------------------*/
+/* Don't know how to declare profile.css in React so I'm gonn a put all of the css classes here for now.*/
+/* ------ Profile header -------*/
+.profHeader{
+  background: #34b9f5;
+  width: 100%;
+  /*max-height: 700px;*/
+  height: 400px;
+  text-align:center;
+}
+
+.profTitle{
+  /*margin-top: 10px;*/
+  color: white;
+  font-size:36px;
+  font-weight: 200;
+  margin-bottom: 20px;
+}
+
+.profPhoto{
+  width:300px;
+  height: 200px;
+
+}
+
+.campaignSideBar {
+  background: #F4F4F4;
+  height: 600px;
+}
+
+.donateModal-headers {
+  text-align: center;
+}
+
+.donateIcons {
+  height: 75px;
+  width: auto;
+  margin-top: 15px;
+}
+
+
+#footer{
+  background: #086788;
+  width: 100%;
+  /*max-height: 700px;*/
+  height: 200px;
+}
+
+.input100 {
+  width: 100%;
+}
+
+.m30 {
+  margin-top: 30px;
+}
+
+.shareIcons {
+  width:50%;
+}
+.shareRow {
+  margin-top: 100px;
+}
+
+.btn-donate {
+  /* Rectangle 7: */
+  background: #DD1C1A;
+  /*border: 1px solid #979797;*/
+  color:#fff;
+  width: 200px;
+  height: 50px;
+  border-radius: 100px;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 24px;
+  margin-top: 20px;
+}
+
