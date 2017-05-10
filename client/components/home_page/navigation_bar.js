@@ -27,8 +27,8 @@ const Navbar = () =>{
 		        </div>
 		        <div className="collapse navbar-collapse navbar-right" id="bs-example-navbar-collapse-1">
 		          <ul className="nav navbar-nav">
-		            <li ><a href="#" ><font color="white">Inicio</font></a></li>
-		            <li><a href="#footer"><font color="white">Sobre Donéalo</font></a></li>
+		            <li className="navbarButtons"><a href="#" ><font color="white">Inicio</font></a></li>
+		            <li className="navbarButtons"><a href="#footer"><font color="white">Sobre Donéalo</font></a></li>
 		            <li><button className="button loginButton"><AccountsUIWrapper /></button></li>
 		          </ul>
 		      </div>

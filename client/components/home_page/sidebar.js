@@ -9,7 +9,7 @@ const Sidebar = () =>{
           <div className="row">
             <div className="col-xs-offset-2 col-xs-10 ">
               <a href="#salud">
-              <button className="buttonCategory" type="button" className="btn btn-block btn-default btn-lg">    
+              <button className="buttonCategory" type="button" className="btn-block btn-default btn-lg btn">
                 <span className="btnContent">
                   <img className= "btnImg" src="img/salud icon.png"></img> Salud
                 </span>

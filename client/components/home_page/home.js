@@ -6,7 +6,7 @@ import Footer from './home_footer';
 
 const HomePage = () => {
 	return (
-		<div className="app">
+		<div className="background borders">
 			<Navbar/>
 			<div className="row">
 				<Sidebar/>

@@ -10,7 +10,7 @@ class Orgs extends Component {
 	//function to render search bar
 	render() {
 		return(
-    <div className="col-sm-7 col-sm-offset-1 text-center" id="organizaciones">
+    <div className="col-sm-7 col-sm-offset-1 organazationsTable" id="organizaciones">
       <div className="row" id="salud">
         <div className="text-center">
           <h2 className= "category-text">Salud</h2>
