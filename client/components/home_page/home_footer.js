@@ -11,11 +11,11 @@ const Footer = () => {
 	</div>
     <div className="row">
       <h4 className="footer-text">APOYADA POR</h4>
-      <div className="col-sm-12 col-sm-offset-4">
-            <div className="col-sm-1">
+      <div className="col-sm-12 col-sm-offset-3">
+            <div className="col-sm-2">
               <div className="blog-column">
                 <a href="https://www.fundacionbancopopular.org/" target="_blank">
-                  <img className="footImg" src="img/Fundacion.jpg" style={{  "width":"100%", "height":"auto"}} alt=""></img>
+                  <img className="footImg" src="img/Fundacion.jpeg"  alt=""></img>
                 </a>
               </div>
             </div>
@@ -29,14 +29,14 @@ const Footer = () => {
             <div className="col-sm-1">
               <div className="blog-column">
                 <a href="https://www.fundacionbancopopular.org/en/new-office/" target="_blank">
-                  <img className="footImg" src="img/ccis.jpg" alt=""></img>
+                  <img className="footImg" src="img/ccis.jpg" style={{"height": "100px", "paddingBottom":"40px", "paddingLeft": "10px"}} alt=""></img>
                 </a>
               </div>
             </div>
             <div className="col-sm-1">
               <div className="blog-column">
                 <a href="https://www.facebook.com/pg/includeGirls/about/?ref=page_internal" target="_blank">
-                  <img className="footImg" src="img/big_logo.png" alt=""></img>
+                  <img className="footImg" src="img/big_logo.png" style={{"height": "40px", "paddingLeft": "10px"}} alt=""></img>
                 </a>
               </div>
             </div>

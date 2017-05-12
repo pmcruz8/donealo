@@ -1,12 +1,12 @@
 
-
+    /************ Body ************/
  .background {
    background-color: #fbfbfb;
-  font-family: "Verdana";
-   width: 1410px;
+   font-family: "Verdana";
+   overflow: hidden;
    padding-left: 10px;
    padding-right: 10px;
-   overflow: hidden;
+   width: 1410px;
 
  }
 
@@ -14,51 +14,50 @@
   border-left-style: solid;
   border-right-style: solid;
   border-color: black;
-   border-width: 1px;
+  border-width: 1px;
 }
 
-/* Navbar */
+    /************ Navbar ************/
 
 .homePage{
   background: #34b9f5;
-  width: 1400px;
   height: 300px;
+  width: 1400px;
 }
 
 .navbarButtons{
     text-shadow: 2px 2px #21769e;
-
 }
 
 .button{
     background-color: #67e43d;
     border: none;
+    border-radius: 30px;
     color: white;
-    padding: 10px 20px;
-    text-align: center;
-    text-decoration: none;
+    cursor: pointer;
     display: inline-block;
     font-size: 16px;
     margin: 4px 2px;
-    cursor: pointer;
-    border-radius: 30px;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
 }
 
 .btn:hover {
-background-color: white !important;
-border: 2px solid grey !important;
+  background-color: white !important;
+  border: 2px solid grey !important;
 
 }
 
 .loginButton{
-font-size: 14px;
-margin-top: 10px;
-padding: 5px 20px;
+  font-size: 14px;
+  margin-top: 10px;
+  padding: 5px 20px;
 }
 
 .logo{
-  width:100px;
   height: auto;
+  width:100px;
 }
 
 .text-white {
@@ -73,7 +72,7 @@ padding: 5px 20px;
 }
 
 .mainHeader{
-text-align: center;
+  text-align: center;
 }
 
 .homeTitle{
@@ -93,10 +92,10 @@ text-align: center;
   text-shadow: 2px 2px #21769e;
 }
 
-/* Sidebar */
+    /************ Sidebar ************/
 
 .sidebar{
-padding-left: 50px;
+  padding-left: 50px;
 }
 
 .btnImg{
@@ -105,43 +104,44 @@ padding-left: 50px;
 }
 
 .btnContent {
-  float:left;
-  text-align: left;
-  width: 100%;
+  border-radius: 30px;
   color:#898989;
+  float:left;
   font-size: 16px;
   font-weight: normal;
-  border-radius: 30px;
+  text-align: left;
+  width: 100%;
+
 }
 
 .homeSidebar{
-  width: 300px;
-  height: 325px;
-  margin-top:80px;
   color:#898989;
   font-size: 30px;
   font-weight: normal;
+  height: 325px;
+  margin-top:80px;
+  width: 300px;
 }
 
 .categorias{
-margin-top:30px;
-width: 100%;
+  margin-top:30px;
+  width: 100%;
 }
 
-/*Orgs*/
+    /************ Organizations ************/
 
 .organazationsTable{
   margin-bottom:30px;
 }
 
 .category-text{
-  font-size: 28px;
-  font-weight: 400px;
   color:#34b9f5;
-  text-align: center
+  font-size: 28px;
+  margin-top: 70px;
+  margin-bottom: 60px;
 }
 
-/*Footer*/
+    /************ Footer ************/
 
 .border{
   border-top-style: solid;
@@ -149,28 +149,27 @@ width: 100%;
   border-left-style: solid;
   border-right-style: solid;
   border-color: black;
-   border-width: 1px;
+  border-width: 1px;
 
 }
 
+
 .footer{
-  width: 1400px;
   background: #ffffff;
   color:#34b9f5;
-
+  width: 1400px;
 }
 
 .footImg{
-  height:40px;
-  margin-bottom: 50px;
-
+  height:50px;
+  margin-left: 50px;
 }
 
 
 .footer-text{
-text-align: center;
-color:grey;
-margin-bottom: 20px;
+  color:grey;
+  margin-bottom: 20px;
+  text-align: center;
 }
 
 .sobreText{
@@ -218,14 +217,6 @@ padding-left: 30px;
   margin-top: 15px;
 }
 
-
-#footer{
-  background: #086788;
-  width: 100%;
-  /*max-height: 700px;*/
-  height: 200px;
-}
-
 .input100 {
   width: 100%;
 }
@@ -254,4 +245,3 @@ padding-left: 30px;
   font-size: 24px;
   margin-top: 20px;
 }
-

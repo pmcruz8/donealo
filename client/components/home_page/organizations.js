@@ -14,7 +14,7 @@ class Orgs extends Component {
       <div className="row" id="salud">
         <div className="text-center">
           <h2 className= "category-text">Salud</h2>
-          <div className="col-sm-3">
+          <div className="col-sm-3 ">
             <div className="blog-column">
               <a href="campaign.html">
                 <img className="img-responsive blog-img" src="img/org-placeholder.png" alt=""></img>
