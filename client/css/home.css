@@ -193,10 +193,10 @@ padding-left: 30px;
   color: white;
   font-size:36px;
   font-weight: 200;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
 }
 
-.profPhoto{
+.orgPhoto{
   width:300px;
   height: 200px;
 
@@ -215,6 +215,77 @@ padding-left: 30px;
   height: 75px;
   width: auto;
   margin-top: 15px;
+}
+
+.profileMenu{
+
+    border-style: solid;
+    border-color: #e0e0e0;
+    border-width: 2px;
+    margin-top:20px;
+    padding-left:40px;
+    padding-top:20px;
+    padding-bottom:20px;
+}
+/* Items for prfoile Menu*/
+.profileItems{
+  /*background-color:gray;*/
+  margin-left:auto;
+  margin-right:auto;
+  color: #34b9f5;
+  text-align:center;
+}
+
+
+.profileTitle{
+    padding-top: 20px;
+    padding-bottom: 30px;
+    color: #34b9f5;
+}
+
+.aboutBox{
+    border-style: solid;
+    border-color: #e0e0e0;
+    border-width: 2px;
+    margin-right:50px;
+    padding-left: 30px;
+    padding-right:30px;
+    padding-top: 30px;
+    padding-bottom: 40px;
+
+}
+
+.accordion {
+  background-color:#fff;
+  color:#444;
+  cursor: pointer;
+  padding: 18px;
+  width: 95%;
+  border:solid;
+  border-width:2px;
+  border-color: #e0e0e0;
+  text-align:left;
+  font-size:15px;
+  transition:0.4s;
+  /*margin-right:50px;*/
+}
+
+.accordion.active, .accordion:hover{
+  background-color:#ddd;
+}
+
+.panel{
+  padding: 0 18px;
+  background-color:white;
+  max-height:0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+  margin-right:50px;
+}
+
+.profilePhoto{
+  margin-bottom: 20px;
+
 }
 
 .input100 {
@@ -244,4 +315,22 @@ padding-left: 30px;
   margin-right: auto;
   font-size: 24px;
   margin-top: 20px;
+}
+
+/*.profileMenu {
+    width: 90%;
+    border-width: 1px;
+    border-color: black;
+    color: #34b9f5;
+}*/
+.container ul {
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+}
+.container ul li {
+    width: 150px;
+    height: 100px;
+    /*background-color: red;*/
+    float: left;
 }
