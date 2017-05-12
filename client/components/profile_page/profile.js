@@ -9,7 +9,7 @@ const Profile = () => {
 		<div>
 			<HeaderProf />
 			<BodyProfile/>
-
+			
 		</div>
 	);
 };

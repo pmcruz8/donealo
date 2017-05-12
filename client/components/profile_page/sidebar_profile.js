@@ -5,10 +5,10 @@ import React from 'react';
 
 const SidebarProfile = () => {
   return (
-    <div>
+    <div className="profileSideBar">
    
         <center>
-          <h3>Escoge el tipo de donación</h3>
+          <h4 className="sidebarText">Escoge el tipo de donación</h4>
           <div className="row">
             <div className="col-xs-4">
               <img id="donateMoney" type="button" className="btn donateIcons" src="img/money-icon.png" alt=""/>
@@ -24,9 +24,20 @@ const SidebarProfile = () => {
             </div>
           </div>
 
-          <div className="shareRow">
-            <h3>Compártelo en las redes sociales</h3>
-            <img src="img/share-icons.png" className="shareIcons" alt=""/>
+          <div className="row">
+            <h4 className="sidebarText">Compártelo en las redes sociales</h4>
+            <div className="col-xs-3">
+              <img src="img/FB.png" className="shareIcons" alt=""/>
+            </div>
+            <div className="col-xs-3">
+              <img src="img/Twitter.png" className="shareIcons" alt=""/>
+            </div>
+            <div className="col-xs-3">
+              <img src="img/WhatsApp.png" className="shareIcons" alt=""/>
+            </div>
+            <div className="col-xs-3">
+              <img src="img/Email.png" className="shareIcons" alt=""/>
+            </div>
           </div>
 
       </center>

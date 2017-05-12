@@ -7,7 +7,7 @@ const HeaderProf = () => {
 		<div >
 			<Navbar />
 			<div className="profHeader">
-    			<div className="profTitle">Nombre de la organización</div>
+    			<div className="orgName">Nombre de la organización</div>
     				<img className="orgPhoto" src="/img/org-placeholder.png" alt="" />
 	    	</div>
     	</div>
