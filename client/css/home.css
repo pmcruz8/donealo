@@ -197,7 +197,7 @@ padding-left: 30px;
   margin-bottom: 10px;
 }
 
-.profPhoto{
+.orgPhoto{
   width:300px;
   height: 200px;
 
@@ -235,6 +235,7 @@ padding-left: 30px;
     padding-top:20px;
     padding-bottom:20px;
 }
+/* Items for prfoile Menu*/
 .profileItems{
   /*background-color:gray;*/
   margin-left:auto;
@@ -290,6 +291,10 @@ padding-left: 30px;
   margin-right:50px;
 }
 
+.profilePhoto{
+  margin-bottom: 20px;
+
+}
 .input100 {
   width: 100%;
 }

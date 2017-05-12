@@ -23,10 +23,10 @@ class BodyProfile extends Component {
 		     			   		<a href="#FAQ" >Preguntas Frecuentes</a>
 		     			   </div>
 		     			   <div className="col-sm-3 profileItems">
-		     			   		<a href="" >Galería</a>
+		     			   		<a href="#gallery" >Galería</a>
 		     			   </div>
 		     			   <div className="col-sm-3 profileItems">
-		     			   		<a href="" >Eventos</a>
+		     			   		<a href="#events" >Eventos</a>
 		     			   	</div>
 		     			</div>
 	     			</div>
@@ -77,28 +77,77 @@ class BodyProfile extends Component {
 		        	</div>
 		        </div>
 		        
-		        {/* Retrieved from w3 schools
-		        <div>
-		        	{
-		        	const accord = document.getElementsByClassName("accordion");
+		        
+		        <div id="gallery">
+		        	<h3 className="profileTitle">Galería</h3>
+		        		<div className="row profilePhoto">
+		        			<div className="col-md-4">
+		        				<div className="blog-column">
+		        					<img className="img-responsive" src="img/photo_card.png" alt=""></img>
+		        				</div>
+		        			</div>
 
-		        	for (var i =0; i<acc.length; i++){
-		        		accord[i].onclick =function(){
-		        			this.classList.toggle("active");
-		        			var panel = this.nextElementSibling;
-		        			if (panel.style.maxHeight){
-		        				panel.style.maxHeight = null;
-		        			}else{
-		        				panel.style.maxHeight = panel.scrollHeight + "px";
-		        			}
-		        		}
-		        	}}
-		        </div>*/}
+		        			<div className="col-md-4">
+		        				<div className="blog-column">
+		        					<img className="img-responsive blog-img" src="img/photo_card.png" alt=""></img>
+		        				</div>
+		        			</div>
 
-		        <h3 className="profileTitle">Categoría</h3>
+		        			<div className="col-md-4">
+		        				<div className="blog-column">
+		        					<img className="img-responsive blog-img" src="img/photo_card.png" alt=""></img>
+		        				</div>
+		        			</div>
+		        		</div>
 
-		        <h3 className="profileTitle">Eventos</h3>
+		        		<div className="row profilePhoto">
+		        			<div className="col-md-4">
+		        				<div className="blog-column">
+		        					<img className="img-responsive" src="img/video_vard.png" alt=""></img>
+		        				</div>
+		        			</div>
+
+		        			<div className="col-md-4">
+		        				<div className="blog-column">
+		        					<img className="img-responsive blog-img" src="img/video_vard.png" alt=""></img>
+		        				</div>
+		        			</div>
+
+		        			<div className="col-md-4">
+		        				<div className="blog-column">
+		        					<img className="img-responsive blog-img" src="img/video_vard.png" alt=""></img>
+		        				</div>
+		        			</div>
+		        		</div>
+		        </div>
+		        
+		        <div id="events">
+		        	<h3 className="profileTitle">Eventos</h3>
+		        	<div className="row profilePhoto">
+		        			<div className="col-md-4">
+		        				<div className="blog-column">
+		        					<img className="img-responsive" src="img/evento_card.png" alt=""></img>
+		        				</div>
+		        			</div>
+
+		        			<div className="col-md-4">
+		        				<div className="blog-column">
+		        					<img className="img-responsive blog-img" src="img/evento_card.png" alt=""></img>
+		        				</div>
+		        			</div>
+
+		        			<div className="col-md-4">
+		        				<div className="blog-column">
+		        					<img className="img-responsive blog-img" src="img/evento_card.png" alt=""></img>
+		        				</div>
+		        			</div>
+		        		</div>
+		        </div>
+		    
+
 		    </div>
+
+
 			 	<div className="col-md-4 campaignSideBar">
 			     	<SidebarProfile/>
 			    </div>
@@ -108,6 +157,15 @@ class BodyProfile extends Component {
 			</div>
 		);
 	}
+	/*
+	componentWillMount(){
+		const script = document.createElement("script")
+
+		script.src = "./accordionAnimation.js"
+		script.async = true;
+
+		document.body.appendChild(script);
+	}  */
 }
 
 export default BodyProfile;
