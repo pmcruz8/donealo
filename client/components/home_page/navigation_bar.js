@@ -3,7 +3,6 @@ import AccountsUIWrapper from '../../../imports/AccountsUIWrapper'
 
 const Navbar = () =>{
 	return(
-		  <div className="homePage">
 		    <nav className="navbar">
 		      <div className="container-fluid">
 		        <div className="navbarHeader">
@@ -34,18 +33,8 @@ const Navbar = () =>{
 		      </div>
 		    </div>
 		  </nav>
-			<div className="mainHeader">
-				<h1 className=" homeTitle">Dona por una causa</h1>
-				<h3 className=" homeSubtitle">Apoya organizaciones sin fines de lucro de Puerto Rico</h3>
-				<a href="#organizaciones">
-				<button className="button mainButton">
-					Ver Organizaciones
-				</button>
-				</a>
-				</div>
-		</div>
-      );
 
+      );
 }
 
 
