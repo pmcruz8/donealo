@@ -1,109 +1,63 @@
-body {
-    background-color: #fbfbfb;
-}
+
+    /************ Body ************/
  .background {
    background-color: #fbfbfb;
+   font-family: "Verdana";
+   overflow: hidden;
+   padding-left: 10px;
+   padding-right: 10px;
+   width: 1410px;
+
  }
-.button {
-    background-color: #67e43d; /* Green */
-    border: none;
-    color: white;
-    padding: 10px 20px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    margin: 4px 2px;
-    cursor: pointer;
-    border-radius: 30px;
+
+.borders{
+  border-left-style: solid;
+  border-right-style: solid;
+  border-color: black;
+  border-width: 1px;
 }
 
-.loginButton{
-font-size: 14px;
-margin-top: 10px;
-padding: 5px 20px;
-}
-
-.btnContent {
-  float:left;
-}
-.mainHeader{
-text-align: center;
-}
-
-.sidebar{
-padding-left: 50px;
-}
-
-.btnImg{
-  padding-right: 10px;
-  text-align: left;
-}
-
-.footImg{
-
-  align: center;
-  width:auto;
-  height:30px;
-}
+    /************ Navbar ************/
 
 .homePage{
   background: #34b9f5;
-  width: 100%;
   height: 300px;
+  width: 1400px;
 }
 
-.buttonCategory{
-text-align: left;
-width: 100%;
-color:#898989;
-font-size: 30px;
-font-weight: normal;
-border-radius: 30px;
+.navbarButtons{
+    text-shadow: 2px 2px #21769e;
+}
+
+.button{
+    background-color: #67e43d;
+    border: none;
+    border-radius: 30px;
+    color: white;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+}
+
+.btn:hover {
+  background-color: white !important;
+  border: 2px solid grey !important;
 
 }
 
-.homeTitle {
-  color:white;
-  font-size: 48px;
-  font-weight: 500px;
-  margin-bottom: 20px;
+.loginButton{
+  font-size: 14px;
+  margin-top: 10px;
+  padding: 5px 20px;
 }
 
-.homeSubtitle {
-  color:white;
-  font-size: 18px;
-  font-weight: 200px;
-  margin-top: 40px;
-  margin-bottom: 30px;
-}
-
-.categorias {
-margin-top:30px;
-width: 100%;
-}
-
-.category-text{
-  font-size: 28px;
-  font-weight: 400;
-  margin-bottom:30px;
-  color:#34b9f5;
-  text-align: center
-}
-
-.homeSidebar {
-  background: #fbfbfb;
-  width: 300px;
-  height: 325px;
-  margin-top:80px;
-  color:#898989;
-  font-size: 30px;
-  font-weight: normal;
-}
-
-.logo {
-  width:100px;
+.logo{
   height: auto;
+  width:100px;
 }
 
 .text-white {
@@ -117,19 +71,279 @@ width: 100%;
   width: 40px;
 }
 
+.mainHeader{
+  text-align: center;
+}
+
+.homeTitle{
+  color:white;
+  font-size: 48px;
+  font-weight: 200px;
+  margin-bottom: 20px;
+  text-shadow: 2px 2px #21769e;
+}
+
+.homeSubtitle{
+  color:white;
+  font-size: 18px;
+  font-weight: 200px;
+  margin-top: 40px;
+  margin-bottom: 30px;
+  text-shadow: 2px 2px #21769e;
+}
+
+    /************ Sidebar ************/
+
+.sidebar{
+  padding-left: 50px;
+}
+
+.btnImg{
+  padding-right: 10px;
+  text-align: left;
+}
+
+.btnContent {
+  border-radius: 30px;
+  color:#898989;
+  float:left;
+  font-size: 16px;
+  font-weight: normal;
+  text-align: left;
+  width: 100%;
+
+}
+
+.homeSidebar{
+  color:#898989;
+  font-size: 30px;
+  font-weight: normal;
+  height: 325px;
+  margin-top:80px;
+  width: 300px;
+}
+
+.categorias{
+  margin-top:30px;
+  width: 100%;
+}
+
+    /************ Organizations ************/
+
+.organazationsTable{
+  margin-bottom:30px;
+}
+
+.category-text{
+  color:#34b9f5;
+  font-size: 28px;
+  margin-top: 70px;
+  margin-bottom: 60px;
+}
+
+    /************ Footer ************/
+
+.border{
+  border-top-style: solid;
+  border-bottom-style: solid;
+  border-left-style: solid;
+  border-right-style: solid;
+  border-color: black;
+  border-width: 1px;
+
+}
+
 
 .footer{
   background: #ffffff;
   color:#34b9f5;
-  margin-bottom: 40px;
-
+  width: 1400px;
 }
+
+.footImg{
+  height:50px;
+  margin-left: 50px;
+}
+
+
 .footer-text{
-text-align: center;
-color:grey;
+  color:grey;
+  margin-bottom: 20px;
+  text-align: center;
 }
 
 .sobreText{
 padding-left: 30px;
 
+}
+
+/*-------------------------------------- Profile style --------------------------------------*/
+/* Don't know how to declare profile.css in React so I'm gonn a put all of the css classes here for now.*/
+/* ------ Profile header -------*/
+.profHeader{
+  background: #34b9f5;
+  width: 100%;
+  /*max-height: 700px;*/
+  height: 400px;
+  text-align:center;
+}
+
+.orgName{
+  /*margin-top: 10px;*/
+  color: white;
+  font-size:36px;
+  font-weight: 200;
+  margin-bottom: 10px;
+}
+
+.orgPhoto{
+  width:300px;
+  height: 200px;
+
+}
+
+.profileSideBar {
+  margin-top:20px; 
+  border: solid;
+  border-width: 2px;
+  border-color: #e0e0e0;
+  padding-right: 10px;
+  padding-left: 10px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+
+.sidebarText{
+  padding-top: 10px;
+  padding-bottom: 10px;
+  color: #34b9f5;
+
+}
+.donateModal-headers {
+  text-align: center;
+}
+
+.donateIcons {
+  height: 10px;
+ /* width: auto;*/
+  /*margin-top: 5px;*/
+}
+
+.profileMenu{
+
+    border-style: solid;
+    border-color: #e0e0e0;
+    border-width: 2px;
+    margin-top:20px;
+    padding-left:40px;
+    padding-top:20px;
+    padding-bottom:20px;
+}
+/* Items for prfoile Menu*/
+.profileItems{
+  /*background-color:gray;*/
+  margin-left:auto;
+  margin-right:auto;
+  color: #34b9f5;
+  text-align:center;
+}
+
+
+.profileTitle{
+    padding-top: 20px;
+    padding-bottom: 30px;
+    color: #34b9f5;
+}
+
+.aboutBox{
+    border-style: solid;
+    border-color: #e0e0e0;
+    border-width: 2px;
+    margin-right:50px;
+    padding-left: 30px;
+    padding-right:30px;
+    padding-top: 30px;
+    padding-bottom: 40px;
+
+}
+
+.accordion {
+  background-color:#fff;
+  color:#444;
+  cursor: pointer;
+  padding: 18px;
+  width: 95%;
+  border:solid;
+  border-width:2px;
+  border-color: #e0e0e0;
+  text-align:left;
+  font-size:15px;
+  transition:0.4s;
+  /*margin-right:50px;*/
+}
+
+.accordion.active, .accordion:hover{
+  background-color:#ddd;
+}
+
+.panel{
+  padding: 0 18px;
+  background-color:white;
+  max-height:0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+  margin-right:50px;
+}
+
+.profilePhoto{
+  margin-bottom: 20px;
+
+}
+
+.input100 {
+  width: 100%;
+}
+
+.m30 {
+  margin-top: 30px;
+}
+
+.shareIcons {
+  width:100%;
+}
+.shareRow {
+  /*margin-top: 100px;*/
+}
+
+.btn-donate {
+  /* Rectangle 7: */
+  background: #DD1C1A;
+  /*border: 1px solid #979797;*/
+  color:#fff;
+  width: 200px;
+  height: 50px;
+  border-radius: 100px;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 24px;
+  margin-top: 20px;
+}
+
+/*.profileMenu {
+    width: 90%;
+    border-width: 1px;
+    border-color: black;
+    color: #34b9f5;
+}*/
+.container ul {
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+}
+.container ul li {
+    width: 150px;
+    height: 100px;
+    /*background-color: red;*/
+    float: left;
 }

@@ -1,10 +1,15 @@
 import React from 'react';
-// import Navbar from './navbar'
+import Navbar from './navbar'
 //For center use bootstrap className: "text-center"
 
 const HeaderProf = () => {
 	return(
-		<div> Profile
+		<div >
+			<Navbar />
+			<div className="profHeader">
+    			<div className="orgName">Nombre de la organización</div>
+    				<img className="orgPhoto" src="/img/org-placeholder.png" alt="" />
+	    	</div>
     	</div>
 	);
 }
