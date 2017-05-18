@@ -12,7 +12,11 @@ const HomePage = () => {
 			<Navbar/>
 			<div className="row">
 				<Sidebar/>
-				<Orgs/>
+				<Orgs category="salud"/>
+        <Orgs category="educacion"/>
+        <Orgs category="arte"/>
+        <Orgs category="animales"/>
+        <Orgs category="familia"/>
 			</div>
     	<Footer/>
 		</div>

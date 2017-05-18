@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter as Router,Route,Link } from 'react-router-dom';
+import { Accounts, STATES } from 'meteor/std:accounts-ui';
 import Money from './components/campaign_page/cp_money_don';
 import Time from './components/campaign_page/cp_time_don';
 import materials from './components/campaign_page/cp_material_don';
@@ -12,6 +13,8 @@ const Index = () => {
     <Router>
       <div>
         <Route exact path="/" component={App}/>
+        <Route path="/signin" component={() => <Accounts.ui.LoginForm />} />
+        <Route path="/signup" component={() => <Accounts.ui.LoginForm formState={STATES.SIGN_UP} />} />
         <Route path="/donations" component={Money}/>
         <Route path="/volunteers" component={Time}/>
         <Route path="/materials" component={materials}/>
