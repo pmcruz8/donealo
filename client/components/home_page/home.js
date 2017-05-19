@@ -15,12 +15,12 @@ const HomePage = () => {
 			<div className="row">
 				<Sidebar/>
 				<div className="col-sm-7 col-sm-offset-1 organazationsTable" id="organizaciones">
-					<Orgs category="salud"/>
-	        <Orgs category="educacion"/>
+				  <div id="salud"><Orgs category="salud"/></div>
+	        <div id="educacion"><Orgs category="educacion"/></div>
 	        <div id="arte_cultura"><Orgs category="arte"/></div>
-	        <Orgs category="animales"/>
-					<Orgs category="ambiente"/>
-	        <Orgs category="familia"/>
+	        <div id="animales"><Orgs category="animales"/></div>
+					<div id="ambiente"><Orgs category="ambiente"/></div>
+	        <div id="familia"><Orgs category="familia"/></div>
 				</div>
 			</div>
     	<Footer/>
