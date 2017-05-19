@@ -4,10 +4,6 @@
    background-color: #fbfbfb;
    font-family: "Verdana";
    overflow: hidden;
-   padding-left: 10px;
-   padding-right: 10px;
-   width: 1410px;
-
  }
 
 .borders{
@@ -22,7 +18,7 @@
 .homePage{
   background: #34b9f5;
   height: 300px;
-  width: 1400px;
+  width: 100%;
 }
 
 .navbarButtons{
@@ -157,7 +153,6 @@
 .footer{
   background: #ffffff;
   color:#34b9f5;
-  width: 1400px;
 }
 
 .footImg{
@@ -203,7 +198,7 @@ padding-left: 30px;
 }
 
 .profileSideBar {
-  margin-top:20px; 
+  margin-top:20px;
   border: solid;
   border-width: 2px;
   border-color: #e0e0e0;

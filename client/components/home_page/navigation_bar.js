@@ -30,7 +30,6 @@ const Navbar = () =>{
 		            <li className="navbarButtons"><a href="#" ><font color="white">Inicio</font></a></li>
 		            <li className="navbarButtons"><a href="#footer"><font color="white">Sobre Donéalo</font></a></li>
 		            <li><button className="button loginButton"><AccountsUIWrapper /></button></li>
-                // <li><Link to="/signup"><button className="button loginButton">Login</button></Link></li>
 		          </ul>
 		      </div>
 		    </div>
