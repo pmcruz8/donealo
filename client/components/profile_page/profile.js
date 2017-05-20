@@ -7,9 +7,8 @@ import Footer from '../home_page/home_footer';
 const Profile = () => {
 	return (
 		<div>
-			<HeaderProf />
-			<BodyProfile id="9NbThiy8kHk3GqcZq"/>
-
+			<HeaderProf id="N6auarXWvjSKibunv"/>
+			<BodyProfile id="N6auarXWvjSKibunv"/>
 		</div>
 	);
 };
