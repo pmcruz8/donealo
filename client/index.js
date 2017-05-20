@@ -8,6 +8,8 @@ import App from './app';
 import Profile from './components/profile_page/profile';
 import Login from './components/accounts/login';
 import Register from './components/accounts/register';
+import Settings from './components/accounts/settings';
+
 
 const Index = () => {
   return (
@@ -21,6 +23,7 @@ const Index = () => {
         <Route path="/volunteers" component={Time}/>
         <Route path="/materials" component={materials}/>
         <Route path="/profile" component={Profile}/>
+        <Route path="/settings" component={Settings}/>
       </div>
     </Router>
   );
