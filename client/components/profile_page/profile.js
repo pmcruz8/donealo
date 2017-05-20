@@ -1,13 +1,14 @@
 import React from 'react';
 import HeaderProf from './header_profile';
-// import Body from './body_profile';
-// import Navbar from './navbar';
-// import Sidebar from './sidebar_profile';
+import BodyProfile from './body_profile';
+import SidebarProfile from './sidebar_profile';
+import Footer from '../home_page/home_footer';
 
 const Profile = () => {
 	return (
 		<div>
-			<HeaderProf />
+			<HeaderProf id="N6auarXWvjSKibunv"/>
+			<BodyProfile id="N6auarXWvjSKibunv"/>
 		</div>
 	);
 };

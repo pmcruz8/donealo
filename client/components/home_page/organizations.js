@@ -1,68 +1,51 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 
-class Orgs extends Component {
-	constructor(props){
-		super(props);
+import { Organizations } from '../../../collections/organizations';
+import { createContainer } from 'meteor/react-meteor-data';
 
-		this.state = {term:' '};
-	}
-
-	//function to render search bar
-	render() {
-		return(
-		<div className="organization">
-		  <div className="section">
-	        <div className="container">
-	        	<div className="row">
-
-			<div className="section-title">
-				<h1>Organizaciones sin fines de Lucro</h1> 
-			</div>
-
-		
-			<ul className="grid cs-style-3">
-	        	<div className="col-md-4 col-md-6 ">
-					<figure>
-						<img className="campaignPhoto" src="/img/gray1.jpg" alt="" />
-						<figcaption>
-							<h3>Nombre</h3>
-							<span>Descripción </span>
-							<a href="">link</a>
-						</figcaption>
-					</figure>
-	        	</div>
-
-	        	<div className="col-md-4 col-md-6 ">
-					<figure>
-						<img className="campaignPhoto" src="/img/gray1.jpg" alt="" />
-						<figcaption>
-							<h3>Nombre</h3>
-							<span>Descripción </span>
-							<a href="">link</a>
-						</figcaption>
-					</figure>
-	        	</div>	
-
-	            <div className="col-md-4 col-md-6 ">
-					<figure>
-						<img className="campaignPhoto" src="/img/gray1.jpg" alt="" />
-						<figcaption>
-							<h3>Nombre</h3>
-							<span>Descripción </span>
-							<a href="">link</a>
-						</figcaption>
-					</figure>
-	        	</div>
-			</ul>
-
-	        	</div>
-
-	        </div>
-	      </div>
-
-		</div>
-		);
-	}
+class Container extends Component {
+  render() {
+    return (
+        <OrganizationList />
+    );
+  }
 }
 
-export default Orgs;
+const OrganizationList = (props) => {
+  return (
+    <div className="row">
+      <div className="text-center">
+        <h2 className= "category-text">{ props.category }</h2>
+        { props.activeData.map(item =>
+          <Box key={item._id} item={item}/>)
+        }
+      </div>
+    </div>
+  );
+};
+
+const Box = (props) => {
+  return (
+    <div className="col-sm-3">
+      <div className="blog-column">
+        <p>{ props.item.name }</p>
+        <img className="img-responsive blog-img" src="img/org-placeholder.png" alt=""></img>
+      </div>
+    </div>
+  );
+};
+
+export default Orgs = createContainer(({ category }) => {
+  // Subscribe to sub-collection -> "organization"
+  // params: collectionName, category
+
+  const handle = Meteor.subscribe("organizations");
+  const isReady = handle.ready();
+
+  return {
+    isReady,
+    activeData: isReady ? Organizations.find({category: category}).fetch() : [],
+    category: category.substr(0,1).toUpperCase() + category.substr(1)
+  };
+
+}, OrganizationList);

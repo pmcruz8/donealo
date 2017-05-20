@@ -1,7 +1,7 @@
 import React from 'react';
 
 const navbar = () =>{
-	return(
+  return(
      <div>
         <nav className="navbar">
           <div className="container-fluid">
@@ -22,7 +22,6 @@ const navbar = () =>{
                 <li><a className="" href="index.html">Inicio</a></li>
                 <li><a className="" href="index.html#campaignBody">Campañas</a></li>
                 <li><a className="" href="index.html#organizationBody">Organizaciones</a></li>
-                <li><a className="" href="index.html#Login">Login</a></li>
               </ul>
               <form className="navbar-form navbar-right">
               </form>

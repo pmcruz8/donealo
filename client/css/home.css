@@ -1,65 +1,342 @@
 
-#splashScreen {
-  background: #00ADD7;
+    /************ Body ************/
+ .background {
+   background-color: #fbfbfb;
+   font-family: "Verdana";
+   overflow: hidden;
+ }
+
+.borders{
+  border-left-style: solid;
+  border-right-style: solid;
+  border-color: black;
+  border-width: 1px;
+}
+
+    /************ Navbar ************/
+
+.homePage{
+  background: #34b9f5;
+  height: 300px;
   width: 100%;
-  /*max-height: 700px;*/
-  height: 400px;
-}
-/* ---------------------- Header Start ---------------------- */
-.homeHeader{
-  background: white;
-  width: 100%;
-  /*max-height: 700px;*/
-  height: 200px;
 }
 
-.homeText{
-  margin-top: 20px;
-  margin-left: 10px;
+.navbarButtons{
+    text-shadow: 2px 2px #21769e;
 }
 
-.homeMotto{
-  color: #00ADD7;
-  text-align:center;
-  font-size:36px;
+.loginButton{
+    background-color: #67e43d;
+    border: none;
+    border-radius: 30px;
+    color: white;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 16px;
+    margin: 10px;
+    padding: 5px 20px;
+    text-align: center;
+    text-decoration: none;
 }
 
-.logo {
-  width:100px;
-  height: auto;
-  margin-left: 10px; 
-}
-
-/* Start Search Bar */
-.search-bar{
+.loginButton:hover {
+  background-color: #67e43d !important;
+  border: none;
+  border-radius: 30px;
+  color: white;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 16px;
   margin: 10px;
+  padding: 5px 20px;
   text-align: center;
+  text-decoration: none;
 }
 
-.search-bar input{
-  width: 50%;
-  height: 50%;
+/*.loginButton{
+  font-size: 14px;
+  margin-top: 10px;
+  padding: 5px 20px;
+}*/
+
+.logo{
+  height: auto;
+  width:100px;
 }
-/* End Search Bar */
 
 .text-white {
-  color: #fff;
+  color: #ffffff;
   margin-top:5px;
 }
 
-/* ---------------------- Header End ---------------------- */
 
-.campaignProgress {
-  margin-top: 100px;
+.logoDona{
+  height: 40px;
+  width: 40px;
 }
 
-.btn-create-campaign {
-    /* Rectangle 2: */
-  background: #8FD93E;
-  border-radius: 100px;
-  color:#fff;
-  margin-right: 20px;
-  margin-top: 5px;
+.mainHeader{
+  text-align: center;
+}
+
+.homeTitle{
+  color:white;
+  font-size: 48px;
+  font-weight: 200px;
+  margin-bottom: 20px;
+  text-shadow: 2px 2px #21769e;
+}
+
+.homeSubtitle{
+  color:white;
+  font-size: 18px;
+  font-weight: 200px;
+  margin-top: 40px;
+  margin-bottom: 30px;
+  text-shadow: 2px 2px #21769e;
+}
+
+    /************ Sidebar ************/
+
+.sidebar{
+  padding-left: 50px;
+}
+
+.btnImg{
+  padding-right: 10px;
+  text-align: left;
+}
+
+.btnContent {
+  border-radius: 30px;
+  color:#898989;
+  float:left;
+  font-size: 16px;
+  font-weight: normal;
+  text-align: left;
+  width: 100%;
+
+}
+
+.homeSidebar{
+  color:#898989;
+  font-size: 30px;
+  font-weight: normal;
+  height: 325px;
+  margin-top:80px;
+  width: 300px;
+}
+
+.categorias{
+  margin-top:30px;
+  width: 100%;
+}
+
+    /************ Organizations ************/
+
+.organazationsTable{
+  margin-bottom:30px;
+}
+
+.category-text{
+  color:#34b9f5;
+  font-size: 28px;
+  margin-top: 70px;
+  margin-bottom: 60px;
+}
+
+    /************ Footer ************/
+
+.border{
+  border-top-style: solid;
+  border-bottom-style: solid;
+  border-left-style: solid;
+  border-right-style: solid;
+  border-color: black;
+  border-width: 1px;
+
+}
+
+
+.footer{
+  background: #ffffff;
+  color:#34b9f5;
+}
+
+.footImg{
+  height:50px;
+  margin-left: 50px;
+}
+
+
+.footer-text{
+  color:grey;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.sobreText{
+padding-left: 30px;
+
+}
+
+/*-------------------------------------- Profile style --------------------------------------*/
+/* Don't know how to declare profile.css in React so I'm gonn a put all of the css classes here for now.*/
+/* ------ Profile header -------*/
+.profHeader{
+  background: #34b9f5;
+  width: 100%;
+  /*max-height: 700px;*/
+  height: 400px;
+  text-align:center;
+}
+
+.orgName{
+  /*margin-top: 10px;*/
+  color: white;
+  font-size:36px;
+  font-weight: 200;
+  margin-bottom: 10px;
+}
+
+.orgPhoto{
+  width:300px;
+  height: 200px;
+
+}
+
+.profileSideBar {
+  margin-top:20px;
+  border: solid;
+  border-width: 2px;
+  border-color: #e0e0e0;
+  padding-right: 10px;
+  padding-left: 10px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+
+.sidebarText{
+  padding-top: 10px;
+  padding-bottom: 10px;
+  color: #34b9f5;
+
+}
+.donateModal-headers {
+  text-align: center;
+}
+
+.donateIcons {
+  height: 10px;
+ /* width: auto;*/
+  /*margin-top: 5px;*/
+}
+
+.profileMenu{
+
+    border-style: solid;
+    border-color: #e0e0e0;
+    border-width: 2px;
+    margin-top:20px;
+    padding-left:40px;
+    padding-top:20px;
+    padding-bottom:20px;
+}
+/* Items for prfoile Menu*/
+.profileItems{
+  /*background-color:gray;*/
+  margin-left:auto;
+  margin-right:auto;
+  color: #34b9f5;
+  text-align:center;
+}
+
+
+.profileTitle{
+    padding-top: 20px;
+    padding-bottom: 30px;
+    color: #34b9f5;
+}
+
+.aboutBox{
+    border-style: solid;
+    border-color: #e0e0e0;
+    border-width: 2px;
+    margin-right:50px;
+    padding-left: 30px;
+    padding-right:30px;
+    padding-top: 30px;
+    padding-bottom: 40px;
+
+}
+
+.accordion {
+  background-color:#fff;
+  color:#444;
+  cursor: pointer;
+  padding: 18px;
+  width: 95%;
+  border:solid;
+  border-width:2px;
+  border-color: #e0e0e0;
+  text-align:left;
+  font-size:15px;
+  transition:0.4s;
+  /*margin-right:50px;*/
+}
+
+.accordion.active, .accordion:hover{
+  background-color:#ddd;
+}
+
+/*.panel{
+  padding: 0 18px;
+  background-color:white;
+  max-height:0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+  margin-right:50px;
+}*/
+.subtitle{
+  padding-bottom: 5px;
+  color: #34b9f5;
+
+}
+
+.profileBox {
+  width: 100%;
+  padding: 10px;
+  border-style: solid;
+  border-color: #e0e0e0;
+  border-width: 2px;
+  margin-right:50px;
+  margin-bottom: 20px;
+  padding-left: 10px;
+  padding-right:10px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  transition: max-height 0.2s ease-out;
+}
+
+.profilePhoto{
+  margin-bottom: 20px;
+
+}
+
+.input100 {
+  width: 100%;
+}
+
+.m30 {
+  margin-top: 30px;
+}
+
+.shareIcons {
+  width:100%;
+}
+.shareRow {
+  /*margin-top: 100px;*/
 }
 
 .btn-donate {
@@ -76,95 +353,35 @@
   margin-top: 20px;
 }
 
-.progressBar {
-  width: 500px
-}
-
-.campaignTitle {
-  font-size: 48px;
-  font-weight: 200;
-  margin-bottom: 20px;
-}
-
-.campaignPhoto {
-  width:100%;
-}
-
-.campaignBody {
-  background: #00ADD7;
-  height: 500px;
-}
-
-/* -------------- Recent Campaign for home page start ---------- */
-.recCampaign {
-  background: #bff0fc;
-  height: 400px;
-}
-
-.section {
-  padding: 30px 0;
-  -webkit-transform: translateZ(0);
-  -moz-transform: translateZ(0);
-  -o-transform: translateZ(0);
-  -ms-transform: translateZ(0);
-  transform: translateZ(0);
-}
-.section-white {
-  background: #FFF;
-}
-
-.section .container:first-child h1,
-.section .container:first-child h2,
-.section .container:first-child h3 {
-  margin-top: 0;
-  font-weight: 700;
-}
-/* -------------- Recent Campaign for home page end ---------- */
-
-/* Organization body */
-.organization {
-  background: #fff;
-  height: 400px;
-}
-
-
-#organizationBody {
-  background: #fff;
-  height: 500px;
-
-}
-.logoDona{
-  height: 40px;
-  width: 40px;
-}
-/*.campaignBodyDesc {
-  padding-left: 20px !important;
-  padding-right: 20px !important;
+/*.profileMenu {
+    width: 90%;
+    border-width: 1px;
+    border-color: black;
+    color: #34b9f5;
 }*/
-
-.campaignSideBar {
-  background: #F4F4F4;
-  height: 600px;
+.container ul {
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+}
+.container ul li {
+    width: 150px;
+    height: 100px;
+    /*background-color: red;*/
+    float: left;
 }
 
-.donateModal-headers {
-  text-align: center;
+.tempPanel{
+    border-style: solid;
+    border-color: #e0e0e0;
+    border-width: 2px;
+    margin-right:50px;
+    padding-left: 30px;
+    padding-right:30px;
+    padding-top: 30px;
+    padding-bottom: 40px;
+
 }
 
-.donateIcons {
-  height: 75px;
-  width: auto;
-  margin-top: 15px;
-}
 
-.footer{
-  color:white;
-  background: #086788;
-  width: 100%;
-  /*max-height: 700px;*/
-  height: 200px;
-}
-
-.splashImg {
-  width: 650px;
 }
