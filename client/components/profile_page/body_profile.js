@@ -1,46 +1,69 @@
 import React, {Component} from 'react';
 import HeaderProf from './header_profile';
-import FAQ from './faq';
+//import FAQ from './faq';
 import SidebarProfile from './sidebar_profile';
+import { Organizations } from '../../../collections/organizations';
+import { createContainer } from 'meteor/react-meteor-data';
 
-const userFaq = {
-	title: "Lorem ipsum",
-	answer: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
 
-}
-
-class BodyProfile extends Component {
+class Container extends Component {
 	constructor(props){
 		super(props);
 	}
 
 	render() {
 		return (
-			<div> <section id="profileBody">
+			<BodyMap/>
+		);
+	}
+
+}
+
+const BodyMap = (props) => {
+	return (
+		<div>
+		{props.activeData.map(item => 
+			<Body key={item._id} item={item}/>)}
+		</div>
+		);
+}
+
+const Body = (props) => {
+
+	return(
+		<div> <section id="profileBody">
      			<div className="col-md-8 contactInfo">
      			<div className="profileMenu profileMenu">
 	     			<div className="row">
 		     			<div>
-		     			   <div className="col-sm-3 profileItems">
-		     			   		<a href="#aboutus" >Sobre Nosotros</a>
+		     			   <div className="col-sm-2 profileItems">
+		     			   	<a href="#aboutus" >Sobre Nosotros</a>
 		     			   	</div>
-		     			   <div className="col-sm-3 profileItems">
+		     			   	<div className="col-sm-2 profileItems">
+		     			   		<a href="#contacts">Contáctanos</a>
+		     			   	</div>
+		     			   <div className="col-sm-2 profileItems">
 		     			   		<a href="#FAQ" >Preguntas Frecuentes</a>
 		     			   </div>
-		     			   <div className="col-sm-3 profileItems">
+		     			   <div className="col-sm-2 profileItems">
 		     			   		<a href="#gallery" >Galería</a>
 		     			   </div>
-		     			   <div className="col-sm-3 profileItems">
+		     			   <div className="col-sm-2 profileItems">
 		     			   		<a href="#events" >Eventos</a>
 		     			   	</div>
+
 		     			</div>
 	     			</div>
      			</div>
 
      			<div className="aboutUs" id="aboutus">
-     				<h3 className="profileTitle">Sobre Nosotros</h3>
+     				<h3 className="profileTitle">Sobre Nosotros </h3>
+
+        			<p>
         			
-        			<div className="aboutBox"> 
+        			</p>
+        			{props.item.name}
+        			<div className="profileBox"> 
         			Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse ultrices dictum ex, 
         			a condimentum justo convallis eu. Suspendisse efficitur tincidunt enim, vehicula pharetra arcu luctus sed. Integer placerat leo nisi, 
         			vel scelerisque nisl posuere eu. Proin sollicitudin mi ligula, nec volutpat dolor vulputate ut. Duis condimentum erat eros, vitae vestibulum 
@@ -62,23 +85,43 @@ class BodyProfile extends Component {
                     id convallis. Donec at mi vitae libero cursus malesuada nec vitae velit.
         			</div>
         		</div>
-        			<p></p>
+        		<div className="contact" id="contacts">
+        			<h3 className="profileTitle">Contáctanos</h3>
+        			<div className="profileBox">
+        				<h4 className="subtitle">Correo Electrónico</h4>
+        					<p>lorem@gmail.com</p>
+        				<h4 className="subtitle">Teléfono</h4>
+        					<p>1-111-1111</p>
+        				<h4 className="subtitle">Dirección Física</h4>
+        					<p>Lorem ipsum dolor sit amet</p>
+        				<h4 className="subtitle">Dirección Física</h4>
+        					<p>Lorem ipsum dolor sit amet</p>
+        				<h4 className="subtitle">ATH-Móvil</h4>
+        					<p>1-111-1111</p>
+        				<h4 className="subtitle">Categoría</h4>
+        					<p>Ejemplo</p>
+        			</div>
+
+        		</div>
         		<div className="FAQ" id="FAQ">
         			
         			<h3 className="profileTitle">Preguntas Frecuentes</h3>
-		        	{/*<FAQ/>*/}
-		        	<button className="accordion">Pregunta 1</button>
-		        	<div className="answers">
+		        	{/*<FAQ/>
+		        	<button className="accordion">Pregunta 1</button>*/}
+		        	<div className="profileBox">
+		        	<h4>Pregunta 1</h4>
 		        		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
 		        	</div>
 
-		        	<button className="accordion">Pregunta 2</button>
-		        	<div className="answers">
+		        	{/*<button className="accordion">Pregunta 2</button>*/}
+		        	<div className="profileBox">
+		        	<h4>Pregunta 2</h4>
 		        		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
 		        	</div>
 
-		        	<button className="accordion">Pregunta 3</button>
-		        	<div className="answers">
+		        	{/*<button className="accordion">Pregunta 3</button>*/}
+		        	<div className="profileBox">
+		        	<h4>Pregunta 3</h4>
 		        		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
 		        	</div>
 		        </div>
@@ -153,7 +196,6 @@ class BodyProfile extends Component {
 
 		    </div>
 
-
 			 	<div className="col-md-4">
 			     	<SidebarProfile/>
 			    </div>
@@ -161,18 +203,25 @@ class BodyProfile extends Component {
 		    </section>
 						
 			</div>
+
 		);
-	}
-	/*
-	componentWillMount(){
-		const script = document.createElement("script")
 
-		script.src = "./accordionAnimation.js"
-		script.async = true;
-
-		document.body.appendChild(script);
-	}  */
 }
 
 
-export default BodyProfile;
+export default BodyProfile = createContainer(({id}) => {
+  // Subscribe to sub-collection -> "organization"
+  // params: collectionName, category
+  console.log("Id: ",id);
+  const handle = Meteor.subscribe("organizations");
+  const isReady = handle.ready();
+
+  return {
+    isReady,
+    activeData: isReady ? Organizations.find({_id: id}).fetch() : [],
+  };
+
+}, BodyMap);
+
+
+// export default BodyProfile;

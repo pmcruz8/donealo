@@ -1,47 +1,38 @@
 import React from 'react';
 
-
-function WarningBanner(props) {
-  if (!props.warn) {
-    return null;
-  }
-
-  return (
-    <div className="answers">
-     Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-    </div>
-  );
-}
-
 class FAQ extends React.Component {
   
-  constructor(props) {
-    super(props);
-    this.state = {showAnswers: false}
-    this.handleToggleClick = this.handleToggleClick.bind(this);
+  constructor() {
+    super();
+    this.state = {open: false}
+    this.toggle = this.toggle.bind(this)
   }
 
-  handleToggleClick() {
-    this.setState(prevState => ({
-      showAnswers: !prevState.showAnswers
-    }));
+  toggle() {
+    this.setState({
+      open: !this.state.open
+    });
   }
   
   render() {
     return (
       <div>
-        <WarningBanner warn={this.state.showAnswers} />
-        <button className="accordion" onClick={this.handleToggleClick}>
-          {this.state.showAnswers ? 'Lorem Ipsum' : 'Lorem Ipsum'}
+        <button className="accordion" onClick={this.toggle}>
+        	Lorem Ipsum
         </button>
+        <div className={"collapse" + (this.state.open ? ' in' : '')}>
+        	<div className="answers">
+          		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
+         	</div>
+        </div>
+
+
       </div>
 
-      
 
+ 
     );
   }
-}
-
-
+} 
 
 export default FAQ;

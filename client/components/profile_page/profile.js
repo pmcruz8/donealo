@@ -8,8 +8,8 @@ const Profile = () => {
 	return (
 		<div>
 			<HeaderProf />
-			<BodyProfile/>
-			
+			<BodyProfile id="N6auarXWvjSKibunv"/>
+
 		</div>
 	);
 };
