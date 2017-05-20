@@ -22,14 +22,12 @@ class Container extends Component {
 const BodyMap = (props) => {
 	return (
 		<div>
-		{props.activeData.map(item => 
-			<Body key={item._id} item={item}/>)}
+		  {props.activeData.map(item => <Body key={item._id} item={item}/>)}
 		</div>
-		);
+	);
 }
 
 const Body = (props) => {
-
 	return(
 		<div> <section id="profileBody">
      			<div className="col-md-8 contactInfo">
@@ -199,9 +197,7 @@ const Body = (props) => {
 			 	<div className="col-md-4">
 			     	<SidebarProfile/>
 			    </div>
-
 		    </section>
-						
 			</div>
 
 		);
@@ -212,7 +208,7 @@ const Body = (props) => {
 export default BodyProfile = createContainer(({id}) => {
   // Subscribe to sub-collection -> "organization"
   // params: collectionName, category
-  console.log("Id: ",id);
+
   const handle = Meteor.subscribe("organizations");
   const isReady = handle.ready();
 
@@ -223,5 +219,3 @@ export default BodyProfile = createContainer(({id}) => {
 
 }, BodyMap);
 
-
-// export default BodyProfile;
