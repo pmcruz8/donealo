@@ -290,13 +290,19 @@ padding-left: 30px;
   background-color:#ddd;
 }
 
-.panel{
+/*.panel{
   padding: 0 18px;
   background-color:white;
   max-height:0;
   overflow: hidden;
   transition: max-height 0.2s ease-out;
   margin-right:50px;
+}*/
+
+.answers {
+  width: 100%;
+  padding: 10px;
+  transition: max-height 0.2s ease-out;
 }
 
 .profilePhoto{
@@ -349,4 +355,19 @@ padding-left: 30px;
     height: 100px;
     /*background-color: red;*/
     float: left;
+}
+
+.tempPanel{
+    border-style: solid;
+    border-color: #e0e0e0;
+    border-width: 2px;
+    margin-right:50px;
+    padding-left: 30px;
+    padding-right:30px;
+    padding-top: 30px;
+    padding-bottom: 40px;
+
+}
+
+
 }

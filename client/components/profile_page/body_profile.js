@@ -1,8 +1,13 @@
 import React, {Component} from 'react';
 import HeaderProf from './header_profile';
-// import Body from './body_profile';
-// import Navbar from './navbar';
+import FAQ from './faq';
 import SidebarProfile from './sidebar_profile';
+
+const userFaq = {
+	title: "Lorem ipsum",
+	answer: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+
+}
 
 class BodyProfile extends Component {
 	constructor(props){
@@ -59,20 +64,21 @@ class BodyProfile extends Component {
         		</div>
         			<p></p>
         		<div className="FAQ" id="FAQ">
+        			
         			<h3 className="profileTitle">Preguntas Frecuentes</h3>
-		        	
+		        	{/*<FAQ/>*/}
 		        	<button className="accordion">Pregunta 1</button>
-		        	<div className="panel">
+		        	<div className="answers">
 		        		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
 		        	</div>
 
 		        	<button className="accordion">Pregunta 2</button>
-		        	<div className="panel">
+		        	<div className="answers">
 		        		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
 		        	</div>
 
 		        	<button className="accordion">Pregunta 3</button>
-		        	<div className="panel">
+		        	<div className="answers">
 		        		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
 		        	</div>
 		        </div>
@@ -167,5 +173,6 @@ class BodyProfile extends Component {
 		document.body.appendChild(script);
 	}  */
 }
+
 
 export default BodyProfile;
