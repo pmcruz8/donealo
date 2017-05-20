@@ -6,7 +6,7 @@ const Login = () => {
   return (
     <div className="bg-dark text-center login-container">
       <div className="text-center">
-        <img className="login-logo" src="../../../img/logo.png" />
+        <Link to="/"><img className="login-logo" src="../../../img/logo.png" /></Link>
       </div>
       <div className="register-form-container">
         <form className="form-horizontal">
