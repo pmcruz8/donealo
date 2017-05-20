@@ -7,7 +7,7 @@ import Footer from '../home_page/home_footer';
 const Profile = () => {
 	return (
 		<div>
-			<HeaderProf />
+			<HeaderProf id="N6auarXWvjSKibunv"/>
 			<BodyProfile id="N6auarXWvjSKibunv"/>
 
 		</div>

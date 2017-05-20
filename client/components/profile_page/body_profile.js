@@ -59,10 +59,8 @@ const Body = (props) => {
      			<div className="aboutUs" id="aboutus">
      				<h3 className="profileTitle">Sobre Nosotros </h3>
 
-        			<p>
+        			{/*<p> {props.item.name} </p>*/}
         			
-        			</p>
-        			{props.item.name}
         			<div className="profileBox"> 
         			Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse ultrices dictum ex, 
         			a condimentum justo convallis eu. Suspendisse efficitur tincidunt enim, vehicula pharetra arcu luctus sed. Integer placerat leo nisi, 
@@ -99,7 +97,7 @@ const Body = (props) => {
         				<h4 className="subtitle">ATH-Móvil</h4>
         					<p>1-111-1111</p>
         				<h4 className="subtitle">Categoría</h4>
-        					<p>Ejemplo</p>
+        					<p>{props.item.category}</p>
         			</div>
 
         		</div>
@@ -210,9 +208,6 @@ const Body = (props) => {
 
 
 export default BodyProfile = createContainer(({id}) => {
-  // Subscribe to sub-collection -> "organization"
-  // params: collectionName, category
-  console.log("Id: ",id);
   const handle = Meteor.subscribe("organizations");
   const isReady = handle.ready();
 
