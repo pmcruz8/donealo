@@ -1,6 +1,5 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import AccountsUIWrapper from '../../../imports/AccountsUIWrapper'
 
 const Navbar = () =>{
 	return(
@@ -29,7 +28,7 @@ const Navbar = () =>{
 		          <ul className="nav navbar-nav">
 		            <li className="navbarButtons"><a href="#" ><font color="white">Inicio</font></a></li>
 		            <li className="navbarButtons"><a href="#footer"><font color="white">Sobre Donéalo</font></a></li>
-		            <li><button className="button loginButton"><AccountsUIWrapper /></button></li>
+		            <Link className="loginButton" to="/login">Login</Link>
 		          </ul>
 		      </div>
 		    </div>
