@@ -12,4 +12,35 @@ for (var i =0; i<accord.length; i++){
 		}
 	}
 }
+
 		        
+		        
+		{/*constructor(){
+			super();
+			this.state = {
+				active:false
+			};
+			this.toggle = this.toggle.bind(this)
+		}
+
+		toggle(){
+			this.setState({
+				active: !this.state.active
+
+			});
+
+		}
+
+		render(){
+			const stateStyle =  this.state.active ? styles.active : styles.inactive;
+			Can't find styles^ 
+
+			return (
+				<section>
+					<a onClick = {this.toggle}>
+					</a>
+					<p style={stateStyle}>
+						{this.props.answer}
+					</p>
+			    </section>
+				);*/}	
