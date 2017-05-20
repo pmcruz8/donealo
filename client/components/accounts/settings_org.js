@@ -2,13 +2,13 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { Link } from 'react-router-dom'
 
-const Settings = () => {
+const SettingsOrg = () => {
   return (
     <div className="container background-settings col-md-6 col-md-offset-3">
-      <h3>Settings</h3>
+      <h3>Settings Org</h3>
       <ul className="nav nav-tabs">
-        <li className="active"><a href="#">Personal</a></li>
-        <li><a href="#">Organización</a></li>
+        <li><a href="#">Personal</a></li>
+        <li className="active"><a href="#">Organización</a></li>
       </ul>
       <div className="col-md-12 margin-top-20">
         <label>Nombre</label>
@@ -33,4 +33,4 @@ const Settings = () => {
   )
 }
 
-export default Settings;
+export default SettingsOrg;
