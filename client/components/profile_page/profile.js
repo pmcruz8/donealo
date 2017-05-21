@@ -13,4 +13,10 @@ const Profile = () => {
 	);
 };
 
+// id's represent organizations in database. If /profile doesn't render, replace
+// the ids above with ids in your local mongo db
+	// open a new tab in terminal
+	// enter: "meteor mongo"
+	// then enter: "db.organizations.find()"
+
 export default Profile;
