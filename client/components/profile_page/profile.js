@@ -9,7 +9,6 @@ const Profile = () => {
 		<div>
 			<HeaderProf id="N6auarXWvjSKibunv"/>
 			<BodyProfile id="N6auarXWvjSKibunv"/>
-
 		</div>
 	);
 };
