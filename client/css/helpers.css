@@ -1,0 +1,23 @@
+.padding-top-10 {
+  padding-top: 10px;
+}
+
+.padding-top-20 {
+  padding-top: 20px;
+}
+
+.margin-top-10 {
+  padding-top: 10px;
+}
+
+.margin-top-20 {
+  padding-top: 20px;
+}
+
+.full-width {
+  width:100% !important;
+}
+
+.grey {
+  color: grey;
+}
