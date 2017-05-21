@@ -9,22 +9,28 @@ class SettingsContent extends Component {
     super(props);
     this.handlePersonalClick = this.handlePersonalClick.bind(this);
     this.handleOrgClick = this.handleOrgClick.bind(this);
-    this.state = {isLoggedIn: false};
+    this.state = {isPersonal: false};
   }
 
+  // active nav tab == Personal
+  // if Org tab is clicked,
+    // remove active class from active tab
+    // set active class from org tab
+    // render the org tab component
+
   handlePersonalClick() {
-    this.setState({isLoggedIn: true});
+    this.setState({isPersonal: true});
   }
 
   handleOrgClick() {
-    this.setState({isLoggedIn: false});
+    this.setState({isPersonal: false});
   }
 
   render() {
-    const isLoggedIn = this.state.isLoggedIn;
+    const isPersonal = this.state.isPersonal;
 
     let settingsNavBar = null;
-    if (isLoggedIn) {
+    if (isPersonal) {
       settingsNavBar = <OrgButton onClick={this.handleOrgClick} />;
     } else {
       settingsNavBar = <PersonalButton onClick={this.handlePersonalClick} />;
@@ -37,7 +43,7 @@ class SettingsContent extends Component {
           <PersonalButton onClick={this.handlePersonalClick} />
         </ul>
 
-        <SettingsContainer isLoggedIn={isLoggedIn} />
+        <SettingsContainer isPersonal={isPersonal} />
       </div>
     );
   }
@@ -52,8 +58,8 @@ function SettingsPersonalContent(props) {
 }
 
 function SettingsContainer(props) {
-  const isLoggedIn = props.isLoggedIn;
-  if (isLoggedIn) {
+  const isPersonal = props.isPersonal;
+  if (isPersonal) {
     return <SettingsOrgContent />;
   }
   return <SettingsPersonalContent />;

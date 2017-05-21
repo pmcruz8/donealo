@@ -11,12 +11,6 @@ class Settings extends Component {
     super(props);
   }
 
-  // active nav tab == Personal
-  // if Org tab is clicked,
-    // remove active class from active tab
-    // set active class from org tab
-    // render the org tab component
-
   render(props) {
 
     return (
