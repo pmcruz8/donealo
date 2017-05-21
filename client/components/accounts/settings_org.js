@@ -4,27 +4,18 @@ import { Link } from 'react-router-dom'
 
 const SettingsOrg = () => {
   return (
-    <div className="container background-settings col-md-6 col-md-offset-3">
-      <h3>Settings Org</h3>
-      <ul className="nav nav-tabs">
-        <li><a href="#">Personal</a></li>
-        <li className="active"><a href="#">Organización</a></li>
-      </ul>
+    <div>
       <div className="col-md-12 margin-top-20">
-        <label>Nombre</label>
-        <input className="form-control" placeholder="Nombre"/>
+        <label>Nombre de Organización</label>
+        <input className="form-control" placeholder="Nombre de Organización"/>
       </div>
       <div className="col-md-12 margin-top-20">
-        <label>Apellido</label>
-        <input className="form-control" placeholder="Apellido"/>
+        <label>Teléfono</label>
+        <input className="form-control" placeholder="Teléfono"/>
       </div>
       <div className="col-md-12 margin-top-20">
-        <label>Email</label>
-        <input className="form-control" placeholder="Email"/>
-      </div>
-      <div className="col-md-12 margin-top-20">
-        <label>Password</label>
-        <input className="form-control" placeholder="Password"/>
+        <label>Dirección Física</label>
+        <input className="form-control" placeholder="Dirección Física"/>
       </div>
       <div className="margin-top-20 pull-right">
         <button className="btn btn-primary">Edit</button>

@@ -1,36 +1,33 @@
-import React from 'react';
+import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
-import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom';
+import SettingsOrg from './settings_org';
+import SettingsPersonal from './settings_personal';
+import Test from './settings_content';
 
-const Settings = () => {
-  return (
-    <div className="container background-settings col-md-6 col-md-offset-3">
-      <h3>Settings</h3>
-      <ul className="nav nav-tabs">
-        <li className="active"><a href="#">Personal</a></li>
-        <li><a href="#">Organización</a></li>
-      </ul>
-      <div className="col-md-12 margin-top-20">
-        <label>Nombre</label>
-        <input className="form-control" placeholder="Nombre"/>
+
+class Settings extends Component {
+  constructor(props) {
+    super(props);
+  }
+
+  // active nav tab == Personal
+  // if Org tab is clicked,
+    // remove active class from active tab
+    // set active class from org tab
+    // render the org tab component
+
+  render(props) {
+
+    return (
+      <div className="container background-settings col-md-6 col-md-offset-3">
+
+        <h3>Settings</h3>
+
+        <Test />
       </div>
-      <div className="col-md-12 margin-top-20">
-        <label>Apellido</label>
-        <input className="form-control" placeholder="Apellido"/>
-      </div>
-      <div className="col-md-12 margin-top-20">
-        <label>Email</label>
-        <input className="form-control" placeholder="Email"/>
-      </div>
-      <div className="col-md-12 margin-top-20">
-        <label>Password</label>
-        <input className="form-control" placeholder="Password"/>
-      </div>
-      <div className="margin-top-20 pull-right">
-        <button className="btn btn-primary">Edit</button>
-      </div>
-    </div>
-  )
+    )
+  }
 }
 
 export default Settings;
