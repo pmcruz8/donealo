@@ -9,6 +9,7 @@ import Profile from './components/profile_page/profile';
 import Login from './components/accounts/login';
 import Register from './components/accounts/register';
 import Settings from './components/accounts/settings';
+import SettingsOrg from './components/accounts/settings_org';
 
 
 const Index = () => {
