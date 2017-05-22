@@ -1,21 +1,28 @@
 import React, {Component} from 'react';
 import HeaderProf from './header_profile';
-//import FAQ from './faq';
+import {Alert, Accordion, Panel} from 'react-bootstrap';
 import SidebarProfile from './sidebar_profile';
 import { Organizations } from '../../../collections/organizations';
 import { createContainer } from 'meteor/react-meteor-data';
 
+// var Alert = ReactBootstrap.Alert;
 
 class Container extends Component {
 	constructor(props){
 		super(props);
+		this.state = {alertVisible: true}
+		this.handleAlertDismiss = this.handleAlertDismiss.bind(this)
 	}
 
+	handleAlertDismiss() {
+    this.setState({alertVisible: false});
+  }
 	render() {
 		return (
 			<BodyMap/>
 		);
 	}
+
 
 }
 
@@ -27,7 +34,14 @@ const BodyMap = (props) => {
 	);
 }
 
+// var infoAlert = (
+// 	<Alert bsStyle="danger">	
+// 	</Alert>
+// )
+
 const Body = (props) => {
+  
+
 	return(
 		<div> <section id="profileBody">
      			<div className="col-md-8 contactInfo">
@@ -66,19 +80,6 @@ const Body = (props) => {
         			mi condimentum at. Sed molestie enim ut lectus eleifend malesuada vitae sit amet tellus. Morbi pretium turpis libero. Sed facilisis, turpis 
         			eu accumsan rutrum, leo mauris suscipit mi, posuere venenatis lectus quam vitae nibh. Donec id sapien sed ligula lacinia dictum eget et enim. 
         			
-        			Sed dictum erat quis tellus volutpat porttitor. Pellentesque aliquet nunc et feugiat congue. Nulla eget mattis arcu. Lorem ipsum dolor sit amet, 
-        			consectetur adipiscing elit.
-        			Praesent ac quam ut ante suscipit eleifend et quis libero. Nam porttitor nec neque eu scelerisque. Mauris nulla mi, fermentum in dolor at, iaculis 
-        			bibendum lectus. 
-        			Nulla sem orci, lobortis pretium diam quis, semper fringilla nibh. Phasellus in ullamcorper nisi. Nunc lobortis fermentum nulla. Nam congue, massa 
-        			ac porttitor vulputate, tortor dolor tempor risus, at pharetra ante neque non ipsum. Aenean sollicitudin nibh ac diam condimentum vehicula.
-
-                    Nunc dapibus tortor sit amet porttitor sollicitudin. Vestibulum eu feugiat nulla. Vestibulum dui quam, semper eget massa at, lacinia aliquet augue. 
-                    Aenean sem diam, mollis sed magna id, tincidunt interdum mi. Nam tempor urna ut leo aliquet posuere. Proin et nisl augue. Integer a nibh tempus, 
-                    faucibus mauris at, eleifend nunc. Maecenas urna quam, luctus vitae dolor blandit, lobortis ultrices ipsum. Sed ut ultricies elit, vitae eleifend enim. 
-                    Praesent gravida, felis eget elementum laoreet, magna eros egestas quam, eget 
-                    euismod nisi ex sed augue. Sed molestie vel risus at aliquam. Vestibulum a lorem eros. Pellentesque aliquam tincidunt sagittis. Quisque porttitor in arcu 
-                    id convallis. Donec at mi vitae libero cursus malesuada nec vitae velit.
         			</div>
         		</div>
         		<div className="contact" id="contacts">
@@ -102,24 +103,22 @@ const Body = (props) => {
         		<div className="FAQ" id="FAQ">
         			
         			<h3 className="profileTitle">Preguntas Frecuentes</h3>
-		        	{/*<FAQ/>
-		        	<button className="accordion">Pregunta 1</button>*/}
-		        	<div className="profileBox">
-		        	<h4>Pregunta 1</h4>
-		        		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
-		        	</div>
-
-		        	{/*<button className="accordion">Pregunta 2</button>*/}
-		        	<div className="profileBox">
-		        	<h4>Pregunta 2</h4>
-		        		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
-		        	</div>
-
-		        	{/*<button className="accordion">Pregunta 3</button>*/}
-		        	<div className="profileBox">
-		        	<h4>Pregunta 3</h4>
-		        		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
-		        	</div>
+		        	<Alert bsStyle="info" onDismiss={this.handleAlertDismiss}>
+			          <h4>Pregunta Sugerida: </h4>
+			          <p>¿Para que usaremos las donaciones monetarias?</p>
+				    </Alert>
+		        	{/*<button className="accordion">Pregunta 1</button>*/}
+		        	  <Accordion>
+					    <Panel header="Pregunta 1" eventKey="1">
+					      Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+					    </Panel>
+					    <Panel header="Pregunta 2" eventKey="2">
+      						Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+    					</Panel>
+    					<Panel header="Pregunta 3" eventKey="3">
+      						Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+    					</Panel>
+					  </Accordion>  
 		        </div>
 		        
 		        
