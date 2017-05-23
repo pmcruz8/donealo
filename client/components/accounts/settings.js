@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import { Link } from 'react-router-dom';
 import SettingsOrg from './settings_org';
 import SettingsPersonal from './settings_personal';
-import Test from './settings_content';
+import SettingsContent from './settings_content';
 
 
 class Settings extends Component {
@@ -18,7 +18,7 @@ class Settings extends Component {
 
         <h3>Settings</h3>
 
-        <Test />
+        <SettingsContent />
       </div>
     )
   }
