@@ -3,6 +3,7 @@ import React, {Component} from 'react';
 import Navbar from '../home_page/navigation_bar';
 import { Organizations } from '../../../collections/organizations';
 import { createContainer } from 'meteor/react-meteor-data';
+import { Meteor } from 'meteor/meteor';
 //For center use bootstrap className: "text-center"
 
 class Container extends Component {
@@ -40,7 +41,7 @@ const Header = (props) => {
 }
 
 export default HeaderProf = createContainer(({id}) => {
-
+  
   const handle = Meteor.subscribe("organizations");
   const isReady = handle.ready();
 

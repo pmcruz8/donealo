@@ -1,10 +1,60 @@
-import React from 'react';
+import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
+import { Redirect } from 'react-router-dom';
 import { Link } from 'react-router-dom'
 
-const Login = () => {
-  return (
-    <div className="bg-dark text-center login-container">
+var loginValues = {
+  email    : null,
+  password : null
+}
+
+class Login extends Component {
+  constructor(props) {
+    super(props); 
+
+    this.saveValues = this.saveValues.bind(this); 
+    this.onLogin = this.onLogin.bind(this); 
+  }
+
+  saveValues(loginValues) {
+    return (
+      loginValues = Object.assign({}, loginValues, loginValues)
+    ); 
+  }
+
+  onLogin(e) {
+    e.preventDefault(); 
+
+    // Get values via this.refs
+    var data = {
+      email    : this.refs.email.value,
+      password : this.refs.password.value
+    }
+
+    this.saveValues(data); 
+    this.loginUser(data); 
+  }
+
+  loginUser(data) {
+    
+    let email = data["email"]; 
+    let password = data["password"]; 
+
+    Meteor.loginWithPassword(email, password, function(error) {
+      if (error) {
+        Bert.alert( 'There was an error, please try again.', 'danger'); 
+      } else {
+        Bert.alert( 'Welcome ' + email, 'success', 'growl-top-right' ); 
+        
+        Meteor.call('sendVerificationLink');  
+        <Redirect to="/profile"/>
+      }
+    });
+  }
+
+  render() {
+    return (
+      <div className="bg-dark text-center login-container">
       <div className="text-center">
         <Link to="/"><img className="login-logo" src="../../../img/logo.png" /></Link>
       </div>
@@ -12,20 +62,20 @@ const Login = () => {
         <form className="form-horizontal">
           <div className="form-group">
             <div className="col-md-12">
-              <input type="email" className="form-control" id="inputEmail3" placeholder="Email" />
+              <input type="email" ref="email" className="form-control" id="inputEmail3" placeholder="Email" />
             </div>
           </div>
           <div className="form-group">
             <div className="col-md-12">
-              <input type="password" className="form-control" id="inputPassword3" placeholder="Password" />
+              <input type="password" ref="password" className="form-control" id="inputPassword3" placeholder="Password" />
             </div>
           </div>
           <div className="form-group">
             <div className="col-md-12 margin-top-10">
-              <button type="submit" className="btn btn-success full-width">Login</button>
+              <button onClick={this.onLogin} type="submit" className="btn btn-success full-width">Login</button>
             </div>
             <div className="col-md-12 margin-top-10">
-              <Link to="/registro"><a className="">Crear Cuenta</a></Link>
+              <Link to="/registro"><button className="btn btn-primary">Crear Cuenta</button></Link>
             </div>
             <div className="col-md-12 margin-top-10">
               <a className="grey">Se me olvidó mi contraseña</a>
@@ -33,8 +83,9 @@ const Login = () => {
           </div>
         </form>
       </div>
-    </div>
-  )
+      </div>
+    ); 
+  }
 }
 
 export default Login;

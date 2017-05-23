@@ -2,7 +2,7 @@
   "name": "home",
   "private": true,
   "scripts": {
-    "start": "meteor run"
+    "start": "meteor --settings settings.json"
   },
   "dependencies": {
     "babel-runtime": "^6.23.0",
@@ -12,8 +12,10 @@
     "rc-progress": "^2.1.0",
     "react": "^15.5.4",
     "react-addons-pure-render-mixin": "^15.5.2",
+    "react-bootstrap": "^0.31.0",
     "react-dom": "^15.5.4",
     "react-materialize": "^0.18.1",
+    "react-mixin": "^3.0.5",
     "react-router": "^4.1.1",
     "react-router-dom": "^4.1.1"
   }

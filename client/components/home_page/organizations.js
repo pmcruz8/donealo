@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 
 import { Organizations } from '../../../collections/organizations';
 import { createContainer } from 'meteor/react-meteor-data';
+import { Link } from 'react-router-dom';
 
 class Container extends Component {
   render() {
@@ -29,7 +30,7 @@ const Box = (props) => {
     <div className="col-sm-3">
       <div className="blog-column">
         <p>{ props.item.name }</p>
-        <img className="img-responsive blog-img" src="img/org-placeholder.png" alt=""></img>
+        <Link to="/profile"><img className="img-responsive blog-img" src="img/org-placeholder.png" alt=""></img></Link>
       </div>
     </div>
   );
