@@ -56,7 +56,7 @@ class Login extends Component {
     Accounts.createUser(user,
       function(error) {
         if (error) {
-          Bert.alert('There was an error, please try again.', 'danger'); 
+          Bert.alert('There was an error, please try again', 'danger'); 
           history.push('/register')
           
         } else { 
