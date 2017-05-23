@@ -10,7 +10,7 @@ import Login from './components/accounts/login';
 import Register from './components/accounts/register';
 import Settings from './components/accounts/settings';
 import SettingsOrg from './components/accounts/settings_org';
-
+import Upload from './components/accounts/upload';
 
 const Index = () => {
   return (
@@ -25,6 +25,7 @@ const Index = () => {
         <Route path="/materials" component={materials}/>
         <Route path="/profile" component={Profile}/>
         <Route path="/settings" component={Settings}/>
+        <Route path="/upload" component={Upload}/>
       </div>
     </Router>
   );
