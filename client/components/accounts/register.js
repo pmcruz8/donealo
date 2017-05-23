@@ -2,6 +2,10 @@ import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import { Meteor } from 'meteor/meteor'; 
 import { Link } from 'react-router-dom'
+import Settings from './settings';
+import createHistory from 'history/createBrowserHistory'
+
+const history = createHistory()
 
 var loginValues = {
   name         : null, 
@@ -53,8 +57,11 @@ class Login extends Component {
       function(error) {
         if (error) {
           Bert.alert('There was an error, please try again.', 'danger'); 
+          history.push('/register')
+          
         } else { 
-          Bert.alert( 'Welcome ' + email, 'success', 'growl-top-right'); 
+          Bert.alert( 'Welcome ' + user["email"], 'success', 'growl-top-right'); 
+          history.push('/settings')
         };
       }
     );
@@ -112,5 +119,22 @@ class Login extends Component {
     ); 
   }
 }
+
+function requireAuth(nextState, replace) {
+  if (!Meteor.userId()) {
+    replace({
+      pathname: '/register',
+      state: { nextPathname: nextState.location.pathname }
+    })
+  }
+}
+
+export const renderRoutes = () => (
+  <Router history={history}>
+      <Route path="/settings" component={Settings} onEnter={requireAuth}/>
+      <Route path="/register" component={Register} />
+  </Router>
+);
+
 
 export default Login;

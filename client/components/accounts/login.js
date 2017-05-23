@@ -1,17 +1,18 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import { browserHistory, Route, Router } from 'react-router-dom';
-import createHistory from 'history/createBrowserHistory'
 import { Link } from 'react-router-dom'
 import Settings from './settings';
 import Register from './register';
+
+import createHistory from 'history/createBrowserHistory'
+
+const history = createHistory()
 
 var loginValues = {
   email    : null,
   password : null
 }
-
-const history = createHistory()
 
 class Login extends Component {
   constructor(props) {
@@ -47,7 +48,7 @@ class Login extends Component {
 
     Meteor.loginWithPassword(email, password, function(error) {
       if (!error) {
-        // Bert.alert( 'Welcome ' + email, 'success', 'growl-top-right'); 
+        Bert.alert( 'Welcome ' + email, 'success', 'growl-top-right'); 
         history.push('/settings')
       
       } else {
