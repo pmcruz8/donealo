@@ -1,12 +1,17 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
-import { Redirect } from 'react-router-dom';
+import { browserHistory, Route, Router } from 'react-router-dom';
+import createHistory from 'history/createBrowserHistory'
 import { Link } from 'react-router-dom'
+import Settings from './settings';
+import Register from './register';
 
 var loginValues = {
   email    : null,
   password : null
 }
+
+const history = createHistory()
 
 class Login extends Component {
   constructor(props) {
@@ -41,13 +46,13 @@ class Login extends Component {
     let password = data["password"]; 
 
     Meteor.loginWithPassword(email, password, function(error) {
-      if (error) {
-        Bert.alert( 'There was an error, please try again.', 'danger'); 
+      if (!error) {
+        // Bert.alert( 'Welcome ' + email, 'success', 'growl-top-right'); 
+        history.push('/settings')
+      
       } else {
-        Bert.alert( 'Welcome ' + email, 'success', 'growl-top-right' ); 
-        
-        Meteor.call('sendVerificationLink');  
-        <Redirect to="/profile"/>
+        Bert.alert('There was an error, please try again.', 'danger'); 
+        history.push('/login')
       }
     });
   }
@@ -87,5 +92,21 @@ class Login extends Component {
     ); 
   }
 }
+
+function requireAuth(nextState, replace) {
+  if (!Meteor.userId()) {
+    replace({
+      pathname: '/register',
+      state: { nextPathname: nextState.location.pathname }
+    })
+  }
+}
+
+export const renderRoutes = () => (
+  <Router history={history}>
+      <Route path="/settings" component={Settings} onEnter={requireAuth}/>
+      <Route path="/register" component={Register} />
+  </Router>
+);
 
 export default Login;
