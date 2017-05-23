@@ -44,11 +44,20 @@ class Login extends Component {
   }
 
   createUser(data) {
-    Meteor.call('createNewUser', data, function(err, isValid) {
-      if (!err) {
-        console.log(Meteor.user()); 
+    let user = {
+      email: data["email"], 
+      password: data["password"]
+    };
+
+    Accounts.createUser(user,
+      function(error) {
+        if (error) {
+          Bert.alert('There was an error, please try again.', 'danger'); 
+        } else { 
+          Bert.alert( 'Welcome ' + email, 'success', 'growl-top-right'); 
+        };
       }
-    });
+    );
   }
 
   render() {

@@ -20,24 +20,6 @@ Meteor.startup(() => {
 
 Meteor.methods({
 
-  'createNewUser' : function(values) {
-    
-    let user = {
-      email: values.email, 
-      password: values.password
-    };
-
-    Accounts.createUser(user,
-      function(error) {
-        if (error) {
-          console.log("there was an error: " + error.reason);
-        } else { 
-          <Link to="/"></Link>
-        };
-      }
-    );
-  }, 
-
   'sendVerificationLink' : function() {
     let userId = Meteor.userId();
     if ( userId ) {
