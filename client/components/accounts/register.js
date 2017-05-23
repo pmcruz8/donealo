@@ -120,21 +120,4 @@ class Login extends Component {
   }
 }
 
-function requireAuth(nextState, replace) {
-  if (!Meteor.userId()) {
-    replace({
-      pathname: '/register',
-      state: { nextPathname: nextState.location.pathname }
-    })
-  }
-}
-
-export const renderRoutes = () => (
-  <Router history={history}>
-      <Route path="/settings" component={Settings} onEnter={requireAuth}/>
-      <Route path="/register" component={Register} />
-  </Router>
-);
-
-
 export default Login;
