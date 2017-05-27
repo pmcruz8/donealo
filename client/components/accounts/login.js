@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
+import { Redirect } from 'react-router-dom';
 import { Link } from 'react-router-dom'
 
 var loginValues = {
@@ -35,9 +36,18 @@ class Login extends Component {
   }
 
   loginUser(data) {
-    Meteor.call('loginUser', data, function(err, isValid) {
-      if (!err) {
-        console.log(Meteor.user()); 
+    
+    let email = data["email"]; 
+    let password = data["password"]; 
+
+    Meteor.loginWithPassword(email, password, function(error) {
+      if (error) {
+        Bert.alert( 'There was an error, please try again.', 'danger'); 
+      } else {
+        Bert.alert( 'Welcome ' + email, 'success', 'growl-top-right' ); 
+        
+        Meteor.call('sendVerificationLink');  
+        <Redirect to="/profile"/>
       }
     });
   }
