@@ -57,9 +57,9 @@ class SettingsContent extends Component {
     return (
       <div>
         <ul className="nav nav-tabs">
-          <PersonalButton onClick={this.handlePersonalClick} />
           <OrgButton onClick={this.handleOrgClick} />
           <ProfileButton onClick={this.handleProfileClick} />
+          <PersonalButton onClick={this.handlePersonalClick} />
         </ul>
 
         <SettingsContainer isOrg={isOrg} isProfile={isProfile} isPersonal={isPersonal}/>
@@ -68,16 +68,16 @@ class SettingsContent extends Component {
   }
 }
 
-function SettingsPersonalContent(props) {
-  return <SettingsPersonal />;
-}
-
 function SettingsOrgContent(props) {
   return <SettingsOrg />;
 }
 
 function SettingsProfileContent(props) {
   return <SettingsProfile />;
+}
+
+function SettingsPersonalContent(props) {
+  return <SettingsPersonal />;
 }
 
 function SettingsContainer(props) {
@@ -93,21 +93,21 @@ function SettingsContainer(props) {
     return <SettingsPersonalContent />
 }
 
-function PersonalButton(props) {
-  return (
-    <li onClick={props.onClick} className="active"><a href="#">Personal</a></li>
-  );
-}
-
 function OrgButton(props) {
   return (
-    <li onClick={props.onClick}><a href="#">Organización</a></li>
+    <li onClick={props.onClick} className="active"><a href="#">Organización</a></li>
   );
 }
 
 function ProfileButton(props) {
   return (
     <li onClick={props.onClick}><a href="#">Perfil</a></li>
+  );
+}
+
+function PersonalButton(props) {
+  return (
+    <li onClick={props.onClick} ><a href="#">Personal</a></li>
   );
 }
 
