@@ -11,8 +11,8 @@ class SettingsNav extends Component {
     return (
       <div>
           <ul className="nav nav-tabs">
-            <li className="active"><a href="#">Personal</a></li>
-            <li><a href="#">Organización</a></li>
+            <li className="active"><a href="#">Organización</a></li>
+            <li><a href="#">Personal</a></li>
           </ul>
       </div>
     )
