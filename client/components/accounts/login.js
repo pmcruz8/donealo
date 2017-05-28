@@ -1,11 +1,8 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
+import createHistory from 'history/createBrowserHistory'; 
 import { browserHistory, Route, Router } from 'react-router-dom';
 import { Link } from 'react-router-dom'
-import Settings from './settings';
-import Register from './register';
-
-import createHistory from 'history/createBrowserHistory'
 
 const history = createHistory()
 
@@ -49,11 +46,16 @@ class Login extends Component {
     Meteor.loginWithPassword(email, password, function(error) {
       if (!error) {
         Bert.alert( 'Welcome ' + email, 'success', 'growl-top-right'); 
-        history.push('/settings')
-      
+
+        history.push('/settings');
+        history.go();  
+
       } else {
         Bert.alert('There was an error, please try again.', 'danger'); 
-        history.push('/login')
+
+        history.push('/register'); 
+        history.go(); 
+
       }
     });
   }
@@ -93,21 +95,5 @@ class Login extends Component {
     ); 
   }
 }
-
-function requireAuth(nextState, replace) {
-  if (!Meteor.userId()) {
-    replace({
-      pathname: '/register',
-      state: { nextPathname: nextState.location.pathname }
-    })
-  }
-}
-
-export const renderRoutes = () => (
-  <Router history={history}>
-      <Route path="/settings" component={Settings} onEnter={requireAuth}/>
-      <Route path="/register" component={Register} />
-  </Router>
-);
 
 export default Login;
