@@ -57,11 +57,16 @@ class Login extends Component {
       function(error) {
         if (error) {
           Bert.alert('There was an error, please try again', 'danger');
-          history.push('/register')
+          
+          history.push('/register'); 
+          history.go(); 
 
         } else {
           Bert.alert( 'Welcome ' + user["email"], 'success', 'growl-top-right');
-          history.push('/settings')
+          
+          history.push('/login'); 
+          history.go(); 
+
         };
       }
     );

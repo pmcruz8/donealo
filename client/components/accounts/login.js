@@ -47,7 +47,7 @@ class Login extends Component {
       if (!error) {
         Bert.alert( 'Welcome ' + email, 'success', 'growl-top-right'); 
 
-        history.push('/settings');
+        history.push('/');
         history.go();  
 
       } else {
