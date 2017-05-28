@@ -2,7 +2,7 @@
 
 Slingshot.fileRestrictions("UsersAvatar", {
   allowedFileTypes: ["image/png", "image/jpeg", "image/jpg"],
-  maxSize: 2 * 500 * 500 // 2 MB (use null for unlimited)
+  maxSize: 5 * 500 * 500 // 5 MB (use null for unlimited)
 });
 
 
