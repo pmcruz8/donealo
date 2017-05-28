@@ -68,16 +68,16 @@ class SettingsContent extends Component {
   }
 }
 
-function SettingsPersonalContent(props) {
-  return <SettingsPersonal />;
-}
-
 function SettingsOrgContent(props) {
   return <SettingsOrg />;
 }
 
 function SettingsProfileContent(props) {
   return <SettingsProfile />;
+}
+
+function SettingsPersonalContent(props) {
+  return <SettingsPersonal />;
 }
 
 function SettingsContainer(props) {
@@ -93,19 +93,19 @@ function SettingsContainer(props) {
     return <SettingsPersonalContent />
 }
 
-function PersonalButton(props) {
+function OrgButton(props) {
   return (
     <li onClick={props.onClick} className={props.active}><a href="#">Personal</a></li>
   );
 }
 
-function OrgButton(props) {
+function ProfileButton(props) {
   return (
     <li onClick={props.onClick} className={props.active}><a href="#">Organización</a></li>
   );
 }
 
-function ProfileButton(props) {
+function PersonalButton(props) {
   return (
     <li onClick={props.onClick} className={props.active}><a href="#">Perfil</a></li>
   );
