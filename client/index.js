@@ -12,6 +12,8 @@ import Settings from './components/accounts/settings';
 import SettingsOrg from './components/accounts/settings_org';
 import Upload from './components/accounts/upload';
 
+// To Do: add query for org name in Profile path
+
 const Index = () => {
   return (
     <Router>
@@ -23,7 +25,7 @@ const Index = () => {
         <Route path="/donations" component={Money}/>
         <Route path="/volunteers" component={Time}/>
         <Route path="/materials" component={materials}/>
-        <Route path="/profile" component={Profile}/>
+        <Route path="/:id" component={Profile}/>
         <Route path="/settings" component={Settings}/>
         <Route path="/upload" component={Upload}/>
       </div>

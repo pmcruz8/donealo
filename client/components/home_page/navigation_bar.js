@@ -15,10 +15,14 @@ const Navbar = () =>{
 		          <a className="navbar-brand" href="#">
 		            <div className="row">
 		              <div className="col-xs-3">
-		                <img className="logoDona" src="img/dona_logo.png" alt=""></img>
+										<Link to="/">
+											<img className="logoDona" src="img/dona_logo.png" alt=""></img>
+										</Link>
 		              </div>
 		              <div className="col-xs-9">
-		                <img className="logo" src="img/logo.png" alt=""></img>
+										<Link to="/">
+		                	<img className="logo" src="img/logo.png" alt=""></img>
+										</Link>
 		              </div>
 
 		            </div>
