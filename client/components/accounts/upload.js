@@ -6,7 +6,7 @@ export default class Upload extends Component {
     componentDidMount() {
         Slingshot.fileRestrictions('avatar', {
             allowedFileTypes: ["image/png", "image/jpeg", "image/jpg"],
-            maxSize: 2 * 500 * 500
+            maxSize: 5 * 500 * 500
         });
     }
     upload() {
