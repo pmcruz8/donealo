@@ -1,37 +1,37 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
-import { Meteor } from 'meteor/meteor'; 
+import { Meteor } from 'meteor/meteor';
 import { Link } from 'react-router-dom'
 import Settings from './settings';
 import createHistory from 'history/createBrowserHistory'
 
-const history = createHistory()
+const history = createHistory();
 
 var loginValues = {
-  name         : null, 
-  lastname     : null, 
+  name         : null,
+  lastname     : null,
   email        : null,
   password     : null,
-  organization : null, 
+  organization : null,
   licence      : null
 }
 
 class Login extends Component {
   constructor(props) {
-    super(props); 
+    super(props);
 
-    this.saveValues = this.saveValues.bind(this); 
-    this.onRegistration = this.onRegistration.bind(this); 
+    this.saveValues = this.saveValues.bind(this);
+    this.onRegistration = this.onRegistration.bind(this);
   }
 
   saveValues(loginValues) {
     return (
       loginValues = Object.assign({}, loginValues, loginValues)
-    ); 
+    );
   }
 
   onRegistration(e) {
-    e.preventDefault(); 
+    e.preventDefault();
 
     // Get values via this.refs
     var data = {
@@ -43,25 +43,30 @@ class Login extends Component {
       licence      : this.refs.licence.value
     }
 
-    this.saveValues(data); 
-    this.createUser(data); 
+    this.saveValues(data);
+    this.createUser(data);
   }
 
   createUser(data) {
     let user = {
-      email: data["email"], 
+      email: data["email"],
       password: data["password"]
     };
 
     Accounts.createUser(user,
       function(error) {
         if (error) {
-          Bert.alert('There was an error, please try again.', 'danger'); 
-          history.push('/register')
+          Bert.alert('There was an error, please try again', 'danger');
           
-        } else { 
-          Bert.alert( 'Welcome ' + user["email"], 'success', 'growl-top-right'); 
-          history.push('/settings')
+          history.push('/register'); 
+          history.go(); 
+
+        } else {
+          Bert.alert( 'Welcome ' + user["email"], 'success', 'growl-top-right');
+          
+          history.push('/login'); 
+          history.go(); 
+
         };
       }
     );
@@ -116,25 +121,8 @@ class Login extends Component {
           </form>
         </div>
       </div>
-    ); 
+    );
   }
 }
-
-function requireAuth(nextState, replace) {
-  if (!Meteor.userId()) {
-    replace({
-      pathname: '/register',
-      state: { nextPathname: nextState.location.pathname }
-    })
-  }
-}
-
-export const renderRoutes = () => (
-  <Router history={history}>
-      <Route path="/settings" component={Settings} onEnter={requireAuth}/>
-      <Route path="/register" component={Register} />
-  </Router>
-);
-
 
 export default Login;

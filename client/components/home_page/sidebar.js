@@ -11,7 +11,7 @@ const Sidebar = () =>{
               <a href="#salud">
               <button className="buttonCategory" type="button" className="btn-block btn-default btn-lg btn">
                 <span className="btnContent">
-                  <img className= "btnImg" src="img/salud icon.png"></img> Salud
+                  <img className= "btnImg" src="img/salud-icon.png"></img> Salud
                 </span>
               </button>
                 </a>
@@ -23,7 +23,7 @@ const Sidebar = () =>{
               <button type="button" className="btn btn-block btn-default btn-lg">
               <a href="#educacion">
                 <span className="btnContent">
-                  <img className= "btnImg" src="img/edu icon.png"></img>Educación
+                  <img className= "btnImg" src="img/edu-icon.png"></img>Educación
                 </span>
                 </a>
               </button>
