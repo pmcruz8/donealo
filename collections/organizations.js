@@ -60,6 +60,16 @@ Meteor.methods({
         password: values.password
       }
     });
-  }
+  },
 
+  'saveAvatar' : function(avatar) {
+    Organizations.update(
+      { 
+        user: Meteor.userId() 
+      }, 
+      {$set: { 
+        avatar: avatar 
+      }
+    }); 
+  }
 });

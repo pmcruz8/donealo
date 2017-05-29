@@ -17,7 +17,8 @@ export default class Upload extends Component {
             if (error) {
                 alert (error);
             } else {
-                Meteor.users.update(Meteor.userId(), {$set: {"profile.avatar": downloadUrl}});
+                //Meteor.users.update(Meteor.userId(), {$set: {"profile.avatar": downloadUrl}});
+                Meteor.call('saveAvatar', downloadUrl); 
             }
         });
     }
