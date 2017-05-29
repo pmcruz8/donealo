@@ -95,19 +95,19 @@ function SettingsContainer(props) {
 
 function OrgButton(props) {
   return (
-    <li onClick={props.onClick} className={props.active}><a href="#">Personal</a></li>
+    <li onClick={props.onClick} className={props.active}><a href="#">Organización</a></li>
   );
 }
 
 function ProfileButton(props) {
   return (
-    <li onClick={props.onClick} className={props.active}><a href="#">Organización</a></li>
+    <li onClick={props.onClick} className={props.active}><a href="#">Profile</a></li>
   );
 }
 
 function PersonalButton(props) {
   return (
-    <li onClick={props.onClick} className={props.active}><a href="#">Perfil</a></li>
+    <li onClick={props.onClick} className={props.active}><a href="#">Personal</a></li>
   );
 }
 
