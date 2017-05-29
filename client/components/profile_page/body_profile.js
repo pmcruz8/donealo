@@ -74,11 +74,8 @@ const Body = (props) => {
         			{/*<p> {props.item.name} </p>*/}
         			
         			<div className="profileBox"> 
-        			Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse ultrices dictum ex, 
-        			a condimentum justo convallis eu. Suspendisse efficitur tincidunt enim, vehicula pharetra arcu luctus sed. Integer placerat leo nisi, 
-        			vel scelerisque nisl posuere eu. Proin sollicitudin mi ligula, nec volutpat dolor vulputate ut. Duis condimentum erat eros, vitae vestibulum 
-        			mi condimentum at. Sed molestie enim ut lectus eleifend malesuada vitae sit amet tellus. Morbi pretium turpis libero. Sed facilisis, turpis 
-        			eu accumsan rutrum, leo mauris suscipit mi, posuere venenatis lectus quam vitae nibh. Donec id sapien sed ligula lacinia dictum eget et enim. 
+        			{props.item.about}
+
         			
         			</div>
         		</div>
@@ -86,15 +83,15 @@ const Body = (props) => {
         			<h3 className="profileTitle">Contáctanos</h3>
         			<div className="profileBox">
         				<h4 className="subtitle">Correo Electrónico</h4>
-        					<p>lorem@gmail.com</p>
+        					<p>{props.item.email}</p>
         				<h4 className="subtitle">Teléfono</h4>
-        					<p>1-111-1111</p>
+        					<p>{props.item.phone}</p>
+        				<h4 className="subtitle">Dirección Postal</h4>
+        					<p>{props.item.postalAddress}</p>
         				<h4 className="subtitle">Dirección Física</h4>
-        					<p>Lorem ipsum dolor sit amet</p>
-        				<h4 className="subtitle">Dirección Física</h4>
-        					<p>Lorem ipsum dolor sit amet</p>
+        					<p>{props.item.physicalAddress}</p>
         				<h4 className="subtitle">ATH-Móvil</h4>
-        					<p>1-111-1111</p>
+        					<p>{props.item.athMovil}</p>
         				<h4 className="subtitle">Categoría</h4>
         					<p>{props.item.category}</p>
         			</div>
@@ -103,20 +100,20 @@ const Body = (props) => {
         		<div className="FAQ" id="FAQ">
         			
         			<h3 className="profileTitle">Preguntas Frecuentes</h3>
-		        	<Alert bsStyle="info" onDismiss={this.handleAlertDismiss}>
+		        	{/*<Alert bsStyle="info" onDismiss={this.handleAlertDismiss}>
 			          <h4>Pregunta Sugerida: </h4>
 			          <p>¿Para que usaremos las donaciones monetarias?</p>
-				    </Alert>
+				    </Alert>*/}
 		        	{/*<button className="accordion">Pregunta 1</button>*/}
 		        	  <Accordion>
-					    <Panel header="Pregunta 1" eventKey="1">
-					      Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+					    <Panel header={props.item.Q1} eventKey="1">
+					      {props.item.A1}
 					    </Panel>
-					    <Panel header="Pregunta 2" eventKey="2">
-      						Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+					    <Panel header={props.item.Q2} eventKey="2">
+      					  {props.item.A2}	
     					</Panel>
-    					<Panel header="Pregunta 3" eventKey="3">
-      						Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+    					<Panel header={props.item.Q3} eventKey="3">
+      					  {props.item.A3}
     					</Panel>
 					  </Accordion>  
 		        </div>
@@ -127,24 +124,24 @@ const Body = (props) => {
 		        		<div className="row profilePhoto">
 		        			<div className="col-md-4">
 		        				<div className="blog-column">
-		        					<img className="img-responsive" src="img/photo_card.png" alt=""></img>
+		        					<img className="img-responsive" src={props.item.img1} alt=""></img>
 		        				</div>
 		        			</div>
 
 		        			<div className="col-md-4">
 		        				<div className="blog-column">
-		        					<img className="img-responsive blog-img" src="img/photo_card.png" alt=""></img>
+		        					<img className="img-responsive blog-img" src={props.item.img2} alt=""></img>
 		        				</div>
 		        			</div>
 
 		        			<div className="col-md-4">
 		        				<div className="blog-column">
-		        					<img className="img-responsive blog-img" src="img/photo_card.png" alt=""></img>
+		        					<img className="img-responsive blog-img" src={props.item.img3} alt=""></img>
 		        				</div>
 		        			</div>
 		        		</div>
 
-		        		<div className="row profilePhoto">
+		        		{/*<div className="row profilePhoto">
 		        			<div className="col-md-4">
 		        				<div className="blog-column">
 		        					<img className="img-responsive" src="img/video_vard.png" alt=""></img>
@@ -162,7 +159,7 @@ const Body = (props) => {
 		        					<img className="img-responsive blog-img" src="img/video_vard.png" alt=""></img>
 		        				</div>
 		        			</div>
-		        		</div>
+		        		</div>*/}
 		        </div>
 		        
 		        <div id="events">
@@ -170,7 +167,7 @@ const Body = (props) => {
 		        	<div className="row profilePhoto">
 		        			<div className="col-md-4">
 		        				<div className="blog-column">
-		        					<img className="img-responsive" src="img/evento_card.png" alt=""></img>
+		        					<img className="img-responsive" src={props.item.event1} alt=""></img>
 		        				</div>
 		        			</div>
 
@@ -194,6 +191,7 @@ const Body = (props) => {
 			 	<div className="col-md-4">
 			     	<SidebarProfile/>
 			    </div>
+
 		    </section>
 			</div>
 

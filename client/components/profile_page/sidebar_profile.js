@@ -12,10 +12,10 @@ const SidebarProfile = () => {
           <div className="row">
             <div className="col-xs-4">
               <form action="https://www.paypal.com/cgi-bin/webscr" method="post">
-                <input type="hidden" name="business" value="donations@kcparkfriends.org"/> // { this.props.org.paypalEmail}
+                <input type="hidden" name="business" value="donations@kcparkfriends.org"/> {/* { this.props.org.paypalEmail} */}
                 <input type="hidden" name="cmd" value="_donations"/>
-                <input type="hidden" name="item_name" value="Friends of the Park"/> // Description
-                <input type="hidden" name="item_number" value="Fall Cleanup Campaign"/> // Description
+                <input type="hidden" name="item_name" value="Friends of the Park"/> {/* Description */}
+                <input type="hidden" name="item_number" value="Fall Cleanup Campaign"/> {/* Description*/}
                 <input type="hidden" name="currency_code" value="USD"/>
                 <input type="image" name="submit"
                   src="img/money-icon.png"

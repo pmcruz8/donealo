@@ -202,8 +202,18 @@ padding-left: 30px;
 .orgPhoto{
   width:300px;
   height: 200px;
-
 }
+
+.blog-img{
+  width:300px;
+  height: 200px;
+  align-self: center;
+}
+
+.blog-column{
+  text-align: center;
+}
+
 
 .profileSideBar {
   margin-top:20px;

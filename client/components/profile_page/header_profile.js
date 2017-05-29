@@ -34,8 +34,12 @@ const Header = (props) => {
 			<div className="profHeader">
 				<Navbar />
     			<div className="orgName">{props.item.name}</div>
-    				<img className="orgPhoto" src="/img/org-placeholder.png" alt="" />
-	    	</div>
+    				<div >
+    					<img className="blog-img" src={props.item.logo} alt=""/>
+    						{/*<img className="orgPhoto" src={props.item.logo} alt="" />*/}
+    					
+    				</div>
+	    		</div>
     	</div>
 		);
 }
