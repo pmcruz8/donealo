@@ -14,6 +14,7 @@ class SettingsPersonal extends Component {
     super(props); 
 
     this.saveValues = this.saveValues.bind(this); 
+    this.saveSettings = this,saveSettings.bind(this); 
     this.onSaveSettings = this.onSaveSettings.bind(this); 
   }
 
@@ -62,7 +63,7 @@ class SettingsPersonal extends Component {
           <input className="form-control" ref="password" placeholder="Password"/>
         </div>
         <div className="margin-top-20 pull-right">
-          <button className="btn btn-primary">Edit</button>
+          <button className="btn btn-primary" onClick={this.onSaveSettings}>Edit</button>
         </div>
       </div>
     )
