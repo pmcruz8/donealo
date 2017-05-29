@@ -9,7 +9,7 @@ Meteor.startup(() => {
  Organizations.insert({
      name: 'Centro Ines',
      category: 'Educación',
-     logo:"https://scontent.fsig3-1.fna.fbcdn.net/v/t1.0-9/13015624_503262786531679_848047690728558062_n.jpg?oh=9dd667672011fe7af5cadca3ee1ee194&oe=59B3C587",
+     avatar:"https://scontent.fsig3-1.fna.fbcdn.net/v/t1.0-9/13015624_503262786531679_848047690728558062_n.jpg?oh=9dd667672011fe7af5cadca3ee1ee194&oe=59B3C587",
      about: "Nuestra Misión: Ofrecer servicios educativos, sociales, recreativos y culturales a niños, envejecientes y otros grupos comunitarios con necesidades especiales, con el fin de mejorar su calidad de vida.",
      email:"centroines@centroines.org",
      phone:"787-706-0465",

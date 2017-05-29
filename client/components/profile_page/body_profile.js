@@ -88,7 +88,7 @@ const Body = (props) => {
 		        	{/*<Alert bsStyle="info" onDismiss={this.handleAlertDismiss}>
 			          <h4>Pregunta Sugerida: </h4>
 			          <p>¿Para que usaremos las donaciones monetarias?</p>
-<<<<<<< HEAD
+
 				    </Alert>*/}
 		        	{/*<button className="accordion">Pregunta 1</button>*/}
 		        	  <Accordion>
@@ -100,8 +100,9 @@ const Body = (props) => {
     					</Panel>
     					<Panel header={props.item.Q3} eventKey="3">
       					  {props.item.A3}
-		        
-		        
+		        		</Panel>
+		        	  </Accordion>
+		        </div>
 		        <div id="gallery">
 		        	<h3 className="profileTitle">Galería</h3>
 		        		<div className="row profilePhoto">
