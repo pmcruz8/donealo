@@ -2,6 +2,9 @@ import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import { Link } from 'react-router-dom'
 
+import { Organizations } from '../../../collections/organizations';
+import { createContainer } from 'meteor/react-meteor-data';
+
 var profileValues = {
   about : null, 
   faq   : null
@@ -40,22 +43,44 @@ class SettingsProfile extends Component {
   }
 
   render() {
-    return (
+    <SettingsProfileData/>
+  }
+}
+
+const Data = (props) => {
+  return (
+    <div>{props.user.map(item => <SettingsProfileData key={item._id} item={item}/>)}
+    </div>
+  ); 
+}; 
+
+const SettingsProfileData = (props) => {
+  return (
       <div>
         <div className="col-md-12 margin-top-20">
           <label>Sobre Nosotors</label>
-          <input className="form-control" ref="about" placeholder="Sobre Nosotros"/>
+          <input className="form-control" ref="about" placeholder={props.item.about}/>
         </div>
         <div className="col-md-12 margin-top-20">
           <label>FAQ</label>
-          <input className="form-control" ref="faq" placeholder="FAQ"/>
+          <input className="form-control" ref="faq" placeholder={props.item.faq}/>
         </div>
         <div className="margin-top-20 pull-right">
           <button className="btn btn-primary" onClick={this.onSaveSettings}>Edit</button>
         </div>
       </div>
     )
-  }
 }
 
-export default SettingsProfile;
+export default SettingsProfile = createContainer(() => {
+
+  const handle = Meteor.subscribe("organizations");
+  const isReady = handle.ready();
+
+  return {
+    isReady,
+    user: isReady ? Organizations.find({user: Meteor.userId()}).fetch() : [],
+  };
+
+}, Data);
+
