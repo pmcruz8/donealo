@@ -8,7 +8,7 @@ import createHistory from 'history/createBrowserHistory'
 const history = createHistory();
 
 var loginValues = {
-  name         : null,
+  firstname    : null,
   lastname     : null,
   email        : null,
   password     : null,
@@ -37,7 +37,7 @@ class Login extends Component {
     var data = {
       email        : this.refs.email.value,
       password     : this.refs.password.value,
-      name         : this.refs.name.value,
+      firstname    : this.refs.firstname.value,
       lastname     : this.refs.lastname.value,
       organization : this.refs.organization.value,
       licence      : this.refs.licence.value
@@ -50,7 +50,11 @@ class Login extends Component {
   createUser(data) {
     let user = {
       email: data["email"],
-      password: data["password"]
+      password: data["password"],
+      firstname: data["firstname"],
+      lastname: data["lastname"],
+      organization: data["organization"], 
+      licence: data["licence"]
     };
 
     Accounts.createUser(user,
@@ -64,7 +68,7 @@ class Login extends Component {
         } else {
           Bert.alert( 'Welcome ' + user["email"], 'success', 'growl-top-right');
           
-          history.push('/login'); 
+          history.push('/settings'); 
           history.go(); 
 
         };
@@ -82,7 +86,7 @@ class Login extends Component {
           <form className="form-horizontal">
             <div className="form-group">
               <div className="col-md-12">
-                <input type="text" ref="name" className="form-control" id="inputName" placeholder="Nombre" />
+                <input type="text" ref="firstname" className="form-control" id="inputName" placeholder="Nombre" />
               </div>
             </div>
             <div className="form-group">
