@@ -22,8 +22,6 @@ class Container extends Component {
 			<BodyMap/>
 		);
 	}
-
-
 }
 
 const BodyMap = (props) => {
@@ -34,14 +32,7 @@ const BodyMap = (props) => {
 	);
 }
 
-// var infoAlert = (
-// 	<Alert bsStyle="danger">	
-// 	</Alert>
-// )
-
 const Body = (props) => {
-  
-
 	return(
 		<div> <section id="profileBody">
      			<div className="col-md-8 contactInfo">
@@ -69,32 +60,22 @@ const Body = (props) => {
      			</div>
 
      			<div className="aboutUs" id="aboutus">
-     				<h3 className="profileTitle">Sobre Nosotros </h3>
-
-        			{/*<p> {props.item.name} </p>*/}
-        			
-        			<div className="profileBox"> 
-        			Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse ultrices dictum ex, 
-        			a condimentum justo convallis eu. Suspendisse efficitur tincidunt enim, vehicula pharetra arcu luctus sed. Integer placerat leo nisi, 
-        			vel scelerisque nisl posuere eu. Proin sollicitudin mi ligula, nec volutpat dolor vulputate ut. Duis condimentum erat eros, vitae vestibulum 
-        			mi condimentum at. Sed molestie enim ut lectus eleifend malesuada vitae sit amet tellus. Morbi pretium turpis libero. Sed facilisis, turpis 
-        			eu accumsan rutrum, leo mauris suscipit mi, posuere venenatis lectus quam vitae nibh. Donec id sapien sed ligula lacinia dictum eget et enim. 
-        			
-        			</div>
+     				<h3 className="profileTitle">Sobre Nosotros </h3>        			
+        			<div className="profileBox"> {props.item.about}</div>
         		</div>
         		<div className="contact" id="contacts">
         			<h3 className="profileTitle">Contáctanos</h3>
         			<div className="profileBox">
-        				<h4 className="subtitle">Correo Electrónico</h4>
-        					<p>lorem@gmail.com</p>
-        				<h4 className="subtitle">Teléfono</h4>
-        					<p>1-111-1111</p>
+        				
+                <h4 className="subtitle">Correo Electrónico</h4>
+        					<p>{props.item.email}</p>
+        				
+                <h4 className="subtitle">Teléfono de ATH-Móvil</h4>
+        					<p>{props.item.phone}</p>
+
         				<h4 className="subtitle">Dirección Física</h4>
-        					<p>Lorem ipsum dolor sit amet</p>
-        				<h4 className="subtitle">Dirección Física</h4>
-        					<p>Lorem ipsum dolor sit amet</p>
-        				<h4 className="subtitle">ATH-Móvil</h4>
-        					<p>1-111-1111</p>
+        					<p>{props.item.postal}</p>
+
         				<h4 className="subtitle">Categoría</h4>
         					<p>{props.item.category}</p>
         			</div>
@@ -107,16 +88,12 @@ const Body = (props) => {
 			          <h4>Pregunta Sugerida: </h4>
 			          <p>¿Para que usaremos las donaciones monetarias?</p>
 				    </Alert>
-		        	{/*<button className="accordion">Pregunta 1</button>*/}
-		        	  <Accordion>
+		        	 <Accordion>
 					    <Panel header="Pregunta 1" eventKey="1">
-					      Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
 					    </Panel>
 					    <Panel header="Pregunta 2" eventKey="2">
-      						Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
     					</Panel>
     					<Panel header="Pregunta 3" eventKey="3">
-      						Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
     					</Panel>
 					  </Accordion>  
 		        </div>
@@ -196,11 +173,8 @@ const Body = (props) => {
 			    </div>
 		    </section>
 			</div>
-
 		);
-
 }
-
 
 export default BodyProfile = createContainer(({id}) => {
   const handle = Meteor.subscribe("organizations");

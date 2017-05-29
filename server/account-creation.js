@@ -7,6 +7,10 @@ Accounts.onCreateUser(function(options, user) {
    user.profile.organization = options.organization; 
    user.profile.licence = options.licence; 
    
+   console.log(options); 
+
+   Meteor.call('createOrganization', options.organization); 
+
    // Returns the user object
    return user;
 });

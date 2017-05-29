@@ -39,7 +39,7 @@ class SettingsPersonal extends Component {
   }
 
   saveSettings(data) {
-    Meteor.call('savePersonalValues', data); 
+    Meteor.call('savePersonalInfo', data); 
   }
 
   render() {

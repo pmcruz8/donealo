@@ -19,6 +19,7 @@ class SettingsOrg extends Component {
     super(props); 
 
     this.saveValues = this.saveValues.bind(this); 
+    this.saveSettings = this.saveSettings.bind(this); 
     this.onSaveSettings = this.onSaveSettings.bind(this); 
   }
 
@@ -49,7 +50,7 @@ class SettingsOrg extends Component {
   }
 
   saveSettings(data) {
-    Meteor.call('saveOrgValues', data); 
+    Meteor.call('saveOrgInfo', data); 
   }
 
   render() {
@@ -60,7 +61,7 @@ class SettingsOrg extends Component {
           <input className="form-control" ref="organization" placeholder="Nombre de Organización"/>
         </div>
         <div className="col-md-12 margin-top-20">
-          <label>Teléfono</label>
+          <label>Teléfono de ATH-Móvil</label>
           <input className="form-control" ref="phone" placeholder="Teléfono"/>
         </div>
         <div className="col-md-12 margin-top-20">
@@ -92,7 +93,7 @@ class SettingsOrg extends Component {
           <input className="form-control" ref="facebookURL" placeholder="Facebook URL"/>
         </div>
         <div className="margin-top-20 pull-right">
-          <button className="btn btn-primary" onClick={this.props.onSaveSettings}>Edit</button>
+          <button className="btn btn-primary" onClick={this.onSaveSettings}>Edit</button>
         </div>
       </div>
     )
