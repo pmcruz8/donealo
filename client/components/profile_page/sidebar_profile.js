@@ -6,21 +6,24 @@ import React from 'react';
 const SidebarProfile = () => {
   return (
     <div className="profileSideBar">
-   
+
         <center>
           <h4 className="sidebarText">Escoge el tipo de donación</h4>
           <div className="row">
             <div className="col-xs-4">
-              <form action="https://www.paypal.com/cgi-bin/webscr" method="post">
-                <input type="hidden" name="business" value="donations@kcparkfriends.org"/> {/* { this.props.org.paypalEmail} */}
+              <form action="https://www.paypal.com/cgi-bin/webscr" method="post"/>
+               <input type="hidden" name="business" value="donations@kcparkfriends.org"/>
                 <input type="hidden" name="cmd" value="_donations"/>
-                <input type="hidden" name="item_name" value="Friends of the Park"/> {/* Description */}
-                <input type="hidden" name="item_number" value="Fall Cleanup Campaign"/> {/* Description*/}
+                <input type="hidden" name="item_name" value="Dona por una causa"/>
+                <input type="hidden" name="item_number" value="Donación"/>
                 <input type="hidden" name="currency_code" value="USD"/>
                 <input type="image" name="submit"
+                  data-toggle="modal" 
+                  data-target="#donateModal" 
+                  className="btn donateIcons"
                   src="img/money-icon.png"
                   alt="Donate"/>
-                <img alt="" width="1" height="1" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" />
+                <h5>Dinero</h5>
               </form>
             </div>
             <div className="col-xs-4">

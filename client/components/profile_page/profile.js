@@ -1,14 +1,21 @@
 import React from 'react';
+import { BrowserRouter as Router,Route,Link } from 'react-router-dom';
 import HeaderProf from './header_profile';
 import BodyProfile from './body_profile';
-import SidebarProfile from './sidebar_profile';
+import SidebarProfile from './sidebar_profile'
 import Footer from '../home_page/home_footer';
 
-const Profile = () => {
+import createHistory from 'history/createBrowserHistory'
+const history = createHistory()
+
+const Profile = ({match}) => {
+
+	// To do: {history.replace({})} Use this to replace id in URL to org name
+
 	return (
 		<div>
-			<HeaderProf id="PjsaWhS4tqkaQSpqg"/>
-			<BodyProfile id="PjsaWhS4tqkaQSpqg"/>
+			<HeaderProf id={match.params.id}/>
+			<BodyProfile id={match.params.id}/>
 		</div>
 	);
 };

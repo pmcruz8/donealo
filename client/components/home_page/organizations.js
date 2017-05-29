@@ -25,12 +25,14 @@ const OrganizationList = (props) => {
   );
 };
 
+// To Do: add query for org name in Profile path
+
 const Box = (props) => {
   return (
     <div className="col-sm-3">
       <div className="blog-column">
         <p>{ props.item.name }</p>
-        <Link to="/profile"><img className="img-responsive blog-img" src="img/org-placeholder.png" alt=""></img></Link>
+        <Link to={props.item._id}><img className="img-responsive blog-img" src={props.item.avatar} alt=""></img></Link>
       </div>
     </div>
   );

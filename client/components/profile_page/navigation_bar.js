@@ -7,6 +7,7 @@ class Navbar extends Component {
 
     if (Meteor.userId()) {
       this.state = {
+        settings: false, 
         button: "Logout",
         path: "/"
       };
@@ -71,6 +72,7 @@ class Navbar extends Component {
               <li className="navbarButtons"><a href="#" ><font color="white">Inicio</font></a></li>
               <li className="navbarButtons"><a href="#footer"><font color="white">Sobre Donéalo</font></a></li>
               <Link className="loginButton" onClick={this.requireAuth} to={this.state.path}>{this.state.button}</Link>
+              <Link className="loginButton" to="/settings">Settings</Link>
             </ul>
         </div>
       </div>

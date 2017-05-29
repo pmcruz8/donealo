@@ -22,8 +22,6 @@ class Container extends Component {
 			<BodyMap/>
 		);
 	}
-
-
 }
 
 const BodyMap = (props) => {
@@ -34,14 +32,7 @@ const BodyMap = (props) => {
 	);
 }
 
-// var infoAlert = (
-// 	<Alert bsStyle="danger">	
-// 	</Alert>
-// )
-
 const Body = (props) => {
-  
-
 	return(
 		<div> <section id="profileBody">
      			<div className="col-md-8 contactInfo">
@@ -69,29 +60,23 @@ const Body = (props) => {
      			</div>
 
      			<div className="aboutUs" id="aboutus">
-     				<h3 className="profileTitle">Sobre Nosotros </h3>
 
-        			{/*<p> {props.item.name} </p>*/}
-        			
-        			<div className="profileBox"> 
-        			{props.item.about}
 
-        			
-        			</div>
+     				<h3 className="profileTitle">Sobre Nosotros </h3>        			
+        			<div className="profileBox"> {props.item.about}</div>
         		</div>
         		<div className="contact" id="contacts">
         			<h3 className="profileTitle">Contáctanos</h3>
-        			<div className="profileBox">
-        				<h4 className="subtitle">Correo Electrónico</h4>
+        			<div className="profileBox">        				
+                <h4 className="subtitle">Correo Electrónico</h4>
         					<p>{props.item.email}</p>
-        				<h4 className="subtitle">Teléfono</h4>
+        				
+                <h4 className="subtitle">Teléfono de ATH-Móvil</h4>
         					<p>{props.item.phone}</p>
+
         				<h4 className="subtitle">Dirección Postal</h4>
-        					<p>{props.item.postalAddress}</p>
-        				<h4 className="subtitle">Dirección Física</h4>
-        					<p>{props.item.physicalAddress}</p>
-        				<h4 className="subtitle">ATH-Móvil</h4>
-        					<p>{props.item.athMovil}</p>
+        					<p>{props.item.postal}</p>
+
         				<h4 className="subtitle">Categoría</h4>
         					<p>{props.item.category}</p>
         			</div>
@@ -103,6 +88,7 @@ const Body = (props) => {
 		        	{/*<Alert bsStyle="info" onDismiss={this.handleAlertDismiss}>
 			          <h4>Pregunta Sugerida: </h4>
 			          <p>¿Para que usaremos las donaciones monetarias?</p>
+<<<<<<< HEAD
 				    </Alert>*/}
 		        	{/*<button className="accordion">Pregunta 1</button>*/}
 		        	  <Accordion>
@@ -114,9 +100,6 @@ const Body = (props) => {
     					</Panel>
     					<Panel header={props.item.Q3} eventKey="3">
       					  {props.item.A3}
-    					</Panel>
-					  </Accordion>  
-		        </div>
 		        
 		        
 		        <div id="gallery">
@@ -184,21 +167,15 @@ const Body = (props) => {
 		        			</div>
 		        		</div>
 		        </div>
-		    
-
 		    </div>
-
 			 	<div className="col-md-4">
 			     	<SidebarProfile/>
 			    </div>
 
 		    </section>
 			</div>
-
 		);
-
 }
-
 
 export default BodyProfile = createContainer(({id}) => {
   const handle = Meteor.subscribe("organizations");

@@ -6,7 +6,7 @@ export default class Upload extends Component {
     componentDidMount() {
         Slingshot.fileRestrictions('avatar', {
             allowedFileTypes: ["image/png", "image/jpeg", "image/jpg"],
-            maxSize: 2 * 500 * 500
+            maxSize: 5 * 500 * 500
         });
     }
     upload() {
@@ -17,7 +17,8 @@ export default class Upload extends Component {
             if (error) {
                 alert (error);
             } else {
-                Meteor.users.update(Meteor.userId(), {$push: {"profile.avatar": downloadUrl}});
+                //Meteor.users.update(Meteor.userId(), {$set: {"profile.avatar": downloadUrl}});
+                Meteor.call('saveAvatar', downloadUrl); 
             }
         });
     }
