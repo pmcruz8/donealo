@@ -60,20 +60,21 @@ const Body = (props) => {
      			</div>
 
      			<div className="aboutUs" id="aboutus">
+
+
      				<h3 className="profileTitle">Sobre Nosotros </h3>        			
         			<div className="profileBox"> {props.item.about}</div>
         		</div>
         		<div className="contact" id="contacts">
         			<h3 className="profileTitle">Contáctanos</h3>
-        			<div className="profileBox">
-        				
+        			<div className="profileBox">        				
                 <h4 className="subtitle">Correo Electrónico</h4>
         					<p>{props.item.email}</p>
         				
                 <h4 className="subtitle">Teléfono de ATH-Móvil</h4>
         					<p>{props.item.phone}</p>
 
-        				<h4 className="subtitle">Dirección Física</h4>
+        				<h4 className="subtitle">Dirección Postal</h4>
         					<p>{props.item.postal}</p>
 
         				<h4 className="subtitle">Categoría</h4>
@@ -84,44 +85,47 @@ const Body = (props) => {
         		<div className="FAQ" id="FAQ">
         			
         			<h3 className="profileTitle">Preguntas Frecuentes</h3>
-		        	<Alert bsStyle="info" onDismiss={this.handleAlertDismiss}>
+		        	{/*<Alert bsStyle="info" onDismiss={this.handleAlertDismiss}>
 			          <h4>Pregunta Sugerida: </h4>
 			          <p>¿Para que usaremos las donaciones monetarias?</p>
-				    </Alert>
-		        	 <Accordion>
-					    <Panel header="Pregunta 1" eventKey="1">
+
+				    </Alert>*/}
+		        	{/*<button className="accordion">Pregunta 1</button>*/}
+		        	  <Accordion>
+					    <Panel header={props.item.Q1} eventKey="1">
+					      {props.item.A1}
 					    </Panel>
-					    <Panel header="Pregunta 2" eventKey="2">
+					    <Panel header={props.item.Q2} eventKey="2">
+      					  {props.item.A2}	
     					</Panel>
-    					<Panel header="Pregunta 3" eventKey="3">
-    					</Panel>
-					  </Accordion>  
+    					<Panel header={props.item.Q3} eventKey="3">
+      					  {props.item.A3}
+		        		</Panel>
+		        	  </Accordion>
 		        </div>
-		        
-		        
 		        <div id="gallery">
 		        	<h3 className="profileTitle">Galería</h3>
 		        		<div className="row profilePhoto">
 		        			<div className="col-md-4">
 		        				<div className="blog-column">
-		        					<img className="img-responsive" src="img/photo_card.png" alt=""></img>
+		        					<img className="img-responsive" src={props.item.img1} alt=""></img>
 		        				</div>
 		        			</div>
 
 		        			<div className="col-md-4">
 		        				<div className="blog-column">
-		        					<img className="img-responsive blog-img" src="img/photo_card.png" alt=""></img>
+		        					<img className="img-responsive blog-img" src={props.item.img2} alt=""></img>
 		        				</div>
 		        			</div>
 
 		        			<div className="col-md-4">
 		        				<div className="blog-column">
-		        					<img className="img-responsive blog-img" src="img/photo_card.png" alt=""></img>
+		        					<img className="img-responsive blog-img" src={props.item.img3} alt=""></img>
 		        				</div>
 		        			</div>
 		        		</div>
 
-		        		<div className="row profilePhoto">
+		        		{/*<div className="row profilePhoto">
 		        			<div className="col-md-4">
 		        				<div className="blog-column">
 		        					<img className="img-responsive" src="img/video_vard.png" alt=""></img>
@@ -139,7 +143,7 @@ const Body = (props) => {
 		        					<img className="img-responsive blog-img" src="img/video_vard.png" alt=""></img>
 		        				</div>
 		        			</div>
-		        		</div>
+		        		</div>*/}
 		        </div>
 		        
 		        <div id="events">
@@ -147,7 +151,7 @@ const Body = (props) => {
 		        	<div className="row profilePhoto">
 		        			<div className="col-md-4">
 		        				<div className="blog-column">
-		        					<img className="img-responsive" src="img/evento_card.png" alt=""></img>
+		        					<img className="img-responsive" src={props.item.event1} alt=""></img>
 		        				</div>
 		        			</div>
 
@@ -168,6 +172,7 @@ const Body = (props) => {
 			 	<div className="col-md-4">
 			     	<SidebarProfile/>
 			    </div>
+
 		    </section>
 			</div>
 		);

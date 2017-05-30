@@ -208,11 +208,16 @@ padding-left: 30px;
   margin-bottom: 10px;
 }
 
-.orgPhoto{
+.blog-img{
   width:300px;
   height: 200px;
-
+  align-self: center;
 }
+
+.blog-column{
+  text-align: center;
+}
+
 
 .profileSideBar {
   margin-top:20px;
