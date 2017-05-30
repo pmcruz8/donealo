@@ -1,75 +1,86 @@
-import { Mongo } from 'meteor/mongo'; 
+import { Mongo } from 'meteor/mongo';
 
-export const Organizations = new Mongo.Collection('organizations'); 
+export const Organizations = new Mongo.Collection('organizations');
 
 Meteor.methods({
 
   'createOrganization' : function(org) {
+
+    var userID = Meteor.userId();
+    console.log(userID);
+
     Organizations.insert({
       name: org,
-      user: Meteor.userId()
-    }); 
+      user: userID
+    });
   },
 
   'saveProfileInfo' : function(values) {
+    var userID = Meteor.userId();
+
     Organizations.update(
-      { 
-        user: Meteor.userId() 
-      }, 
-      
+      {
+        user: userID
+      },
+
       { $set: {
-          about : values.about, 
+          about : values.about,
           faq: values.faq
       }
     });
   },
 
   'saveOrgInfo' : function(values) {
+    var userID = Meteor.userId();
 
-    console.log(Meteor.userId()); 
-    console.log(values); 
+    console.log(userID);
+    console.log(values);
 
     Organizations.update(
-      { 
-        user: Meteor.userId() 
-      }, 
+      {
+        user: userID
+      },
 
       {$set: {
-        name: values.organization, 
-        phone: values.phone, 
-        address: values.address, 
-        postal: values.postal, 
-        paypal: values.paypal, 
-        category: values.category, 
-        avatar: values.avatar, 
-        websiteURL: values.websiteURL, 
+        name: values.organization,
+        phone: values.phone,
+        address: values.address,
+        postal: values.postal,
+        paypal: values.paypal,
+        category: values.category,
+        avatar: values.avatar,
+        websiteURL: values.websiteURL,
         facebookURL: values.facebookURL
       }
     });
   },
 
   'savePersonalInfo' : function(values) {
+    var userID = Meteor.userId();
+
     Organizations.update(
-      { 
-        user: Meteor.userId() 
-      }, 
+      {
+        user: userID
+      },
       {$set: {
-        username: values.username, 
-        lastname: values.lastname, 
-        email: values.email, 
+        username: values.username,
+        lastname: values.lastname,
+        email: values.email,
         password: values.password
       }
     });
   },
 
   'saveAvatar' : function(avatar) {
+    var userID = Meteor.userId();
+
     Organizations.update(
-      { 
-        user: Meteor.userId() 
-      }, 
-      {$set: { 
-        avatar: avatar 
+      {
+        user: userID
+      },
+      {$set: {
+        avatar: avatar
       }
-    }); 
+    });
   }
 });

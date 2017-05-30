@@ -2,55 +2,43 @@ import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import { Link } from 'react-router-dom'
 
-var settingsValues = {
-  organization: null, 
-  phone       : null, 
-  address     : null, 
-  postal      : null, 
-  paypal      : null, 
-  category    : null, 
-  avatar      : null, 
-  websiteURL  : null, 
-  facebookURL : null
-}
-
 class SettingsOrg extends Component {
   constructor(props) {
-    super(props); 
+    super(props);
 
-    this.saveValues = this.saveValues.bind(this); 
-    this.saveSettings = this.saveSettings.bind(this); 
-    this.onSaveSettings = this.onSaveSettings.bind(this); 
+    this.saveValues = this.saveValues.bind(this);
+    this.saveSettings = this.saveSettings.bind(this);
+    this.onSaveSettings = this.onSaveSettings.bind(this);
   }
 
   saveValues(settingsValues) {
     return (
       settingsValues = Object.assign({}, settingsValues, settingsValues)
-    ); 
+    );
   }
 
   onSaveSettings(e) {
-    e.preventDefault(); 
+    e.preventDefault();
 
     // Get values via this.refs
     var data = {
-      organization: this.refs.organization.value, 
-      phone       : this.refs.phone.value, 
-      address     : this.refs.address.value, 
-      postal      : this.refs.postal.value, 
-      paypal      : this.refs.paypal.value, 
-      category    : this.refs.category.value, 
-      avatar      : this.refs.avatar. value, 
-      websiteURL  : this.refs.websiteURL.value, 
+      organization: this.refs.organization.value,
+      phone       : this.refs.phone.value,
+      address     : this.refs.address.value,
+      postal      : this.refs.postal.value,
+      paypal      : this.refs.paypal.value,
+      category    : this.refs.category.value,
+      avatar      : this.refs.avatar. value,
+      websiteURL  : this.refs.websiteURL.value,
       facebookURL : this.refs.facebookURL.value
     }
 
-    this.saveValues(data); 
-    this.saveSettings(data); 
+    this.saveValues(data);
+    this.saveSettings(data);
   }
 
   saveSettings(data) {
-    Meteor.call('saveOrgInfo', data); 
+    Meteor.call('saveOrgInfo', data);
   }
 
   render() {
