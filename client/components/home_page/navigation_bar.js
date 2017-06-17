@@ -7,14 +7,14 @@ class Navbar extends Component {
   constructor(props) {
     super(props);
 
-
-        var currUser = Meteor.userId();
-        var currUserFN = '';
+    var currUser = Meteor.userId();
+    var currUserFN = '';
 
     if (Meteor.userId()) {
       this.state = {
         button: "Logout",
         path: "/",
+        isUserLoggedIn: true,
         text: currUserFN
       };
 
@@ -22,12 +22,10 @@ class Navbar extends Component {
       this.state = {
         button: "Login",
         path: "/login",
+        isUserLoggedIn: false,
         text: "Login"
-
       };
     }
-
-
 
     Tracker.autorun(() => {
 
@@ -53,7 +51,7 @@ class Navbar extends Component {
 
       Meteor.logout();
 
-      this.setState({button: "Login", path: "/login"});
+      this.setState({button: "Login", path: "/login", text: "Login",isUserLoggedIn:false});
 
     } else {
       this.setState({button: "Logout", path: "/"});
@@ -64,13 +62,20 @@ class Navbar extends Component {
   // To do: Meteor.call(findName)
   loginToName() {
     if (Meteor.userId()) {
-
       Meteor.logout();
-
       this.setState({text: "Login", path: "/login"});
-
+      console.log(Meteor.userId())
     } else {
       this.setState({text: "Logout", path: "/"});
+    }
+  }
+
+  // Check to see if user is logged in
+  isUserLoggedIn() {
+    if (Meteor.userId()) {
+      return true;
+    } else {
+      return false;
     }
   }
 
@@ -113,14 +118,22 @@ class Navbar extends Component {
                   <font color="white">Sobre Donéalo</font>
                 </a>
               </li>
-              <DropdownButton title={this.state.text} id="dropdown-settings">
-                <MenuItem eventKey="1" href="profile">Profile</MenuItem>
-                <MenuItem eventKey="2" href="/settings">Settings</MenuItem>
-                <MenuItem divider/>
-                <MenuItem eventKey="3">
-                  <Link onClick={this.requireAuth} to={this.state.path}>{this.state.button}</Link>
-                </MenuItem>
-              </DropdownButton>
+              {
+                this.state.isUserLoggedIn ?
+                (
+                  <DropdownButton title={this.state.text} id="dropdown-settings">
+                    <MenuItem eventKey="1" href="profile">Profile</MenuItem>
+                    <MenuItem eventKey="2" href="/settings">Settings</MenuItem>
+                    <MenuItem divider />
+                    <MenuItem eventKey="3">
+                      <Link onClick={this.requireAuth} to={this.state.path}>{this.state.button}</Link>
+                    </MenuItem>
+                  </DropdownButton>
+                )
+                : (
+                  <Link className="loginButton" onClick={this.requireAuth} to={this.state.path}>{this.state.button}</Link>
+                )
+            }
             </ul>
           </div>
         </div>
