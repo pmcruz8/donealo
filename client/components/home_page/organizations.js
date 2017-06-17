@@ -13,16 +13,17 @@ class Container extends Component {
 }
 
 const OrganizationList = (props) => {
-  return (
-    <div className="row">
-      <div className="text-center">
-        <h2 className= "category-text">{ props.category }</h2>
-        { props.activeData.map(item =>
-          <Box key={item._id} item={item}/>)
-        }
+
+    return (
+      <div className="row">
+        <div className="text-center">
+          <h2 className= "category-text">{ props.category }</h2>
+          { props.activeData.map(item =>
+            <Box key={item._id} item={item}/>)
+          }
+        </div>
       </div>
-    </div>
-  );
+    );
 };
 
 // To Do: add query for org name in Profile path
@@ -48,6 +49,7 @@ export default Orgs = createContainer(({ category }) => {
   return {
     isReady,
     activeData: isReady ? Organizations.find({category: category}).fetch() : [],
+    count: isReady ? Organizations.find({category: category}).count() : 0,
     category: category.substr(0,1).toUpperCase() + category.substr(1)
   };
 
