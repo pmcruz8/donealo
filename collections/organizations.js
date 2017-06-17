@@ -5,16 +5,24 @@ export const Organizations = new Mongo.Collection('organizations');
 Meteor.methods({
 
   'createOrganization' : function(org) {
+
+    var userID = Meteor.userId(); 
+    console.log("creating organization: " + userID); 
+
     Organizations.insert({
       name: org,
-      user: Meteor.userId()
+      user: userID
     }); 
   },
 
   'saveProfileInfo' : function(values) {
+    
+    var userID = Meteor.userId(); 
+    console.log(userID); 
+
     Organizations.update(
       { 
-        user: Meteor.userId() 
+        user: userID
       }, 
       
       { $set: {
@@ -25,13 +33,13 @@ Meteor.methods({
   },
 
   'saveOrgInfo' : function(values) {
-
-    console.log(Meteor.userId()); 
-    console.log(values); 
+    
+    var userID = Meteor.userId(); 
+    console.log(userID); 
 
     Organizations.update(
       { 
-        user: Meteor.userId() 
+        user: userID
       }, 
 
       {$set: {
@@ -49,9 +57,13 @@ Meteor.methods({
   },
 
   'savePersonalInfo' : function(values) {
+    
+    var userID = Meteor.userId(); 
+    console.log(userID); 
+
     Organizations.update(
       { 
-        user: Meteor.userId() 
+        user: userID
       }, 
       {$set: {
         username: values.username, 
@@ -63,13 +75,17 @@ Meteor.methods({
   },
 
   'saveAvatar' : function(avatar) {
+    
+    var userID = Meteor.userId(); 
+    console.log(userID); 
+
     Organizations.update(
       { 
-        user: Meteor.userId() 
+        user: userID
       }, 
       {$set: { 
         avatar: avatar 
       }
-    }); 
+    });  
   }
 });
