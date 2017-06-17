@@ -6,23 +6,25 @@ Meteor.methods({
 
   'createOrganization' : function(org) {
 
-    var userID = Meteor.userId();
-    console.log(userID);
+    var userID = Meteor.userId(); 
+    console.log("creating organization: " + userID); 
 
     Organizations.insert({
       name: org,
       user: userID
-    });
+    }); 
   },
 
   'saveProfileInfo' : function(values) {
-    var userID = Meteor.userId();
+    
+    var userID = Meteor.userId(); 
+    console.log("Save profile info: " + userID); 
 
     Organizations.update(
-      {
+      { 
         user: userID
-      },
-
+      }, 
+      
       { $set: {
           about : values.about,
           faq: values.faq
@@ -31,15 +33,14 @@ Meteor.methods({
   },
 
   'saveOrgInfo' : function(values) {
-    var userID = Meteor.userId();
-
-    console.log(userID);
-    console.log(values);
+    
+    var userID = Meteor.userId(); 
+    console.log("Save org info: " + userID); 
 
     Organizations.update(
-      {
+      { 
         user: userID
-      },
+      }, 
 
       {$set: {
         name: values.organization,
@@ -56,12 +57,14 @@ Meteor.methods({
   },
 
   'savePersonalInfo' : function(values) {
-    var userID = Meteor.userId();
+    
+    var userID = Meteor.userId(); 
+    console.log("Save personal info: " + userID); 
 
     Organizations.update(
-      {
+      { 
         user: userID
-      },
+      }, 
       {$set: {
         username: values.username,
         lastname: values.lastname,
@@ -72,15 +75,17 @@ Meteor.methods({
   },
 
   'saveAvatar' : function(avatar) {
-    var userID = Meteor.userId();
+    
+    var userID = Meteor.userId(); 
+    console.log("Save avatar: " + userID); 
 
     Organizations.update(
-      {
+      { 
         user: userID
-      },
-      {$set: {
-        avatar: avatar
+      }, 
+      {$set: { 
+        avatar: avatar 
       }
-    });
+    });  
   }
 });

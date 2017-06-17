@@ -65,15 +65,25 @@ class Login extends Component {
           history.push('/register'); 
           history.go(); 
 
-        } else {
-          Bert.alert( 'Welcome ' + user["email"], 'success', 'growl-top-right');
-          
-          history.push('/settings'); 
-          history.go(); 
+        } else {          
 
-        };
+          console.log(user.email); 
+          console.log(user.password); 
+
+          Meteor.loginWithPassword(user.email, user.password, function(error) {
+            if (!error) {
+              
+              Meteor.call('createOrganization', user.organization); 
+              
+              history.push('/settings'); 
+              history.go(); 
+
+            } else {
+              Bert.alert('There was an error, please try again', 'danger');
+            }
+        });
       }
-    );
+    });
   }
 
   render() {
