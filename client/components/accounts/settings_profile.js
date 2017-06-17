@@ -9,13 +9,31 @@ class SettingsProfile extends Component {
   constructor(props) {
     super(props); 
 
-    this.saveSettings = this.saveSettings.bind(this); 
-    this.onSaveSettings = this.onSaveSettings.bind(this); 
-
     this.state  ={
       about : null, 
       faq   : null
     }; 
+
+    this.saveSettings = this.saveSettings.bind(this); 
+    this.onSaveSettings = this.onSaveSettings.bind(this); 
+  }
+
+  componentDidMount() {
+    const currUser = Meteor.userId();
+    const handle = Meteor.subscribe('organization.user', currUser);
+    
+    Tracker.autorun(() => {
+      const isReady = handle.ready();
+      
+      if (isReady) {
+
+        const org_data = Organizations.findOne({user:currUser}); 
+
+        this.setState({ about: org_data.about === undefined ? "" : org_data.about }); 
+        this.setState({ faq: org_data.faq === undefined ? "" : org_data.faq }); 
+
+      }
+    });
   }
 
   onSaveSettings(e) {
@@ -55,41 +73,4 @@ class SettingsProfile extends Component {
 }
 
 export default SettingsProfile; 
-
-// const Data = (props) => {
-//   return (
-//     <div>{props.user.map(item => <SettingsProfileData key={item._id} item={item}/>)}
-//     </div>
-//   ); 
-// }; 
-
-// const SettingsProfileData = (props) => {
-//   return (
-//       <div>
-//         <div className="col-md-12 margin-top-20">
-//           <label>Sobre Nosotors</label>
-//           <input className="form-control" ref="about" placeholder={props.item.about}/>
-//         </div>
-//         <div className="col-md-12 margin-top-20">
-//           <label>FAQ</label>
-//           <input className="form-control" ref="faq" placeholder={props.item.faq}/>
-//         </div>
-//         <div className="margin-top-20 pull-right">
-//           <button className="btn btn-primary" onClick={this.onSaveSettings}>Edit</button>
-//         </div>
-//       </div>
-//     )
-// }
-
-// export default SettingsProfile = createContainer(() => {
-
-//   const handle = Meteor.subscribe("organizations");
-//   const isReady = handle.ready();
-
-//   return {
-//     isReady,
-//     user: isReady ? Organizations.find({user: Meteor.userId()}).fetch() : [],
-//   };
-
-// }, Data);
 

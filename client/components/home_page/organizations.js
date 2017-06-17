@@ -47,7 +47,6 @@ export default Orgs = createContainer(({ category }) => {
   const isReady = handle.ready();
 
   return {
-    isReady,
     activeData: isReady ? Organizations.find({category: category}).fetch() : [],
     count: isReady ? Organizations.find({category: category}).count() : 0,
     category: category.substr(0,1).toUpperCase() + category.substr(1)

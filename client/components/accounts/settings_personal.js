@@ -18,6 +18,19 @@ class SettingsPersonal extends Component {
 
     this.saveSettings = this.saveSettings.bind(this);
     this.onSaveSettings = this.onSaveSettings.bind(this); 
+
+    var currUser = Meteor.userId();
+    Tracker.autorun(() => {
+      
+      const user_data = Meteor.users.findOne(currUser); 
+
+      if (user_data) {
+        this.setState({ username: user_data.profile.firstName }); 
+        this.setState({ lastname: user_data.profile.lastName }); 
+        this.setState({ email: user_data.profile.password }); 
+        this.setState({ password: user_data.profile.email }); 
+      }
+    });
   }
 
   onSaveSettings(e) {
@@ -41,7 +54,6 @@ class SettingsPersonal extends Component {
 
   render() {
     return (
-      //<SettingsPersonalData/>
       <div>
         <div className="col-md-12 margin-top-20">
           <label>Nombre</label>
@@ -49,15 +61,15 @@ class SettingsPersonal extends Component {
         </div>
         <div className="col-md-12 margin-top-20">
           <label>Apellido</label>
-          <input className="form-control" ref="lastname" placeholder=""/>
+          <input className="form-control" ref="lastname" placeholder={this.state.lastname}/>
         </div>
         <div className="col-md-12 margin-top-20">
           <label>Email</label>
-          <input className="form-control" ref="email" placeholder=""/>
+          <input className="form-control" ref="email" placeholder={this.state.email}/>
         </div>
         <div className="col-md-12 margin-top-20">
           <label>Password</label>
-          <input className="form-control" ref="password" placeholder=""/>
+          <input className="form-control" ref="password" placeholder={this.state.password}/>
         </div>
         <div className="margin-top-20 pull-right">
           <button className="btn btn-primary" onClick={this.onSaveSettings}>Edit</button>
@@ -68,50 +80,3 @@ class SettingsPersonal extends Component {
 }
 
 export default SettingsPersonal; 
-
-// const Data = (props) => {
-//   return (
-//     <div>
-//       { props.user.map(item => <SettingsPersonalData key={item._id} item={item}/>)
-//       }
-//     </div>
-//   );
-// };
-
-// const SettingsPersonalData = (props) => {
-//   return (
-//       <div>
-//         <div className="col-md-12 margin-top-20">
-//           <label>Nombre</label>
-//           <input className="form-control" ref="username" placeholder=""/>
-//         </div>
-//         <div className="col-md-12 margin-top-20">
-//           <label>Apellido</label>
-//           <input className="form-control" ref="lastname" placeholder=""/>
-//         </div>
-//         <div className="col-md-12 margin-top-20">
-//           <label>Email</label>
-//           <input className="form-control" ref="email" placeholder=""/>
-//         </div>
-//         <div className="col-md-12 margin-top-20">
-//           <label>Password</label>
-//           <input className="form-control" ref="password" placeholder=""/>
-//         </div>
-//         <div className="margin-top-20 pull-right">
-//           <button className="btn btn-primary" onClick={this.onSaveSettings}>Edit</button>
-//         </div>
-//       </div>
-//     )
-// }
-
-// export default SettingsPersonal = createContainer(() => {
-
-//   const handle = Meteor.subscribe("organizations");
-//   const isReady = handle.ready();
-
-//   return {
-//     isReady,
-//     user: isReady ? Organizations.find({user: Meteor.userId()}).fetch() : [],
-//   };
-
-// }, Data);
