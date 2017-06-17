@@ -28,13 +28,13 @@
 .loginButton{
     background-color: #67e43d;
     border: none;
-    border-radius: 30px;
+    border-radius: 150px;
     color: white;
     cursor: pointer;
     display: inline-block;
-    font-size: 16px;
+    font-size: 14px;
     margin: 10px;
-    padding: 5px 20px;
+    padding: 5px 15px;
     text-align: center;
     text-decoration: none;
 }
@@ -42,13 +42,13 @@
 .loginButton:hover {
   background-color: #67e43d !important;
   border: none;
-  border-radius: 30px;
+  border-radius: 150px;
   color: white;
   cursor: pointer;
   display: inline-block;
-  font-size: 16px;
+  font-size: 14px;
   margin: 10px;
-  padding: 5px 20px;
+  padding: 5px 15px;
   text-align: center;
   text-decoration: none;
 }
