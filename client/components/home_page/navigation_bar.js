@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import {Tracker} from 'meteor/tracker';
 import {Link} from 'react-router-dom';
 import {DropdownButton, MenuItem} from 'react-bootstrap';
 
@@ -6,11 +7,15 @@ class Navbar extends Component {
   constructor(props) {
     super(props);
 
+
+        var currUser = Meteor.userId();
+        var currUserFN = '';
+
     if (Meteor.userId()) {
       this.state = {
         button: "Logout",
         path: "/",
-        text: "Pedro"
+        text: currUserFN
       };
 
     } else {
@@ -22,8 +27,25 @@ class Navbar extends Component {
       };
     }
 
+
+
+    Tracker.autorun(() => {
+
+      const USER_DATA = Meteor.users.findOne(currUser);
+
+      if (USER_DATA) {
+        currUserFN = USER_DATA.profile.firstName;
+        this.setState({text:currUserFN});
+
+        console.log(currUserFN);
+      }
+    });
+
+
+
     this.requireAuth = this.requireAuth.bind(this);
     this.loginToName = this.loginToName.bind(this);
+
   }
 
   requireAuth() {
