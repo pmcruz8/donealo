@@ -12,7 +12,7 @@ const SidebarProfile = () => {
           <div className="row">
             <div className="col-xs-4">
               <form action="https://www.paypal.com/cgi-bin/webscr" method="post">
-                <input type="hidden" name="business" value="donations@kcparkfriends.org"/>
+               <input type="hidden" name="business" value="donations@kcparkfriends.org"/>
                 <input type="hidden" name="cmd" value="_donations"/>
                 <input type="hidden" name="item_name" value="Dona por una causa"/>
                 <input type="hidden" name="item_number" value="Donación"/>
@@ -25,7 +25,9 @@ const SidebarProfile = () => {
                   alt="Donate"/>
                 <h5>Dinero</h5>
               </form>
-            </div>
+              </div>
+            
+
             <div className="col-xs-4">
               <img type="button" data-toggle="modal" data-target="#giveModal" className="btn donateIcons" src="img/give-icon.png" alt=""/>
               <h5>Artículos</h5>

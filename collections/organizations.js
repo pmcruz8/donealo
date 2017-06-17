@@ -1,6 +1,6 @@
-import { Mongo } from 'meteor/mongo'; 
+import { Mongo } from 'meteor/mongo';
 
-export const Organizations = new Mongo.Collection('organizations'); 
+export const Organizations = new Mongo.Collection('organizations');
 
 Meteor.methods({
 
@@ -18,7 +18,7 @@ Meteor.methods({
   'saveProfileInfo' : function(values) {
     
     var userID = Meteor.userId(); 
-    console.log(userID); 
+    console.log("Save profile info: " + userID); 
 
     Organizations.update(
       { 
@@ -26,7 +26,7 @@ Meteor.methods({
       }, 
       
       { $set: {
-          about : values.about, 
+          about : values.about,
           faq: values.faq
       }
     });
@@ -35,7 +35,7 @@ Meteor.methods({
   'saveOrgInfo' : function(values) {
     
     var userID = Meteor.userId(); 
-    console.log(userID); 
+    console.log("Save org info: " + userID); 
 
     Organizations.update(
       { 
@@ -43,14 +43,14 @@ Meteor.methods({
       }, 
 
       {$set: {
-        name: values.organization, 
-        phone: values.phone, 
-        address: values.address, 
-        postal: values.postal, 
-        paypal: values.paypal, 
-        category: values.category, 
-        avatar: values.avatar, 
-        websiteURL: values.websiteURL, 
+        name: values.organization,
+        phone: values.phone,
+        address: values.address,
+        postal: values.postal,
+        paypal: values.paypal,
+        category: values.category,
+        avatar: values.avatar,
+        websiteURL: values.websiteURL,
         facebookURL: values.facebookURL
       }
     });
@@ -59,16 +59,16 @@ Meteor.methods({
   'savePersonalInfo' : function(values) {
     
     var userID = Meteor.userId(); 
-    console.log(userID); 
+    console.log("Save personal info: " + userID); 
 
     Organizations.update(
       { 
         user: userID
       }, 
       {$set: {
-        username: values.username, 
-        lastname: values.lastname, 
-        email: values.email, 
+        username: values.username,
+        lastname: values.lastname,
+        email: values.email,
         password: values.password
       }
     });
@@ -77,7 +77,7 @@ Meteor.methods({
   'saveAvatar' : function(avatar) {
     
     var userID = Meteor.userId(); 
-    console.log(userID); 
+    console.log("Save avatar: " + userID); 
 
     Organizations.update(
       { 

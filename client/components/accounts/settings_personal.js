@@ -1,55 +1,55 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
-import { Link } from 'react-router-dom'; 
+import { Link } from 'react-router-dom';
 
 import { Organizations } from '../../../collections/organizations';
 import { createContainer } from 'meteor/react-meteor-data';
 
 var personalValues = {
-  username : null, 
-  lastname : null, 
+  username : null,
+  lastname : null,
   email    : null,
   password : null
 }
 
 class SettingsPersonal extends Component {
   constructor(props) {
-    super(props); 
+    super(props);
 
-    this.saveValues = this.saveValues.bind(this); 
-    this.saveSettings = this,saveSettings.bind(this); 
-    this.onSaveSettings = this.onSaveSettings.bind(this); 
+    this.saveValues = this.saveValues.bind(this);
+    this.saveSettings = this,saveSettings.bind(this);
+    this.onSaveSettings = this.onSaveSettings.bind(this);
   }
 
   saveValues(personalValues) {
     return (
       personalValues = Object.assign({}, personalValues, personalValues)
-    ); 
+    );
   }
 
   onSaveSettings(e) {
-    e.preventDefault(); 
+    e.preventDefault();
 
     // Get values via this.refs
     var data = {
-      username: this.refs.username.value, 
-      lastname: this.refs.lastname.value, 
-      email   : this.refs.email.value, 
+      username: this.refs.username.value,
+      lastname: this.refs.lastname.value,
+      email   : this.refs.email.value,
       password: this.refs.password.value
     }
 
-    this.saveValues(data); 
-    this.saveSettings(data); 
+    this.saveValues(data);
+    this.saveSettings(data);
   }
 
   saveSettings(data) {
-    Meteor.call('savePersonalInfo', data); 
+    Meteor.call('savePersonalInfo', data);
   }
 
   render() {
     return (
       <SettingsPersonalData/>
-    ); 
+    );
   }
 }
 
@@ -59,8 +59,8 @@ const Data = (props) => {
       { props.user.map(item => <SettingsPersonalData key={item._id} item={item}/>)
       }
     </div>
-  ); 
-}; 
+  );
+};
 
 const SettingsPersonalData = (props) => {
   return (
@@ -99,4 +99,3 @@ export default SettingsPersonal = createContainer(() => {
   };
 
 }, Data);
-
