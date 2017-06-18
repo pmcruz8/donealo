@@ -32,7 +32,9 @@ const Header = props => {
 			<div className="profHeader">
 				<Navbar />
 				<div className="orgName">{props.item.name}</div>
-					<img className="blog-img" src={props.item.avatar} alt="" />
+					<img className="blog-img" 
+            src={props.item.avatar !== "" ? props.item.avatar : "img/org-placeholder.png"} 
+            alt="" />
 			</div>
 		</div>
 	);
