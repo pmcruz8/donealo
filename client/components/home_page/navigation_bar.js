@@ -7,6 +7,7 @@ class Navbar extends Component {
   constructor(props) {
     super(props);
 
+    var currUser = Meteor.userId();
     var currUserFN = '';
 
     if (Meteor.userId()) {
@@ -26,40 +27,42 @@ class Navbar extends Component {
       };
     }
 
-    this.requireAuth = this.requireAuth.bind(this);
-
-  }
-
-  componentDidMount() {
-
-    var currUser = Meteor.userId();
-
     Tracker.autorun(() => {
 
-      const USER_DATA = Meteor.users.findOne(currUser);
+      const user_data = Meteor.users.findOne(currUser);
 
-      if (USER_DATA) {
-        currUserFN = USER_DATA.profile.firstName;
-        this.setState({text: currUserFN,isUserLoggedIn:true,button:"Logout"});
+      if (user_data) {
+        currUserFN = user_data.profile.firstName;
+        this.setState({text:currUserFN});
 
         console.log(currUserFN);
-      } else {
-        this.setState({text: "Login",isUserLoggedIn:false,button:"Login"})
       }
     });
 
-  }
+    this.requireAuth = this.requireAuth.bind(this);
+    this.loginToName = this.loginToName.bind(this);
 
+  }
 
   requireAuth() {
     if (Meteor.userId()) {
-      this.setState({button: "Login", path: "/login", text: "Login", isUserLoggedIn: false});
-
       Meteor.logout();
-      console.log('loggin out')
+      this.setState({button: "Login", path: "/login", text: "Login",isUserLoggedIn:false});
 
     } else {
-      this.setState({button: "Logout", path: "/", text:currUserFN, isUserLoggedIn: true});
+      this.setState({button: "Logout", path: "/"});
+    }
+  }
+
+  // Renders Name if logged in, renders login if not
+  // To do: Meteor.call(findName)
+  loginToName() {
+    if (Meteor.userId()) {
+      Meteor.logout();
+      this.setState({text: "Login", path: "/login"});
+      console.log(Meteor.userId())
+    } else {
+      this.setState({text: "Logout", path: "/"});
     }
   }
 
@@ -102,21 +105,22 @@ class Navbar extends Component {
           <div className="collapse navbar-collapse navbar-right" id="bs-example-navbar-collapse-1">
             <ul className="nav navbar-nav">
               <li className="navbarButtons">
-                <a href="/">
+                <a href="#">
                   <font color="white">Inicio</font>
                 </a>
               </li>
               <li className="navbarButtons">
-                <a href="/#footer">
+                <a href="#footer">
                   <font color="white">Sobre Donéalo</font>
                 </a>
               </li>
-              {this.state.isUserLoggedIn
-                ? (
+              {
+                this.state.isUserLoggedIn ?
+                (
                   <DropdownButton title={this.state.text} id="dropdown-settings">
                     <MenuItem eventKey="1" href="profile">Profile</MenuItem>
                     <MenuItem eventKey="2" href="/settings">Settings</MenuItem>
-                    <MenuItem divider/>
+                    <MenuItem divider />
                     <MenuItem eventKey="3">
                       <Link onClick={this.requireAuth} to={this.state.path}>{this.state.button}</Link>
                     </MenuItem>
@@ -125,7 +129,7 @@ class Navbar extends Component {
                 : (
                   <Link className="loginButton" onClick={this.requireAuth} to={this.state.path}>{this.state.button}</Link>
                 )
-}
+            }
             </ul>
           </div>
         </div>

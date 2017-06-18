@@ -13,7 +13,7 @@ class Container extends Component {
 }
 
 const OrganizationList = (props) => {
-
+  if(props.count > 0) {
     return (
       <div className="row">
         <div className="text-center">
@@ -24,6 +24,12 @@ const OrganizationList = (props) => {
         </div>
       </div>
     );
+  } else {
+    return (
+      <div className="row">
+      </div>
+    );
+  }
 };
 
 // To Do: add query for org name in Profile path
@@ -33,7 +39,12 @@ const Box = (props) => {
     <div className="col-sm-3">
       <div className="blog-column">
         <p>{ props.item.name }</p>
-        <Link to={props.item._id}><img className="img-responsive blog-img" src={props.item.avatar} alt=""></img></Link>
+        <Link to={props.item._id}>
+          <img className="img-responsive blog-img" 
+            src={props.item.avatar !== "" ? props.item.avatar : "img/org-placeholder.png"} 
+            alt="">
+          </img>
+        </Link>
       </div>
     </div>
   );
@@ -47,7 +58,6 @@ export default Orgs = createContainer(({ category }) => {
   const isReady = handle.ready();
 
   return {
-    isReady,
     activeData: isReady ? Organizations.find({category: category}).fetch() : [],
     count: isReady ? Organizations.find({category: category}).count() : 0,
     category: category.substr(0,1).toUpperCase() + category.substr(1)

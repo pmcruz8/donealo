@@ -5,37 +5,54 @@ import { Link } from 'react-router-dom'
 import { Organizations } from '../../../collections/organizations';
 import { createContainer } from 'meteor/react-meteor-data';
 
-var profileValues = {
-  about : null, 
-  faq   : null
-}
-
 class SettingsProfile extends Component {
   constructor(props) {
     super(props); 
 
-    this.saveValues = this.saveValues.bind(this); 
+    this.state  ={
+      about : null, 
+      faq   : null
+    }; 
+
     this.saveSettings = this.saveSettings.bind(this); 
     this.onSaveSettings = this.onSaveSettings.bind(this); 
   }
 
-  saveValues(profileValues) {
-    return (
-      profileValues = Object.assign({}, profileValues, profileValues)
-    ); 
+  componentDidMount() {
+    const currUser = Meteor.userId();
+    const handle = Meteor.subscribe('organization.user', currUser);
+    
+    Tracker.autorun(() => {
+      const isReady = handle.ready();
+      
+      if (isReady) {
+
+        const org_data = Organizations.findOne({user:currUser}); 
+
+        this.setState({ about: org_data.about === undefined ? "" : org_data.about }); 
+        this.setState({ faq: org_data.faq === undefined ? "" : org_data.faq }); 
+
+      }
+    });
   }
 
   onSaveSettings(e) {
     e.preventDefault(); 
 
     // Get values via this.refs
-    var data = {
-      about: this.refs.about.value, 
-      faq: this.refs.faq.value
-    }
-
-    this.saveValues(data); 
-    this.saveSettings(data); 
+    this.setState({ 
+      about: this.refs.about.value !== "" ?
+        this.refs.about.value 
+        : this.state.about, 
+      
+      faq: this.refs.faq.value !== "" ?
+        this.refs.faq.value 
+        : this.state.faq
+    
+    }, function () {
+      console.log(this.state); 
+      this.saveSettings(this.state); 
+    });
   }
 
   saveSettings(data) {
@@ -43,44 +60,31 @@ class SettingsProfile extends Component {
   }
 
   render() {
-    <SettingsProfileData/>
-  }
-}
-
-const Data = (props) => {
-  return (
-    <div>{props.user.map(item => <SettingsProfileData key={item._id} item={item}/>)}
-    </div>
-  ); 
-}; 
-
-const SettingsProfileData = (props) => {
-  return (
+    return (
       <div>
         <div className="col-md-12 margin-top-20">
           <label>Sobre Nosotors</label>
-          <input className="form-control" ref="about" placeholder={props.item.about}/>
+          <input className="form-control" 
+            ref="about" 
+            placeholder="Sobre Nosotors"
+            value={this.state.about !== null ? this.state.about : ""}
+            onChange={this.onSaveSettings} />
         </div>
         <div className="col-md-12 margin-top-20">
           <label>FAQ</label>
-          <input className="form-control" ref="faq" placeholder={props.item.faq}/>
+          <input className="form-control" 
+          ref="faq" 
+          placeholder="FAQ" 
+          value={this.state.faq !== null ? this.state.faq : ""}
+          onChange={this.onSaveSettings} />
         </div>
         <div className="margin-top-20 pull-right">
           <button className="btn btn-primary" onClick={this.onSaveSettings}>Edit</button>
         </div>
       </div>
-    )
+    ); 
+  }
 }
 
-export default SettingsProfile = createContainer(() => {
-
-  const handle = Meteor.subscribe("organizations");
-  const isReady = handle.ready();
-
-  return {
-    isReady,
-    user: isReady ? Organizations.find({user: Meteor.userId()}).fetch() : [],
-  };
-
-}, Data);
+export default SettingsProfile; 
 
