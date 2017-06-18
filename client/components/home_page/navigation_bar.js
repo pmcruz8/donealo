@@ -29,17 +29,15 @@ class Navbar extends Component {
 
     Tracker.autorun(() => {
 
-      const USER_DATA = Meteor.users.findOne(currUser);
+      const user_data = Meteor.users.findOne(currUser);
 
-      if (USER_DATA) {
-        currUserFN = USER_DATA.profile.firstName;
+      if (user_data) {
+        currUserFN = user_data.profile.firstName;
         this.setState({text:currUserFN});
 
         console.log(currUserFN);
       }
     });
-
-
 
     this.requireAuth = this.requireAuth.bind(this);
     this.loginToName = this.loginToName.bind(this);
@@ -48,9 +46,7 @@ class Navbar extends Component {
 
   requireAuth() {
     if (Meteor.userId()) {
-
       Meteor.logout();
-
       this.setState({button: "Login", path: "/login", text: "Login",isUserLoggedIn:false});
 
     } else {

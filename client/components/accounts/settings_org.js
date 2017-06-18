@@ -105,10 +105,6 @@ class SettingsOrg extends Component {
         this.refs.category.value 
         : this.state.category, 
 
-      avatar: this.refs.avatar.value !== "" ? 
-        this.refs.avatar.value 
-        : this.state.avatar, 
-
       websiteURL: this.refs.websiteURL.value !== "" ? 
         this.refs.websiteURL.value 
         : this.state.websiteURL, 

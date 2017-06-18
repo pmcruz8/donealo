@@ -13,7 +13,7 @@ class Container extends Component {
 }
 
 const OrganizationList = (props) => {
-
+  if(props.count > 0) {
     return (
       <div className="row">
         <div className="text-center">
@@ -24,6 +24,12 @@ const OrganizationList = (props) => {
         </div>
       </div>
     );
+  } else {
+    return (
+      <div className="row">
+      </div>
+    );
+  }
 };
 
 // To Do: add query for org name in Profile path
