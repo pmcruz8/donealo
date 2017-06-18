@@ -25,6 +25,7 @@ class SettingsOrg extends Component {
     this.upload = this.upload.bind(this); 
     this.saveSettings = this.saveSettings.bind(this);
     this.onSaveSettings = this.onSaveSettings.bind(this); 
+    this.onSaveSettingsToDB = this.onSaveSettingsToDB.bind(this); 
   }
 
   componentDidMount() {
@@ -63,8 +64,10 @@ class SettingsOrg extends Component {
     uploader.send(document.getElementById('input').files[0], function (error, downloadUrl) {
         if (error) {
             alert (error);
+            Bert.alert('Hubo un error guardando la foto', 'danger');
         } else {
             Meteor.call('saveAvatar', downloadUrl); 
+            Bert.alert('Hemos guardado tu foto correctamente', 'success');
         }
     });
   }
@@ -81,41 +84,45 @@ class SettingsOrg extends Component {
 
     // Get values via this.refs
     this.setState({ 
-      organization: this.refs.organization.value !== "" ? 
+      organization: this.refs.organization.value !== undefined ? 
         this.refs.organization.value 
         : this.state.organization, 
 
-      phone: this.refs.phone.value !== "" ? 
+      phone: this.refs.phone.value !== undefined ? 
         this.refs.phone.value 
         : this.state.phone, 
 
-      address: this.refs.address.value !== "" ? 
+      address: this.refs.address.value !== undefined ?  
         this.refs.address.value 
         : this.state.address, 
 
-      postal: this.refs.postal.value !== "" ? 
+      postal: this.refs.postal.value !== undefined ? 
         this.refs.postal.value 
         : this.state.postal, 
 
-      paypal: this.refs.paypal.value !== "" ? 
+      paypal: this.refs.paypal.value !== undefined ? 
         this.refs.paypal.value 
         : this.state.paypal, 
 
-      category: this.refs.category.value !== "" ? 
+      category: this.refs.category.value !== undefined ? 
         this.refs.category.value 
         : this.state.category, 
 
-      websiteURL: this.refs.websiteURL.value !== "" ? 
+      websiteURL: this.refs.websiteURL.value !== undefined ? 
         this.refs.websiteURL.value 
         : this.state.websiteURL, 
 
-      facebookURL: this.refs.facebookURL.value !== "" ? 
+      facebookURL: this.refs.facebookURL.value !== undefined ? 
         this.refs.facebookURL.value 
         : this.state.facebookURL 
-    
     }, function () {
       this.saveSettings(this.state);
     }); 
+  }
+
+  onSaveSettingsToDB(e) {
+    this.saveSettings(this.state);
+    Bert.alert('Hemos guardado la información correctamente', 'success');
   }
 
   saveSettings(data) {
@@ -203,7 +210,7 @@ class SettingsOrg extends Component {
             onChange={this.onSaveSettings}/>
         </div>
         <div className="margin-top-20 pull-right">
-          <button className="btn btn-primary" onClick={this.onSaveSettings}>Save</button>
+          <button className="btn btn-primary" onClick={this.onSaveSettingsToDB}>Save</button>
         </div>
       </div>
     ); 

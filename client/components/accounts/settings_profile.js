@@ -16,6 +16,7 @@ class SettingsProfile extends Component {
 
     this.saveSettings = this.saveSettings.bind(this); 
     this.onSaveSettings = this.onSaveSettings.bind(this); 
+    this.onSaveSettingsToDB = this.onSaveSettingsToDB.bind(this); 
   }
 
   componentDidMount() {
@@ -26,7 +27,6 @@ class SettingsProfile extends Component {
       const isReady = handle.ready();
       
       if (isReady) {
-
         const org_data = Organizations.findOne({user:currUser}); 
 
         this.setState({ about: org_data.about === undefined ? "" : org_data.about }); 
@@ -41,18 +41,22 @@ class SettingsProfile extends Component {
 
     // Get values via this.refs
     this.setState({ 
-      about: this.refs.about.value !== "" ?
+      about: this.refs.about.value !== undefined ?
         this.refs.about.value 
         : this.state.about, 
       
-      faq: this.refs.faq.value !== "" ?
+      faq: this.refs.faq.value !== undefined ?
         this.refs.faq.value 
         : this.state.faq
     
     }, function () {
-      console.log(this.state); 
       this.saveSettings(this.state); 
     });
+  }
+
+  onSaveSettingsToDB(e) {
+    this.saveSettings(this.state); 
+    Bert.alert('Hemos guardado la información correctamente', 'success');
   }
 
   saveSettings(data) {
@@ -79,7 +83,7 @@ class SettingsProfile extends Component {
           onChange={this.onSaveSettings} />
         </div>
         <div className="margin-top-20 pull-right">
-          <button className="btn btn-primary" onClick={this.onSaveSettings}>Save</button>
+          <button className="btn btn-primary" onClick={this.onSaveSettingsToDB}>Save</button>
         </div>
       </div>
     ); 

@@ -16,6 +16,7 @@ class SettingsPersonal extends Component {
 
     this.saveSettings = this.saveSettings.bind(this);
     this.onSaveSettings = this.onSaveSettings.bind(this); 
+    this.onSaveSettingsToDB = this.onSaveSettingsToDB.bind(this); 
   }
 
   componentDidMount() {
@@ -36,15 +37,24 @@ class SettingsPersonal extends Component {
 
     // Get values via this.refs
     this.setState = ({
-      username: this.refs.username.value,
-      lastname: this.refs.lastname.value
-    }); 
+      username: this.refs.username.value !== undefined ? 
+        this.refs.username.value 
+        : this.state.username, 
 
+      lastname: this.refs.lastname.value !== undefined ? 
+        this.refs.lastname.value 
+        : this.state.lastname, 
+    }); 
+    
     this.saveSettings(this.state);
   }
 
-  saveSettings(data) {
+  onSaveSettingsToDB(e) {
+    this.saveSettings(this.state); 
+    Bert.alert('Hemos guardado la información correctamente', 'success');
+  }
 
+  saveSettings(data) {
     Meteor.call('savePersonalInfo', data);
   }
 
@@ -68,7 +78,7 @@ class SettingsPersonal extends Component {
             onChange={this.onSaveSettings} />
         </div>
         <div className="margin-top-20 pull-right">
-          <button className="btn btn-primary" onClick={this.onSaveSettings}>Save</button>
+          <button className="btn btn-primary" onClick={this.onSaveSettingsToDB}>Save</button>
         </div>
       </div>
     );

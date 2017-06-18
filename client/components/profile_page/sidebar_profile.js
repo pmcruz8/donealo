@@ -1,10 +1,14 @@
 import React, {Component} from 'react';
+import { Organizations } from '../../../collections/organizations';
 
 class SidebarProfile extends Component {
   constructor(props) {
     super(props);   
+
+    this.state = {paypal: ""}
+    this.managePaypal = this.managePaypal.bind(this); 
   }
-  
+
   componentDidMount() {
     const currUser = Meteor.userId();
     const handle = Meteor.subscribe('organization.user', currUser);
@@ -14,8 +18,22 @@ class SidebarProfile extends Component {
       
       if (isReady) {
         const org_data = Organizations.findOne({user:currUser}); 
+        this.setState({paypal: org_data.paypal !== "" || org_data.paypal !== undefined ? org_data.paypal : ""})
       }
     });
+  }
+
+  componentWillUnmount() {
+    console.log("will unmount"); 
+    if(this.state.paypal === "") {
+      Bert.alert('Esta organización no ha configurado la opción de PayPal', 'danger'); 
+    }
+  }
+
+  managePaypal() {
+    if(this.state.paypal === "") {
+      Bert.alert('Esta organización no ha configurado la opción de PayPal', 'danger'); 
+    }
   }
 
   render() {
@@ -26,10 +44,14 @@ class SidebarProfile extends Component {
           <div className="row">
             <div className="col-xs-4">
               <form action="https://www.paypal.com/cgi-bin/webscr" method="post">
-               <input type="hidden" name="business" value="donations@kcparkfriends.org"/>
+               <input type="hidden" 
+                  name="business" 
+                  onSubmit={this.managePaypal}
+                  value={this.state.paypal !== "" ? this.state.paypal : ""}/>
+
                 <input type="hidden" name="cmd" value="_donations"/>
                 <input type="hidden" name="item_name" value="Dona por una causa"/>
-                <input type="hidden" name="item_number" value="Donación"/>
+                <input type="hidden" name="item_number" value="Donation"/>
                 <input type="hidden" name="currency_code" value="USD"/>
                 <input type="image" name="submit"
                   data-toggle="modal" 
