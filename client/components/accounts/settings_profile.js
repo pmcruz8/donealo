@@ -67,14 +67,16 @@ class SettingsProfile extends Component {
           <input className="form-control" 
             ref="about" 
             placeholder="Sobre Nosotors"
-            value={this.state.about !== null ? this.state.about : ""}/>
+            value={this.state.about !== null ? this.state.about : ""}
+            onChange={this.onSaveSettings}>
         </div>
         <div className="col-md-12 margin-top-20">
           <label>FAQ</label>
           <input className="form-control" 
           ref="faq" 
           placeholder="FAQ" 
-          value={this.state.faq !== null ? this.state.faq : ""}/>
+          value={this.state.faq !== null ? this.state.faq : ""}
+          onChange={this.onSaveSettings}>
         </div>
         <div className="margin-top-20 pull-right">
           <button className="btn btn-primary" onClick={this.onSaveSettings}>Edit</button>

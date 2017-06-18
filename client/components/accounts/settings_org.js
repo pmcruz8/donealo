@@ -46,6 +46,8 @@ class SettingsOrg extends Component {
         this.setState({ avatar: org_data.avatar === undefined ? "" : org_data.avatar }); 
         this.setState({ websiteURL: org_data.websiteURL === undefined ? "" : org_data.websiteURL }); 
         this.setState({ facebookURL: org_data.facebookURL === undefined ? "" : org_data.facebookURL }); 
+
+        $('#category').val(org_data.category);
       }
     });
   }
@@ -108,63 +110,78 @@ class SettingsOrg extends Component {
           <input className="form-control" 
             ref="organization" 
             placeholder={this.state.organization} 
-            value={this.state.organization !== null ? this.state.organization : ""}/>
+            value={this.state.organization !== null ? this.state.organization : ""}
+            onChange={this.onSaveSettings}/>
         </div>
         <div className="col-md-12 margin-top-20">
           <label>Teléfono de ATH-Móvil</label>
           <input className="form-control" 
             ref="phone" 
             placeholder="(787)-555-5555"
-            value={this.state.phone !== null ? this.state.phone : ""}/>
+            value={this.state.phone !== null ? this.state.phone : ""}
+            onChange={this.onSaveSettings}/>
         </div>
         <div className="col-md-12 margin-top-20">
           <label>Dirección Física</label>
           <input className="form-control" 
             ref="address" 
             placeholder="Urb. Sabana del Palmar 818 calle Palma Real" 
-            value={this.state.address !== null ? this.state.address : ""}/>
+            value={this.state.address !== null ? this.state.address : ""}
+            onChange={this.onSaveSettings}/>
         </div>
         <div className="col-md-12 margin-top-20">
           <label>Dirección Postal</label>
           <input className="form-control" 
             ref="postal" 
             placeholder="818 Apt. #432" 
-            value={this.state.postal !== null ? this.state.postal : ""}/>
+            value={this.state.postal !== null ? this.state.postal : ""}
+            onChange={this.onSaveSettings}/>
         </div>
         <div className="col-md-12 margin-top-20">
           <label>Paypal Email</label>
           <input className="form-control" 
             ref="paypal" 
             placeholder="paypal@donations.com" 
-            value={this.state.paypal !== null ? this.state.paypal : ""}/>
+            value={this.state.paypal !== null ? this.state.paypal : ""}
+            onChange={this.onSaveSettings}/>
         </div>
         <div className="col-md-12 margin-top-20">
           <label>Categoría</label>
-          <input className="form-control" 
-            ref="category" 
-            placeholder="Salud" 
-            value={this.state.category !== null ? this.state.category : ""}/>
+          <select value={this.state.category !== null ? this.state.category : ""}
+            className="form-control" 
+            ref="category"
+            onChange={this.onSaveSettings}>
+              <option value="salud">Salud</option>
+              <option value="educacion">Educación</option>
+              <option value="arte_cultura">Arte y Cultura</option>
+              <option value="animales">Animales</option>
+              <option value="ambiente">Ambiente y Naturaleza</option>
+              <option value="familia">Familia</option>
+          </select>
         </div>
         <div className="col-md-12 margin-top-20">
           <label>Logo URL</label>
           <input className="form-control" 
             ref="avatar" 
             placeholder="http://"
-            value={this.state.avatar !== null ? this.state.avatar : ""}/>
+            value={this.state.avatar !== null ? this.state.avatar : ""}
+            onChange={this.onSaveSettings}/>
         </div>
         <div className="col-md-12 margin-top-20">
           <label>Website URL</label>
           <input className="form-control" 
             ref="websiteURL" 
             placeholder="http://"
-            value={this.state.websiteURL !== null ? this.state.websiteURL : ""}/>
+            value={this.state.websiteURL !== null ? this.state.websiteURL : ""}
+            onChange={this.onSaveSettings}/>
         </div>
         <div className="col-md-12 margin-top-20">
           <label>Facebook URL</label>
           <input className="form-control" 
             ref="facebookURL" 
             placeholder="facebook.com/organization"
-            value={this.state.facebookURL !== null ? this.state.facebookURL : ""}/>
+            value={this.state.facebookURL !== null ? this.state.facebookURL : ""}
+            onChange={this.onSaveSettings}/>
         </div>
         <div className="margin-top-20 pull-right">
           <button className="btn btn-primary" onClick={this.onSaveSettings}>Edit</button>

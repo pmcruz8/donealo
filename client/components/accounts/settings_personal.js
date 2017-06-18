@@ -60,14 +60,16 @@ class SettingsPersonal extends Component {
           <input className="form-control" 
             ref="username" 
             placeholder="Nombre"
-            value={this.state.username !== null ? this.state.username : ""}/>
+            value={this.state.username !== null ? this.state.username : ""}
+            onChange={this.onSaveSettings}>
         </div>
         <div className="col-md-12 margin-top-20">
           <label>Apellido</label>
           <input className="form-control" 
             ref="lastname" 
             placeholder="Apellido"
-            value={this.state.lastname !== null ? this.state.lastname : ""}/>
+            value={this.state.lastname !== null ? this.state.lastname : ""}
+            onChange={this.onSaveSettings}>
         </div>
         <div className="margin-top-20 pull-right">
           <button className="btn btn-primary" onClick={this.onSaveSettings}>Edit</button>
