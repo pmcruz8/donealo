@@ -11,24 +11,22 @@ class SettingsPersonal extends Component {
 
     this.state = {
       username : null,
-      lastname : null,
-      email    : null,
-      password : null
+      lastname : null
     }; 
 
     this.saveSettings = this.saveSettings.bind(this);
     this.onSaveSettings = this.onSaveSettings.bind(this); 
+  }
 
-    var currUser = Meteor.userId();
+  componentDidMount() {
+    const currUser = Meteor.userId();
     Tracker.autorun(() => {
       
       const user_data = Meteor.users.findOne(currUser); 
 
       if (user_data) {
-        this.setState({ username: user_data.profile.firstName }); 
-        this.setState({ lastname: user_data.profile.lastName }); 
-        this.setState({ email: user_data.profile.password }); 
-        this.setState({ password: user_data.profile.email }); 
+        this.setState({ username: user_data.profile.firstName === undefined ? "" : user_data.profile.firstName });
+        this.setState({ lastname: user_data.profile.lastName === undefined ? "" : user_data.profile.lastName });
       }
     });
   }
@@ -39,9 +37,7 @@ class SettingsPersonal extends Component {
     // Get values via this.refs
     this.setState = ({
       username: this.refs.username.value,
-      lastname: this.refs.lastname.value,
-      email   : this.refs.email.value,
-      password: this.refs.password.value
+      lastname: this.refs.lastname.value
     }); 
 
     this.saveSettings(this.state);

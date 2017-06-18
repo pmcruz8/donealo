@@ -1,12 +1,26 @@
-import React from 'react';
+import React, {Component} from 'react';
 
-// import Navbar from './navbar';
-// import Sidebar from './sidebar_profile';
+class SidebarProfile extends Component {
+  constructor(props) {
+    super(props);   
+  }
+  
+  componentDidMount() {
+    const currUser = Meteor.userId();
+    const handle = Meteor.subscribe('organization.user', currUser);
+    
+    Tracker.autorun(() => {
+      const isReady = handle.ready();
+      
+      if (isReady) {
+        const org_data = Organizations.findOne({user:currUser}); 
+      }
+    });
+  }
 
-const SidebarProfile = () => {
-  return (
-    <div className="profileSideBar">
-
+  render() {
+    return (
+      <div className="profileSideBar">
         <center>
           <h4 className="sidebarText">Escoge el tipo de donación</h4>
           <div className="row">
@@ -26,8 +40,7 @@ const SidebarProfile = () => {
                 <h5>Dinero</h5>
               </form>
               </div>
-            
-
+          
             <div className="col-xs-4">
               <img type="button" data-toggle="modal" data-target="#giveModal" className="btn donateIcons" src="img/give-icon.png" alt=""/>
               <h5>Artículos</h5>
@@ -55,10 +68,10 @@ const SidebarProfile = () => {
               <img src="img/Email.png" className="shareIcons" alt=""/>
             </div>
           </div>
-
       </center>
       </div>
-  );
+    );
+  }
 };
 
 export default SidebarProfile;
