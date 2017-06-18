@@ -41,7 +41,7 @@ const Box = (props) => {
         <p>{ props.item.name }</p>
         <Link to={props.item._id}>
           <img className="img-responsive blog-img" 
-            src={props.item.avatar !== "" ? props.item.avatar : "img/org-placeholder.png"} 
+            src={props.item.avatar !== "" ? props.item.avatar : "img/org-placeholder.png"}
             alt="">
           </img>
         </Link>
