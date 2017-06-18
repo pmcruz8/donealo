@@ -51,22 +51,49 @@ class SettingsOrg extends Component {
   }
 
   onSaveSettings(e) {
-    //e.preventDefault();
+    e.preventDefault();
 
     // Get values via this.refs
-    this.setState({ organization: this.refs.organization.value }); 
-    this.setState({ phone: this.refs.phone.value }); 
-    this.setState({ address: this.refs.address.value }); 
-    this.setState({ postal: this.refs.postal.value }); 
-    this.setState({ paypal: this.refs.paypal.value }); 
-    this.setState({ category: this.refs.category.value }); 
-    this.setState({ avatar: this.refs.avatar.value }); 
-    this.setState({ websiteURL: this.refs.websiteURL.value }); 
-    this.setState({ facebookURL: this.refs.facebookURL.value }); 
+    this.setState({ 
+      organization: this.refs.organization.value !== "" ? 
+        this.refs.organization.value 
+        : this.state.organization, 
 
-    console.log(this.state); 
+      phone: this.refs.phone.value !== "" ? 
+        this.refs.phone.value 
+        : this.state.phone, 
 
-    //this.saveSettings(data);
+      address: this.refs.address.value !== "" ? 
+        this.refs.address.value 
+        : this.state.address, 
+
+      postal: this.refs.postal.value !== "" ? 
+        this.refs.postal.value 
+        : this.state.postal, 
+
+      paypal: this.refs.paypal.value !== "" ? 
+        this.refs.paypal.value 
+        : this.state.paypal, 
+
+      category: this.refs.category.value !== "" ? 
+        this.refs.category.value 
+        : this.state.category, 
+
+      avatar: this.refs.avatar.value !== "" ? 
+        this.refs.avatar.value 
+        : this.state.avatar, 
+
+      websiteURL: this.refs.websiteURL.value !== "" ? 
+        this.refs.websiteURL.value 
+        : this.state.websiteURL, 
+
+      facebookURL: this.refs.facebookURL.value !== "" ? 
+        this.refs.facebookURL.value 
+        : this.state.facebookURL 
+    
+    }, function () {
+      this.saveSettings(this.state);
+    }); 
   }
 
   saveSettings(data) {
@@ -78,39 +105,66 @@ class SettingsOrg extends Component {
       <div>
         <div className="col-md-12 margin-top-20">
           <label>Nombre de Organización</label>
-          <input className="form-control" ref="organization" placeholder={this.state.organization}/>
+          <input className="form-control" 
+            ref="organization" 
+            placeholder={this.state.organization} 
+            value={this.state.organization !== null ? this.state.organization : ""}/>
         </div>
         <div className="col-md-12 margin-top-20">
           <label>Teléfono de ATH-Móvil</label>
-          <input className="form-control" ref="phone" placeholder={this.state.phone}/>
+          <input className="form-control" 
+            ref="phone" 
+            placeholder="(787)-555-5555"
+            value={this.state.phone !== null ? this.state.phone : ""}/>
         </div>
         <div className="col-md-12 margin-top-20">
           <label>Dirección Física</label>
-          <input className="form-control" ref="address" placeholder={this.state.address}/>
+          <input className="form-control" 
+            ref="address" 
+            placeholder="Urb. Sabana del Palmar 818 calle Palma Real" 
+            value={this.state.address !== null ? this.state.address : ""}/>
         </div>
         <div className="col-md-12 margin-top-20">
           <label>Dirección Postal</label>
-          <input className="form-control" ref="postal" placeholder={this.state.postal}/>
+          <input className="form-control" 
+            ref="postal" 
+            placeholder="818 Apt. #432" 
+            value={this.state.postal !== null ? this.state.postal : ""}/>
         </div>
         <div className="col-md-12 margin-top-20">
           <label>Paypal Email</label>
-          <input className="form-control" ref="paypal" placeholder={this.state.paypal}/>
+          <input className="form-control" 
+            ref="paypal" 
+            placeholder="paypal@donations.com" 
+            value={this.state.paypal !== null ? this.state.paypal : ""}/>
         </div>
         <div className="col-md-12 margin-top-20">
           <label>Categoría</label>
-          <input className="form-control" ref="category" placeholder={this.state.category}/>
+          <input className="form-control" 
+            ref="category" 
+            placeholder="Salud" 
+            value={this.state.category !== null ? this.state.category : ""}/>
         </div>
         <div className="col-md-12 margin-top-20">
           <label>Logo URL</label>
-          <input className="form-control" ref="avatar" placeholder={this.state.avatar}/>
+          <input className="form-control" 
+            ref="avatar" 
+            placeholder="http://"
+            value={this.state.avatar !== null ? this.state.avatar : ""}/>
         </div>
         <div className="col-md-12 margin-top-20">
           <label>Website URL</label>
-          <input className="form-control" ref="websiteURL" placeholder={this.state.websiteURL}/>
+          <input className="form-control" 
+            ref="websiteURL" 
+            placeholder="http://"
+            value={this.state.websiteURL !== null ? this.state.websiteURL : ""}/>
         </div>
         <div className="col-md-12 margin-top-20">
           <label>Facebook URL</label>
-          <input className="form-control" ref="facebookURL" placeholder={this.state.facebookURL}/>
+          <input className="form-control" 
+            ref="facebookURL" 
+            placeholder="facebook.com/organization"
+            value={this.state.facebookURL !== null ? this.state.facebookURL : ""}/>
         </div>
         <div className="margin-top-20 pull-right">
           <button className="btn btn-primary" onClick={this.onSaveSettings}>Edit</button>

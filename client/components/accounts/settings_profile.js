@@ -40,12 +40,19 @@ class SettingsProfile extends Component {
     e.preventDefault(); 
 
     // Get values via this.refs
-    this.setState = ({
-      about: this.refs.about.value, 
-      faq: this.refs.faq.value
-    }); 
-
-    this.saveSettings(this.state); 
+    this.setState({ 
+      about: this.refs.about.value !== "" ?
+        this.refs.about.value 
+        : this.state.about, 
+      
+      faq: this.refs.faq.value !== "" ?
+        this.refs.faq.value 
+        : this.state.faq
+    
+    }, function () {
+      console.log(this.state); 
+      this.saveSettings(this.state); 
+    });
   }
 
   saveSettings(data) {
@@ -53,16 +60,21 @@ class SettingsProfile extends Component {
   }
 
   render() {
-    //<SettingsProfileData/>
     return (
       <div>
         <div className="col-md-12 margin-top-20">
           <label>Sobre Nosotors</label>
-          <input className="form-control" ref="about" placeholder=""/>
+          <input className="form-control" 
+            ref="about" 
+            placeholder="Sobre Nosotors"
+            value={this.state.about !== null ? this.state.about : ""}/>
         </div>
         <div className="col-md-12 margin-top-20">
           <label>FAQ</label>
-          <input className="form-control" ref="faq" placeholder=""/>
+          <input className="form-control" 
+          ref="faq" 
+          placeholder="FAQ" 
+          value={this.state.faq !== null ? this.state.faq : ""}/>
         </div>
         <div className="margin-top-20 pull-right">
           <button className="btn btn-primary" onClick={this.onSaveSettings}>Edit</button>

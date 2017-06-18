@@ -57,19 +57,17 @@ class SettingsPersonal extends Component {
       <div>
         <div className="col-md-12 margin-top-20">
           <label>Nombre</label>
-          <input className="form-control" ref="username" placeholder={this.state.username}/>
+          <input className="form-control" 
+            ref="username" 
+            placeholder="Nombre"
+            value={this.state.username !== null ? this.state.username : ""}/>
         </div>
         <div className="col-md-12 margin-top-20">
           <label>Apellido</label>
-          <input className="form-control" ref="lastname" placeholder={this.state.lastname}/>
-        </div>
-        <div className="col-md-12 margin-top-20">
-          <label>Email</label>
-          <input className="form-control" ref="email" placeholder={this.state.email}/>
-        </div>
-        <div className="col-md-12 margin-top-20">
-          <label>Password</label>
-          <input className="form-control" ref="password" placeholder={this.state.password}/>
+          <input className="form-control" 
+            ref="lastname" 
+            placeholder="Apellido"
+            value={this.state.lastname !== null ? this.state.lastname : ""}/>
         </div>
         <div className="margin-top-20 pull-right">
           <button className="btn btn-primary" onClick={this.onSaveSettings}>Edit</button>
