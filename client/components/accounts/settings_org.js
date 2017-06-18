@@ -22,6 +22,7 @@ class SettingsOrg extends Component {
       facebookURL : null
     }; 
 
+    this.upload = this.upload.bind(this); 
     this.saveSettings = this.saveSettings.bind(this);
     this.onSaveSettings = this.onSaveSettings.bind(this); 
   }
@@ -46,9 +47,32 @@ class SettingsOrg extends Component {
         this.setState({ avatar: org_data.avatar === undefined ? "" : org_data.avatar }); 
         this.setState({ websiteURL: org_data.websiteURL === undefined ? "" : org_data.websiteURL }); 
         this.setState({ facebookURL: org_data.facebookURL === undefined ? "" : org_data.facebookURL }); 
-
-        $('#category').val(org_data.category);
       }
+    });
+
+    Slingshot.fileRestrictions('avatar', {
+      allowedFileTypes: ["image/png", "image/jpeg", "image/jpg"],
+      maxSize: 5 * 500 * 500
+    });
+  }
+
+  upload() {
+    let userId = Meteor.user()._id;
+    let metaContext = { avatarId: userId };
+    let uploader = new Slingshot.Upload("UsersAvatar", metaContext);
+    uploader.send(document.getElementById('input').files[0], function (error, downloadUrl) {
+        if (error) {
+            alert (error);
+        } else {
+            Meteor.call('saveAvatar', downloadUrl); 
+        }
+    });
+  }
+
+  onSubmit() {
+    let avatarUrl = downloadUrl;
+    Meteor.users.update(Meteor.userId(), {
+        $set: {profile: avatarUrl}
     });
   }
 
@@ -160,12 +184,11 @@ class SettingsOrg extends Component {
           </select>
         </div>
         <div className="col-md-12 margin-top-20">
-          <label>Logo URL</label>
-          <input className="form-control" 
-            ref="avatar" 
-            placeholder="http://"
-            value={this.state.avatar !== null ? this.state.avatar : ""}
-            onChange={this.onSaveSettings}/>
+          <label>Logo / Foto de perfíl</label>
+          <form>
+            <input className="form-control" type="file" id="input" onChange={this.upload} />
+            <br /><button type="submit" onClick={this.onSubmit}>Upload</button>
+          </form>
         </div>
         <div className="col-md-12 margin-top-20">
           <label>Website URL</label>

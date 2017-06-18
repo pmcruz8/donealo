@@ -68,7 +68,7 @@ class SettingsProfile extends Component {
             ref="about" 
             placeholder="Sobre Nosotors"
             value={this.state.about !== null ? this.state.about : ""}
-            onChange={this.onSaveSettings}>
+            onChange={this.onSaveSettings} />
         </div>
         <div className="col-md-12 margin-top-20">
           <label>FAQ</label>
@@ -76,7 +76,7 @@ class SettingsProfile extends Component {
           ref="faq" 
           placeholder="FAQ" 
           value={this.state.faq !== null ? this.state.faq : ""}
-          onChange={this.onSaveSettings}>
+          onChange={this.onSaveSettings} />
         </div>
         <div className="margin-top-20 pull-right">
           <button className="btn btn-primary" onClick={this.onSaveSettings}>Edit</button>
