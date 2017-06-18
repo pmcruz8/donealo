@@ -96,7 +96,7 @@ class Navbar extends Component {
               <span className="icon-bar"></span>
               <span className="icon-bar"></span>
             </button>
-            <a className="navbar-brand" href="#">
+            <div className="navbar-brand" href="#">
               <div className="row">
                 <div className="col-xs-3">
                   <Link to="/">
@@ -110,19 +110,19 @@ class Navbar extends Component {
                 </div>
 
               </div>
-            </a>
+            </div>
           </div>
           <div className="collapse navbar-collapse navbar-right" id="bs-example-navbar-collapse-1">
             <ul className="nav navbar-nav">
               <li className="navbarButtons">
-                <a href="/">
+                <Link to="/">
                   <font color="white">Inicio</font>
-                </a>
+                </Link>
               </li>
               <li className="navbarButtons">
-                <a href="#footer">
+                <Link to="/#footer">
                   <font color="white">Sobre Donéalo</font>
-                </a>
+                </Link>
               </li>
               {
                 this.state.isUserLoggedIn ?

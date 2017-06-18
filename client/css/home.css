@@ -22,7 +22,7 @@
 }
 
 .navbarButtons{
-    text-shadow: 2px 2px #21769e;
+    /*text-shadow: 2px 2px #21769e;*/
 }
 
 .loginButton{
@@ -211,6 +211,7 @@ padding-left: 30px;
 .blog-img{
   width:300px;
   height: auto;
+  max-height: 200px;
   align-self: center;
 }
 

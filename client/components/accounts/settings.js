@@ -4,25 +4,30 @@ import { Link } from 'react-router-dom';
 import SettingsOrg from './settings_org';
 import SettingsPersonal from './settings_personal';
 import SettingsContent from './settings_content';
-import Login from './login'; 
+import Login from './login';
+import Navbar from '../home_page/navigation_bar';
 
-import createHistory from 'history/createBrowserHistory'; 
+
+import createHistory from 'history/createBrowserHistory';
 import { browserHistory, Route, Router } from 'react-router-dom';
 import { Switch } from 'react-router';
 
 const history = createHistory()
 
-function requireAuth() {      
+function requireAuth() {
   if (!Meteor.userId()) {
-    history.replace('/login'); 
+    history.replace('/login');
   }
 }
 
 const SettingsBody = () => {
   return (
-    <div className="container background-settings col-md-6 col-md-offset-3">
-      <h3>Settings</h3>
-      <SettingsContent />
+    <div className="bg-dark text-center login-container">
+      <Navbar />
+        <div className="container background-settings col-md-6 col-md-offset-3 settings-container pb-20">
+          <h3>Settings</h3>
+          <SettingsContent />
+        </div>
     </div>
   )
 }

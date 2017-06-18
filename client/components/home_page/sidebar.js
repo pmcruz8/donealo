@@ -36,7 +36,7 @@ const Sidebar = () => {
             <button className="buttonCategory" type="button" className="btn btn-block btn-default btn-lg">
               <a href="#arte_cultura">
                 <span className="btnContent">
-                  <img className="btnImg" src="img/arte y cultura icon.png"></img>
+                  <img className="btnImg" src="img/arte-y-cultura-icon.png"></img>
                   Arte y cultura
                 </span>
               </a>
@@ -49,7 +49,7 @@ const Sidebar = () => {
             <button className="buttonCategory" type="button" className="btn btn-block btn-default btn-lg">
               <a href="#animales">
                 <span className="btnContent">
-                  <img className="btnImg" src="img/animales icon.png"></img>
+                  <img className="btnImg" src="img/animales-icon.png"></img>
                   Animales
                 </span>
               </a>
@@ -62,7 +62,7 @@ const Sidebar = () => {
             <button className="buttonCategory" type="button" className="btn btn-block btn-default btn-lg">
               <a href="#ambiente">
                 <span className="btnContent">
-                  <img className="btnImg" src="img/medio ambiente icon.png"></img>
+                  <img className="btnImg" src="img/medio-ambiente-icon.png"></img>
                   Medio Ambiente
                 </span>
               </a>
@@ -75,7 +75,7 @@ const Sidebar = () => {
             <button className="buttonCategory" type="button" className="btn btn-block btn-default btn-lg">
               <a href="#familia">
                 <span className="btnContent">
-                  <img className="btnImg" src="img/familia icon.png"></img>
+                  <img className="btnImg" src="img/familia-icon.png"></img>
                   Familia
                 </span>
               </a>
