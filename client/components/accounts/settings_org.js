@@ -203,7 +203,7 @@ class SettingsOrg extends Component {
             onChange={this.onSaveSettings}/>
         </div>
         <div className="margin-top-20 pull-right">
-          <button className="btn btn-primary" onClick={this.onSaveSettings}>Edit</button>
+          <button className="btn btn-primary" onClick={this.onSaveSettings}>Save</button>
         </div>
       </div>
     ); 
