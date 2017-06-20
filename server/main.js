@@ -1,10 +1,21 @@
 import { Meteor } from 'meteor/meteor';
 import { Mongo } from 'meteor/mongo';
-import { Accounts } from 'meteor/accounts-base'; 
+import { Accounts } from 'meteor/accounts-base';
 import { Organizations } from '../collections/organizations';
 import { Link } from 'react-router-dom';
 
+import { Email } from 'meteor/email';
+
 Meteor.startup(() => {
+process.env.MAIL_URL = Meteor.settings.smtp;
+
+  // Testing the email sender:
+  Email.send({
+    to: "pedro@rokailabs.com",
+    from: "postmaster@sandbox85aeefb65423495ebc56bdda208a23ab.mailgun.org",
+    subject: "Example Email",
+    text: "The contents of our email in plain text.",
+  });
 
  // Organizations.insert({
  //     name: 'Centro Ines',
@@ -16,7 +27,7 @@ Meteor.startup(() => {
  //     postalAddress:"PO Box 360342 San Juan, PR 00936-0342",
  //     physicalAddress:"Ave. Lomas Verdes (PR-177) Int. Ave. San Ignacio (PR-841) Río Piedras, Puerto Rico 00921",
  //     athMovil:"",
- //     Q1:"Para que usaremos las donaciones monetarias?", 
+ //     Q1:"Para que usaremos las donaciones monetarias?",
  //     A1:"Blah blah blah",
  //     Q2:"",
  //     A2:"",
@@ -54,5 +65,4 @@ Meteor.methods({
       return Accounts.sendVerificationEmail( userId );
     }
   }
-}); 
-
+});
