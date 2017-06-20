@@ -9,7 +9,7 @@ const HomePage = () => {
 	return (
 		<div className="background borders">
 		<div className="homePage">
-				<Navbar/>
+				<Navbar />
 				<Header/>
 			</div>
 			<div className="row">

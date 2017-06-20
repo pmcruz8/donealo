@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import {Tracker} from 'meteor/tracker';
 import {Link} from 'react-router-dom';
 import {DropdownButton, MenuItem} from 'react-bootstrap';
+import { Organizations } from '../../../collections/organizations';
 
 class Navbar extends Component {
   constructor(props) {
@@ -9,13 +10,15 @@ class Navbar extends Component {
 
     var currUser = Meteor.userId();
     var currUserFN = '';
+    var orgProfile = '';
 
     if (Meteor.userId()) {
       this.state = {
         button: "Logout",
         path: "/",
         isUserLoggedIn: true,
-        text: currUserFN
+        text: currUserFN,
+        profile: orgProfile
       };
 
     } else {
@@ -23,19 +26,26 @@ class Navbar extends Component {
         button: "Login",
         path: "/login",
         isUserLoggedIn: false,
-        text: "Login"
+        text: "Login",
+        profile: orgProfile
       };
     }
 
     Tracker.autorun(() => {
+      const org_data = Organizations.findOne({user:currUser});
 
       const user_data = Meteor.users.findOne(currUser);
 
       if (user_data) {
         currUserFN = user_data.profile.firstName;
         this.setState({text:currUserFN});
-
         console.log(currUserFN);
+      }
+
+      if (org_data) {
+        console.log(org_data._id)
+        orgProfile = org_data._id;
+        this.setState({profile:orgProfile});
       }
     });
 
@@ -86,7 +96,7 @@ class Navbar extends Component {
               <span className="icon-bar"></span>
               <span className="icon-bar"></span>
             </button>
-            <a className="navbar-brand" href="#">
+            <div className="navbar-brand" href="#">
               <div className="row">
                 <div className="col-xs-3">
                   <Link to="/">
@@ -100,25 +110,25 @@ class Navbar extends Component {
                 </div>
 
               </div>
-            </a>
+            </div>
           </div>
           <div className="collapse navbar-collapse navbar-right" id="bs-example-navbar-collapse-1">
             <ul className="nav navbar-nav">
               <li className="navbarButtons">
-                <a href="#">
+                <Link to="/">
                   <font color="white">Inicio</font>
-                </a>
+                </Link>
               </li>
               <li className="navbarButtons">
-                <a href="#footer">
+                <Link to="/#footer">
                   <font color="white">Sobre Donéalo</font>
-                </a>
+                </Link>
               </li>
               {
                 this.state.isUserLoggedIn ?
                 (
                   <DropdownButton title={this.state.text} id="dropdown-settings">
-                    <MenuItem eventKey="1" href="profile">Profile</MenuItem>
+                    <MenuItem eventKey="1" href={this.state.profile}>Profile</MenuItem>
                     <MenuItem eventKey="2" href="/settings">Settings</MenuItem>
                     <MenuItem divider />
                     <MenuItem eventKey="3">

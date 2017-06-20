@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 // import Navbar from './navbar'
 import Navbar from "../home_page/navigation_bar";
+import {Tracker} from 'meteor/tracker';
 import { Organizations } from "../../../collections/organizations";
 import { createContainer } from "meteor/react-meteor-data";
 import { Meteor } from "meteor/meteor";

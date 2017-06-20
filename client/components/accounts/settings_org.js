@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
-import { Link } from 'react-router-dom'; 
+import { Link } from 'react-router-dom';
 import { Tracker } from 'meteor/tracker';
 
 import { Organizations } from '../../../collections/organizations';
@@ -20,9 +20,9 @@ class SettingsOrg extends Component {
       avatar      : null,
       websiteURL  : null,
       facebookURL : null
-    }; 
+    };
 
-    this.upload = this.upload.bind(this); 
+    this.upload = this.upload.bind(this);
     this.saveSettings = this.saveSettings.bind(this);
     this.onSaveSettings = this.onSaveSettings.bind(this); 
     this.onSaveSettingsToDB = this.onSaveSettingsToDB.bind(this); 
@@ -31,23 +31,23 @@ class SettingsOrg extends Component {
   componentDidMount() {
     const currUser = Meteor.userId();
     const handle = Meteor.subscribe('organization.user', currUser);
-    
+
     Tracker.autorun(() => {
       const isReady = handle.ready();
-      
+
       if (isReady) {
 
-        const org_data = Organizations.findOne({user:currUser}); 
+        const org_data = Organizations.findOne({user:currUser});
 
-        this.setState({ organization: org_data.name === undefined ? "" : org_data.name }); 
-        this.setState({ phone: org_data.phone === undefined ? "" : org_data.phone }); 
-        this.setState({ address: org_data.address === undefined ? "" : org_data.address }); 
-        this.setState({ postal: org_data.postal === undefined ? "" : org_data.postal }); 
-        this.setState({ paypal: org_data.paypal === undefined ? "" : org_data.paypal }); 
-        this.setState({ category: org_data.category === undefined ? "" : org_data.category }); 
-        this.setState({ avatar: org_data.avatar === undefined ? "" : org_data.avatar }); 
-        this.setState({ websiteURL: org_data.websiteURL === undefined ? "" : org_data.websiteURL }); 
-        this.setState({ facebookURL: org_data.facebookURL === undefined ? "" : org_data.facebookURL }); 
+        this.setState({ organization: org_data.name === undefined ? "" : org_data.name });
+        this.setState({ phone: org_data.phone === undefined ? "" : org_data.phone });
+        this.setState({ address: org_data.address === undefined ? "" : org_data.address });
+        this.setState({ postal: org_data.postal === undefined ? "" : org_data.postal });
+        this.setState({ paypal: org_data.paypal === undefined ? "" : org_data.paypal });
+        this.setState({ category: org_data.category === undefined ? "" : org_data.category });
+        this.setState({ avatar: org_data.avatar === undefined ? "" : org_data.avatar });
+        this.setState({ websiteURL: org_data.websiteURL === undefined ? "" : org_data.websiteURL });
+        this.setState({ facebookURL: org_data.facebookURL === undefined ? "" : org_data.facebookURL });
       }
     });
 
@@ -117,7 +117,7 @@ class SettingsOrg extends Component {
         : this.state.facebookURL 
     }, function () {
       this.saveSettings(this.state);
-    }); 
+    });
   }
 
   onSaveSettingsToDB(e) {
@@ -132,50 +132,50 @@ class SettingsOrg extends Component {
   render() {
     return (
       <div>
-        <div className="col-md-12 margin-top-20">
+        <div className="col-md-6 margin-top-20">
           <label>Nombre de Organización</label>
-          <input className="form-control" 
-            ref="organization" 
-            placeholder={this.state.organization} 
+          <input className="form-control"
+            ref="organization"
+            placeholder={this.state.organization}
             value={this.state.organization !== null ? this.state.organization : ""}
             onChange={this.onSaveSettings}/>
         </div>
-        <div className="col-md-12 margin-top-20">
+        <div className="col-md-6 margin-top-20">
           <label>Teléfono de ATH-Móvil</label>
-          <input className="form-control" 
-            ref="phone" 
+          <input className="form-control"
+            ref="phone"
             placeholder="(787)-555-5555"
             value={this.state.phone !== null ? this.state.phone : ""}
             onChange={this.onSaveSettings}/>
         </div>
         <div className="col-md-12 margin-top-20">
           <label>Dirección Física</label>
-          <input className="form-control" 
-            ref="address" 
-            placeholder="Urb. Sabana del Palmar 818 calle Palma Real" 
+          <input className="form-control"
+            ref="address"
+            placeholder="Urb. Sabana del Palmar 818 calle Palma Real"
             value={this.state.address !== null ? this.state.address : ""}
             onChange={this.onSaveSettings}/>
         </div>
         <div className="col-md-12 margin-top-20">
           <label>Dirección Postal</label>
-          <input className="form-control" 
-            ref="postal" 
-            placeholder="818 Apt. #432" 
+          <input className="form-control"
+            ref="postal"
+            placeholder="818 Apt. #432"
             value={this.state.postal !== null ? this.state.postal : ""}
             onChange={this.onSaveSettings}/>
         </div>
-        <div className="col-md-12 margin-top-20">
+        <div className="col-md-6 margin-top-20">
           <label>Paypal Email</label>
-          <input className="form-control" 
-            ref="paypal" 
-            placeholder="paypal@donations.com" 
+          <input className="form-control"
+            ref="paypal"
+            placeholder="paypal@donations.com"
             value={this.state.paypal !== null ? this.state.paypal : ""}
             onChange={this.onSaveSettings}/>
         </div>
-        <div className="col-md-12 margin-top-20">
+        <div className="col-md-6 margin-top-20">
           <label>Categoría</label>
           <select value={this.state.category !== null ? this.state.category : ""}
-            className="form-control" 
+            className="form-control"
             ref="category"
             onChange={this.onSaveSettings}>
               <option value="salud">Salud</option>
@@ -186,25 +186,25 @@ class SettingsOrg extends Component {
               <option value="familia">Familia</option>
           </select>
         </div>
-        <div className="col-md-12 margin-top-20">
+        <div className="col-md-8 margin-top-20">
           <label>Logo / Foto de perfíl</label>
           <form>
             <input className="form-control" type="file" id="input" onChange={this.upload} />
-            <br /><button type="submit" onClick={this.onSubmit}>Upload</button>
+            <button type="submit" onClick={this.onSubmit}>Upload</button>
           </form>
         </div>
-        <div className="col-md-12 margin-top-20">
+        <div className="col-md-6 margin-top-20">
           <label>Website URL</label>
-          <input className="form-control" 
-            ref="websiteURL" 
+          <input className="form-control"
+            ref="websiteURL"
             placeholder="http://"
             value={this.state.websiteURL !== null ? this.state.websiteURL : ""}
             onChange={this.onSaveSettings}/>
         </div>
-        <div className="col-md-12 margin-top-20">
+        <div className="col-md-6 margin-top-20">
           <label>Facebook URL</label>
-          <input className="form-control" 
-            ref="facebookURL" 
+          <input className="form-control"
+            ref="facebookURL"
             placeholder="facebook.com/organization"
             value={this.state.facebookURL !== null ? this.state.facebookURL : ""}
             onChange={this.onSaveSettings}/>
@@ -213,7 +213,7 @@ class SettingsOrg extends Component {
           <button className="btn btn-primary" onClick={this.onSaveSettingsToDB}>Save</button>
         </div>
       </div>
-    ); 
+    );
   }
 }
 

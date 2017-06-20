@@ -12,8 +12,7 @@ var loginValues = {
   lastname     : null,
   email        : null,
   password     : null,
-  organization : null,
-  licence      : null
+  organization : null
 }
 
 class Login extends Component {
@@ -39,8 +38,7 @@ class Login extends Component {
       password     : this.refs.password.value,
       firstname    : this.refs.firstname.value,
       lastname     : this.refs.lastname.value,
-      organization : this.refs.organization.value,
-      licence      : this.refs.licence.value
+      organization : this.refs.organization.value
     }
 
     this.saveValues(data);
@@ -53,8 +51,7 @@ class Login extends Component {
       password: data["password"],
       firstname: data["firstname"],
       lastname: data["lastname"],
-      organization: data["organization"], 
-      licence: data["licence"]
+      organization: data["organization"]
     };
 
     Accounts.createUser(user,
@@ -117,11 +114,6 @@ class Login extends Component {
             <div className="form-group">
               <div className="col-md-12">
                 <input type="password" ref="password" className="form-control" id="inputPassword3" placeholder="Password" />
-              </div>
-            </div>
-            <div className="form-group">
-              <div className="col-md-12">
-                <input type="text" ref="licence" className="form-control" id="inputAccessCode" placeholder="Código de Invitación" />
               </div>
             </div>
             <div className="form-group">

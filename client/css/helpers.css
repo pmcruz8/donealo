@@ -21,3 +21,11 @@
 .grey {
   color: grey;
 }
+
+.mb-20 {
+  margin-bottom: 20px;
+}
+
+.pb-20 {
+  padding-bottom: 20px
+}
