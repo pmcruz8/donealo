@@ -7,7 +7,7 @@ import { Link } from 'react-router-dom';
 import { Email } from 'meteor/email';
 
 Meteor.startup(() => {
-process.env.MAIL_URL = Meteor.settings.smtp;
+process.env.MAIL_URL = Meteor.settings.MAIL_URL;
 
   // Testing the email sender:
   Email.send({
