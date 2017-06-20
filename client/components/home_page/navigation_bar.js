@@ -87,7 +87,7 @@ class Navbar extends Component {
 
   render() {
     return (
-      <nav className="navbar">
+      <nav className="navbarMain">
         <div className="container-fluid">
           <div className="navbarHeader">
             <button type="button" className="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">

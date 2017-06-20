@@ -7,7 +7,6 @@ Meteor.methods({
   'createOrganization' : function(org) {
 
     var userID = Meteor.userId(); 
-    console.log("creating organization: " + userID); 
 
     Organizations.insert({
       name: org,
@@ -18,7 +17,6 @@ Meteor.methods({
   'saveProfileInfo' : function(values) {
     
     var userID = Meteor.userId(); 
-    console.log("Save profile info: " + userID); 
 
     Organizations.update(
       { 
@@ -27,7 +25,9 @@ Meteor.methods({
       
       { $set: {
           about : values.about,
-          faq: values.faq
+          A1: values.A1,
+          A2: values.A2,
+          A3: values.A3 
       }
     });
   },
@@ -35,7 +35,6 @@ Meteor.methods({
   'saveOrgInfo' : function(values) {
     
     var userID = Meteor.userId(); 
-    console.log("Save org info: " + userID); 
 
     Organizations.update(
       { 
@@ -49,7 +48,6 @@ Meteor.methods({
         postal: values.postal,
         paypal: values.paypal,
         category: values.category,
-        avatar: values.avatar,
         websiteURL: values.websiteURL,
         facebookURL: values.facebookURL
       }
@@ -59,7 +57,6 @@ Meteor.methods({
   'savePersonalInfo' : function(values) {
     
     var userID = Meteor.userId(); 
-    console.log("Save personal info: " + userID); 
 
     Organizations.update(
       { 
@@ -68,8 +65,6 @@ Meteor.methods({
       {$set: {
         username: values.username,
         lastname: values.lastname,
-        email: values.email,
-        password: values.password
       }
     });
   },
@@ -77,7 +72,6 @@ Meteor.methods({
   'saveAvatar' : function(avatar) {
     
     var userID = Meteor.userId(); 
-    console.log("Save avatar: " + userID); 
 
     Organizations.update(
       { 

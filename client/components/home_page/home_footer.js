@@ -7,7 +7,7 @@ const Footer = () => {
 <div className="col-md-12" className="footer border" id="footer">
 	<div className="sobreText">
 	  <h2>Sobre nosotros</h2>
-	  <p>Somos unos estudiantes motivados por comida gratis y mucha cafeína.</p>
+	  <p>Plataforma centralizada para que organizaciones sin fines de lucro de Puerto Rico puedan recibir donaciones monetarias, voluntarios y recursos.</p>
 	</div>
     <div className="row">
       <h4 className="footer-text">APOYADA POR</h4>

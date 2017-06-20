@@ -165,7 +165,7 @@ class SettingsOrg extends Component {
             onChange={this.onSaveSettings}/>
         </div>
         <div className="col-md-6 margin-top-20">
-          <label>Paypal Email</label>
+          <label>Email de Paypal</label>
           <input className="form-control"
             ref="paypal"
             placeholder="paypal@donations.com"

@@ -51,10 +51,6 @@ const Body = (props) => {
 		     			   <div className="col-sm-2 profileItems">
 		     			   		<a href="#gallery" >Galería</a>
 		     			   </div>
-		     			   <div className="col-sm-2 profileItems">
-		     			   		<a href="#events" >Eventos</a>
-		     			   	</div>
-
 		     			</div>
 	     			</div>
      			</div>
@@ -69,7 +65,7 @@ const Body = (props) => {
         			<h3 className="profileTitle">Contáctanos</h3>
         			<div className="profileBox">        				
                 <h4 className="subtitle">Correo Electrónico</h4>
-        					<p>{props.item.email}</p>
+        					<p>{props.item.paypal}</p>
         				
                 <h4 className="subtitle">Teléfono de ATH-Móvil</h4>
         					<p>{props.item.phone}</p>
@@ -78,97 +74,47 @@ const Body = (props) => {
         					<p>{props.item.postal}</p>
 
         				<h4 className="subtitle">Categoría</h4>
-        					<p>{props.item.category}</p>
+        					<p>{props.item.category.substr(0,1).toUpperCase() + props.item.category.substr(1)}</p>
         			</div>
 
         		</div>
         		<div className="FAQ" id="FAQ">
-        			
-        			<h3 className="profileTitle">Preguntas Frecuentes</h3>
-		        	{/*<Alert bsStyle="info" onDismiss={this.handleAlertDismiss}>
-			          <h4>Pregunta Sugerida: </h4>
-			          <p>¿Para que usaremos las donaciones monetarias?</p>
-
-				    </Alert>*/}
-		        	{/*<button className="accordion">Pregunta 1</button>*/}
-		        	  <Accordion>
-					    <Panel header={props.item.Q1} eventKey="1">
-					      {props.item.A1}
-					    </Panel>
-					    <Panel header={props.item.Q2} eventKey="2">
+        		<h3 className="profileTitle">Preguntas Frecuentes</h3>
+		        	<Accordion>
+					      <Panel header="¿Para qué usaremos las donaciones monetarias?" eventKey="1">
+					        {props.item.A1}
+					      </Panel>
+					      <Panel header="¿Para qué usaremos las donaciones monetarias?" eventKey="2">
       					  {props.item.A2}	
-    					</Panel>
-    					<Panel header={props.item.Q3} eventKey="3">
+    					  </Panel>
+    					  <Panel header="¿Para qué usaremos las donaciones monetarias?" eventKey="3">
       					  {props.item.A3}
 		        		</Panel>
-		        	  </Accordion>
+		        	 </Accordion>
 		        </div>
-		        <div id="gallery">
-		        	<h3 className="profileTitle">Galería</h3>
-		        		<div className="row profilePhoto">
-		        			<div className="col-md-4">
-		        				<div className="blog-column">
-		        					<img className="img-responsive" src={props.item.img1} alt=""></img>
-		        				</div>
-		        			</div>
+            <div id="gallery">
+            	<h3 className="profileTitle">Galería</h3>
+            		<div className="row profilePhoto">
+            			<div className="col-md-4">
+            				<div className="blog-column">
+            					<img className="img-responsive blog-img" src="img/org-placeholder.png" alt=""></img>
+            				</div>
+            			</div>
 
-		        			<div className="col-md-4">
-		        				<div className="blog-column">
-		        					<img className="img-responsive blog-img" src={props.item.img2} alt=""></img>
-		        				</div>
-		        			</div>
+            			<div className="col-md-4">
+            				<div className="blog-column">
+            					<img className="img-responsive blog-img" src="img/org-placeholder.png" alt=""></img>
+            				</div>
+            			</div>
 
-		        			<div className="col-md-4">
-		        				<div className="blog-column">
-		        					<img className="img-responsive blog-img" src={props.item.img3} alt=""></img>
-		        				</div>
-		        			</div>
-		        		</div>
-
-		        		{/*<div className="row profilePhoto">
-		        			<div className="col-md-4">
-		        				<div className="blog-column">
-		        					<img className="img-responsive" src="img/video_vard.png" alt=""></img>
-		        				</div>
-		        			</div>
-
-		        			<div className="col-md-4">
-		        				<div className="blog-column">
-		        					<img className="img-responsive blog-img" src="img/video_vard.png" alt=""></img>
-		        				</div>
-		        			</div>
-
-		        			<div className="col-md-4">
-		        				<div className="blog-column">
-		        					<img className="img-responsive blog-img" src="img/video_vard.png" alt=""></img>
-		        				</div>
-		        			</div>
-		        		</div>*/}
-		        </div>
-		        
-		        <div id="events">
-		        	<h3 className="profileTitle">Eventos</h3>
-		        	<div className="row profilePhoto">
-		        			<div className="col-md-4">
-		        				<div className="blog-column">
-		        					<img className="img-responsive" src={props.item.event1} alt=""></img>
-		        				</div>
-		        			</div>
-
-		        			<div className="col-md-4">
-		        				<div className="blog-column">
-		        					<img className="img-responsive blog-img" src="img/evento_card.png" alt=""></img>
-		        				</div>
-		        			</div>
-
-		        			<div className="col-md-4">
-		        				<div className="blog-column">
-		        					<img className="img-responsive blog-img" src="img/evento_card.png" alt=""></img>
-		        				</div>
-		        			</div>
-		        		</div>
-		        </div>
-		    </div>
+            			<div className="col-md-4">
+            				<div className="blog-column">
+            					<img className="img-responsive blog-img" src="img/org-placeholder.png" alt=""></img>
+            				</div>
+            			</div>
+            		</div>
+            </div>
+          </div>
 			 	<div className="col-md-4">
 			     	<SidebarProfile/>
 			    </div>
@@ -184,7 +130,7 @@ export default BodyProfile = createContainer(({id}) => {
 
   return {
     isReady,
-    activeData: isReady ? Organizations.find({_id: id}).fetch() : [],
+    activeData: isReady ? Organizations.find({_id: id}).fetch() : []
   };
 
 }, BodyMap);

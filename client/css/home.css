@@ -25,6 +25,12 @@
     /*text-shadow: 2px 2px #21769e;*/
 }
 
+.navbarMain{
+  background: #34b9f5; 
+  border-radius: 0px;
+  border: 10px solid transparent;
+}
+
 .loginButton{
     background-color: #67e43d;
     border: none;
@@ -193,7 +199,8 @@ padding-left: 30px;
 /* Don't know how to declare profile.css in React so I'm gonn a put all of the css classes here for now.*/
 /* ------ Profile header -------*/
 .profHeader{
-  background: #34b9f5;
+  /*background: #34b9f5;*/
+  background: #ffffff;
   width: 100%;
   /*max-height: 700px;*/
   height: 400px;
@@ -202,10 +209,12 @@ padding-left: 30px;
 
 .orgName{
   /*margin-top: 10px;*/
-  color: white;
+  color: #34b9f5;
   font-size:36px;
   font-weight: 200;
   margin-bottom: 10px;
+  margin-top: 50px; 
+  font-family: "Verdana";
 }
 
 .blog-img{
@@ -223,7 +232,7 @@ padding-left: 30px;
 .profileSideBar {
   margin-top:20px;
   border: solid;
-  border-width: 2px;
+  border-width: 1px;
   border-color: #e0e0e0;
   padding-right: 10px;
   padding-left: 10px;
@@ -252,7 +261,7 @@ padding-left: 30px;
 
     border-style: solid;
     border-color: #e0e0e0;
-    border-width: 2px;
+    border-width: 1px;
     margin-top:20px;
     padding-left:40px;
     padding-top:20px;
@@ -277,13 +286,12 @@ padding-left: 30px;
 .aboutBox{
     border-style: solid;
     border-color: #e0e0e0;
-    border-width: 2px;
+    border-width: 1px;
     margin-right:50px;
     padding-left: 30px;
     padding-right:30px;
     padding-top: 30px;
     padding-bottom: 40px;
-
 }
 
 .accordion {
@@ -293,7 +301,7 @@ padding-left: 30px;
   padding: 18px;
   width: 95%;
   border:solid;
-  border-width:2px;
+  border-width:1px;
   border-color: #e0e0e0;
   text-align:left;
   font-size:15px;
@@ -324,13 +332,15 @@ padding-left: 30px;
   padding: 10px;
   border-style: solid;
   border-color: #e0e0e0;
-  border-width: 2px;
+  border-width: 1px;
   margin-right:50px;
   margin-bottom: 20px;
   padding-left: 10px;
   padding-right:10px;
   padding-top: 10px;
   padding-bottom: 10px;
+  font-size: 18px; 
+  font-family: "Verdana";
   transition: max-height 0.2s ease-out;
 }
 
@@ -389,7 +399,7 @@ padding-left: 30px;
 .tempPanel{
     border-style: solid;
     border-color: #e0e0e0;
-    border-width: 2px;
+    border-width: 1px;
     margin-right:50px;
     padding-left: 30px;
     padding-right:30px;

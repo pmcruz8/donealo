@@ -72,33 +72,17 @@ class SidebarProfile extends Component {
                 <h5>Dinero</h5>
               </form>
             </div>
-          </div>
-          <div className="col-xs-4">
-            <img type="button" className="btn donateIcons" src="img/give-icon.png" alt="" onClick={this.openRecursos}/>
-            <h5>Recursos</h5>
-          </div>
+            <div className="col-xs-4">
+              <img type="button" className="btn donateIcons" src="img/give-icon.png" alt="" onClick={this.openRecursos}/>
+              <h5>Recursos</h5>
+            </div>
 
-          <div className="col-xs-4">
-            <img type="button" data-toggle="modal" data-target="#timeModal" className="btn donateIcons" src="img/time-icon.png" alt="" onClick={this.openTiempo}/>
-            <h5>Tiempo</h5>
+            <div className="col-xs-4">
+              <img type="button" data-toggle="modal" data-target="#timeModal" className="btn donateIcons" src="img/time-icon.png" alt="" onClick={this.openTiempo}/>
+              <h5>Tiempo</h5>
+            </div>
           </div>
         </center>
-      
-          <div className="row">
-            <h4 className="sidebarText">Compártelo en las redes sociales</h4>
-            <div className="col-xs-3">
-              <img src="img/FB.png" className="shareIcons" alt=""/>
-            </div>
-            <div className="col-xs-3">
-              <img src="img/Twitter.png" className="shareIcons" alt=""/>
-            </div>
-            <div className="col-xs-3">
-              <img src="img/WhatsApp.png" className="shareIcons" alt=""/>
-            </div>
-            <div className="col-xs-3">
-              <img src="img/Email.png" className="shareIcons" alt=""/>
-            </div>
-          </div>
 
         <Modal show={this.state.showModalRecursos} onHide={this.closeRecursos}>
           <Modal.Header closeButton>

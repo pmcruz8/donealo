@@ -11,7 +11,9 @@ class SettingsProfile extends Component {
 
     this.state  ={
       about : null, 
-      faq   : null
+      A1 : null,
+      A2 : null, 
+      A3 : null
     }; 
 
     this.saveSettings = this.saveSettings.bind(this); 
@@ -30,8 +32,9 @@ class SettingsProfile extends Component {
         const org_data = Organizations.findOne({user:currUser}); 
 
         this.setState({ about: org_data.about === undefined ? "" : org_data.about }); 
-        this.setState({ faq: org_data.faq === undefined ? "" : org_data.faq }); 
-
+        this.setState({ A1: org_data.A1 === undefined ? "" : org_data.A1 }); 
+        this.setState({ A2: org_data.A2 === undefined ? "" : org_data.A2 }); 
+        this.setState({ A3: org_data.A3 === undefined ? "" : org_data.A3 }); 
       }
     });
   }
@@ -45,9 +48,17 @@ class SettingsProfile extends Component {
         this.refs.about.value 
         : this.state.about, 
       
-      faq: this.refs.faq.value !== undefined ?
-        this.refs.faq.value 
-        : this.state.faq
+      A1: this.refs.A1.value !== undefined ?
+        this.refs.A1.value 
+        : this.state.A1, 
+
+      A2: this.refs.A2.value !== undefined ?
+        this.refs.A2.value 
+        : this.state.A2, 
+
+      A3: this.refs.A3.value !== undefined ?
+        this.refs.A3.value 
+        : this.state.A3
     
     }, function () {
       this.saveSettings(this.state); 
@@ -68,18 +79,38 @@ class SettingsProfile extends Component {
       <div>
         <div className="col-md-12 margin-top-20">
           <label>Sobre Nosotors</label>
-          <input className="form-control" 
+          <textarea className="form-control" 
             ref="about" 
+            rows="5"
             placeholder="Sobre Nosotors"
             value={this.state.about !== null ? this.state.about : ""}
             onChange={this.onSaveSettings} />
         </div>
         <div className="col-md-12 margin-top-20">
-          <label>FAQ</label>
-          <input className="form-control" 
-          ref="faq" 
+          <label>¿Para qué usaremos las donaciones monetarias?</label>
+          <textarea className="form-control" 
+          ref="A1" 
+          rows="2"
           placeholder="FAQ" 
-          value={this.state.faq !== null ? this.state.faq : ""}
+          value={this.state.A1 !== null ? this.state.A1 : ""}
+          onChange={this.onSaveSettings} />
+        </div>
+        <div className="col-md-12 margin-top-20">
+          <label>¿Para qué usaremos las donaciones monetarias?</label>
+          <textarea className="form-control" 
+          ref="A2" 
+          rows="2"
+          placeholder="FAQ" 
+          value={this.state.A2 !== null ? this.state.A2 : ""}
+          onChange={this.onSaveSettings} />
+        </div>
+        <div className="col-md-12 margin-top-20">
+          <label>¿Para qué usaremos las donaciones monetarias?</label>
+          <textarea className="form-control" 
+          ref="A3" 
+          rows="2"
+          placeholder="FAQ" 
+          value={this.state.A3 !== null ? this.state.A3 : ""}
           onChange={this.onSaveSettings} />
         </div>
         <div className="margin-top-20 pull-right">
