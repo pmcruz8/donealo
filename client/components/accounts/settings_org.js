@@ -190,6 +190,7 @@ class SettingsOrg extends Component {
           <label>Logo / Foto de perfíl</label>
           <form>
             <input className="form-control" type="file" id="input" onChange={this.upload} />
+            <br />
             <button type="submit" onClick={this.onSubmit}>Upload</button>
           </form>
         </div>

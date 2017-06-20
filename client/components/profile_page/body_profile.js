@@ -1,11 +1,10 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
+import ReactDOM from 'react-dom';
 import HeaderProf from './header_profile';
-import {Alert, Accordion, Panel} from 'react-bootstrap';
 import SidebarProfile from './sidebar_profile';
+import { Alert, Accordion, Panel } from 'react-bootstrap';
 import { Organizations } from '../../../collections/organizations';
 import { createContainer } from 'meteor/react-meteor-data';
-
-// var Alert = ReactBootstrap.Alert;
 
 class Container extends Component {
 	constructor(props){
@@ -74,7 +73,7 @@ const Body = (props) => {
         					<p>{props.item.postal}</p>
 
         				<h4 className="subtitle">Categoría</h4>
-        					<p>{props.item.category.substr(0,1).toUpperCase() + props.item.category.substr(1)}</p>
+        					<p>{props.item.category}</p>
         			</div>
 
         		</div>
@@ -84,15 +83,15 @@ const Body = (props) => {
 					      <Panel header="¿Para qué usaremos las donaciones monetarias?" eventKey="1">
 					        {props.item.A1}
 					      </Panel>
-					      <Panel header="¿Para qué usaremos las donaciones monetarias?" eventKey="2">
+					      <Panel header="¿Cuáles han sido los logros más grandes de su organización?" eventKey="2">
       					  {props.item.A2}	
     					  </Panel>
-    					  <Panel header="¿Para qué usaremos las donaciones monetarias?" eventKey="3">
+    					  <Panel header="¿De qué otra forma puedo ayudar, si no puedo donar dinero?" eventKey="3">
       					  {props.item.A3}
 		        		</Panel>
 		        	 </Accordion>
 		        </div>
-            <div id="gallery">
+            {/*<div id="gallery">
             	<h3 className="profileTitle">Galería</h3>
             		<div className="row profilePhoto">
             			<div className="col-md-4">
@@ -113,12 +112,11 @@ const Body = (props) => {
             				</div>
             			</div>
             		</div>
-            </div>
+            </div>*/}
           </div>
 			 	<div className="col-md-4">
-			     	<SidebarProfile/>
+			     	<SidebarProfile paypalEmail={props.item.paypal}/>
 			    </div>
-
 		    </section>
 			</div>
 		);

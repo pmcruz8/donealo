@@ -1,22 +1,36 @@
 import React, {Component} from 'react';
+import { Modal, Button } from 'react-bootstrap';
+import { Tracker } from 'meteor/tracker';
 import { Organizations } from '../../../collections/organizations';
-import {Modal, Button} from 'react-bootstrap';
 
 class SidebarProfile extends Component {
   constructor(props) {
-    super(props);
+    super(props); 
 
     this.state = {
       showModalRecursos:false,
       showModalTiempo: false, 
-      paypal: ""
+      paypal: props.paypalEmail
     }
 
     this.closeRecursos = this.closeRecursos.bind(this);
     this.openRecursos = this.openRecursos.bind(this);
     this.closeTiempo = this.closeTiempo.bind(this);
     this.openTiempo = this.openTiempo.bind(this);
+  }
 
+  componentDidMount() {
+    const currUser = Meteor.userId();
+    const handle = Meteor.subscribe('organization.user', currUser);
+    
+    Tracker.autorun(() => {
+      const isReady = handle.ready();
+
+      if (isReady) {
+        const org_data = Organizations.findOne({user:currUser}); 
+        this.setState({ paypal: org_data.paypal === null ? "" : org_data.paypal });
+      }
+    });
   }
 
   getInitialState() {
@@ -39,20 +53,6 @@ class SidebarProfile extends Component {
     this.setState({showModalTiempo: true});
   }
 
-  componentDidMount() {
-    const currUser = Meteor.userId();
-    const handle = Meteor.subscribe('organization.user', currUser);
-    
-    Tracker.autorun(() => {
-      const isReady = handle.ready();
-      
-      if (isReady) {
-        const org_data = Organizations.findOne({user:currUser}); 
-        this.setState({paypal: org_data.paypal !== "" || org_data.paypal !== undefined ? org_data.paypal : ""})
-      }
-    });
-  }
-
   render() {
     return (
       <div className="profileSideBar">
@@ -61,9 +61,7 @@ class SidebarProfile extends Component {
           <div className="row">
             <div className="col-xs-4">
               <form action="https://www.paypal.com/cgi-bin/webscr" method="post">
-               <input type="hidden" 
-                  name="business" 
-                  value={this.state.paypal !== "" ? this.state.paypal : ""}/>
+               <input type="hidden" name="business" value={this.state.paypal === null ? "" : this.state.paypal}/>
                 <input type="hidden" name="cmd" value="_donations"/>
                 <input type="hidden" name="item_name" value="Dona por una causa"/>
                 <input type="hidden" name="item_number" value="Donation"/>
@@ -97,19 +95,19 @@ class SidebarProfile extends Component {
                   <textarea className="input100" name="articles" rows="5"></textarea>
                 </div>
                 <div className="col-md-6 m30">
-                  <label>First Name</label><br />
+                  <label>Nombre</label><br />
                   <input className="input100"  type="text" name="firstname" />
                 </div>
                 <div className="col-md-6 m30">
-                  <label>Last Name</label><br />
+                  <label>Apellido</label><br />
                   <input className="input100"  type="text" name="lastname" />
                 </div>
                 <div className="col-md-6 m30">
-                  <label>Telephone</label><br />
+                  <label>Teléfono</label><br />
                   <input className="input100"  type="text" name="telephone" />
                 </div>
                 <div className="col-md-6 m30">
-                  <label>Email</label><br />
+                  <label>Correo electrónico</label><br />
                   <input className="input100"  type="text" name="email" />
                 </div>
                 <input type="submit" value="Submit" />
@@ -133,19 +131,19 @@ class SidebarProfile extends Component {
                   <input className="input100" name="horario"></input>
                 </div>
                 <div className="col-md-6 m30">
-                  <label>First Name</label><br />
+                  <label>Nombre</label><br />
                   <input className="input100"  type="text" name="firstname" />
                 </div>
                 <div className="col-md-6 m30">
-                  <label>Last Name</label><br />
+                  <label>Apellido</label><br />
                   <input className="input100"  type="text" name="lastname" />
                 </div>
                 <div className="col-md-6 m30">
-                  <label>Telephone</label><br />
+                  <label>Teléfono</label><br />
                   <input className="input100"  type="text" name="telephone" />
                 </div>
                 <div className="col-md-6 m30">
-                  <label>Email</label><br />
+                  <label>Correo electrónico</label><br />
                   <input className="input100"  type="text" name="email" />
                 </div>
                 <input type="submit" value="Submit" />

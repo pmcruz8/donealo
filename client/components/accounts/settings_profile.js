@@ -28,6 +28,8 @@ class SettingsProfile extends Component {
     Tracker.autorun(() => {
       const isReady = handle.ready();
       
+      console.log("ready: " + isReady); 
+      
       if (isReady) {
         const org_data = Organizations.findOne({user:currUser}); 
 
@@ -96,7 +98,7 @@ class SettingsProfile extends Component {
           onChange={this.onSaveSettings} />
         </div>
         <div className="col-md-12 margin-top-20">
-          <label>¿Para qué usaremos las donaciones monetarias?</label>
+          <label>¿Cuáles han sido los logros más grandes de su organización?</label>
           <textarea className="form-control" 
           ref="A2" 
           rows="2"
@@ -105,7 +107,7 @@ class SettingsProfile extends Component {
           onChange={this.onSaveSettings} />
         </div>
         <div className="col-md-12 margin-top-20">
-          <label>¿Para qué usaremos las donaciones monetarias?</label>
+          <label>¿De qué otra forma puedo ayudar, si no puedo donar dinero?</label>
           <textarea className="form-control" 
           ref="A3" 
           rows="2"
